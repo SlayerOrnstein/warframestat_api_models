@@ -1,4 +1,4 @@
-library worldstatemodel;
+library worldstate_model;
 
 export 'src/alerts.dart';
 export 'src/deals.dart';

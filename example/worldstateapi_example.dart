@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:worldstatemodel/worldstatemodel.dart';
+import 'package:worldstate_model/worldstate_model.dart';
 import 'package:http/http.dart' as http;
 
 Future<void> main() async {
