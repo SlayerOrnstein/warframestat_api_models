@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
+import 'package:worldstate_model/src/reward.dart';
 
 @immutable
 abstract class WorldstateObject extends Equatable {
@@ -14,8 +15,8 @@ abstract class WorldstateObject extends Equatable {
   final DateTime activation, expiry;
 }
 
-abstract class CycleModel extends WorldstateObject {
-  CycleModel({
+abstract class CycleObject extends WorldstateObject {
+  CycleObject({
     String id,
     DateTime activation,
     DateTime expiry,
@@ -30,7 +31,27 @@ abstract class CycleModel extends WorldstateObject {
 
   final String state;
 
-  bool getStateBool();
+  bool get getStateBool;
 
-  String nextState();
+  String get nextState;
+}
+
+abstract class EventObject extends WorldstateObject {
+  EventObject({
+    String id,
+    DateTime activation,
+    DateTime expiry,
+    this.faction,
+    this.description,
+    this.victimNode,
+    this.node,
+    this.tooltip,
+    this.rewards,
+    List props = const [],
+  }) : super(id: id, activation: activation, expiry: expiry, props: props);
+
+  final String faction, description, victimNode, node, tooltip;
+  final List<Reward> rewards;
+
+  double get eventHealth;
 }

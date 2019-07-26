@@ -9,7 +9,7 @@ const cetusDay = Duration(minutes: 100);
 const cetusNight = Duration(minutes: 50);
 
 @JsonSerializable()
-class Earth extends CycleModel {
+class Earth extends CycleObject {
   Earth({
     String id,
     //DateTime activation,
@@ -24,10 +24,10 @@ class Earth extends CycleModel {
   final bool isDay, isCetus;
 
   @override
-  bool getStateBool() => isDay;
+  bool get getStateBool => isDay;
 
   @override
-  String nextState() => !isDay ? 'Day' : 'Night';
+  String get nextState => !isDay ? 'Day' : 'Night';
 
   Map<String, dynamic> toJson() => _$EarthToJson(this);
 }

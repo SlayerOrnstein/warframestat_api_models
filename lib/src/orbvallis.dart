@@ -5,7 +5,7 @@ import 'worldstateObject.dart';
 part 'orbvallis.g.dart';
 
 @JsonSerializable()
-class Vallis extends CycleModel {
+class Vallis extends CycleObject {
   Vallis(
       {String id,
       DateTime activation,
@@ -25,10 +25,10 @@ class Vallis extends CycleModel {
   final bool isWarm;
 
   @override
-  bool getStateBool() => isWarm;
+  bool get getStateBool => isWarm;
 
   @override
-  String nextState() => !isWarm ? 'warm' : 'cold';
+  String get nextState => !isWarm ? 'warm' : 'cold';
 
   Map<String, dynamic> toJson() => _$VallisToJson(this);
 }
