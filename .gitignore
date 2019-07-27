@@ -9,6 +9,3 @@ build/
 
 # Directory created by dartdoc
 doc/api/
-
-
-**/*.g.dart
