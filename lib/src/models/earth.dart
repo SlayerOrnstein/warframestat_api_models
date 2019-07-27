@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'worldstateObject.dart';
+import '../objects/cycleObject.dart';
 
 part 'earth.g.dart';
 

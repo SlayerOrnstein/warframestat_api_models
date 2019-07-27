@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'worldstateObject.dart';
+import '../objects/worldstateObject.dart';
 
 part 'nightwave.g.dart';
 

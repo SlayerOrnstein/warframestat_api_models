@@ -1,8 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../objects/worldstateObject.dart';
 import 'reward.dart';
 import 'syndicate.dart';
-import 'worldstateObject.dart';
 
 part 'event.g.dart';
 

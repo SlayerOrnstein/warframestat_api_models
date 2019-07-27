@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import 'worldstateObject.dart';
+import '../objects/worldstateObject.dart';
 
 part 'sortie.g.dart';
 

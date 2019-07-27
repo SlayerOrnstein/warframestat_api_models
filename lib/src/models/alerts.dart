@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'reward.dart';
-import 'worldstateObject.dart';
+import '../objects/worldstateObject.dart';
 
 part 'alerts.g.dart';
 
