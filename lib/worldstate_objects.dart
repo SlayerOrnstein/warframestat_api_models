@@ -1,5 +1,5 @@
 library worldstate_objects;
 
-export 'src/objects/cycleObject.dart';
-export 'src/objects/eventObject.dart';
-export 'src/objects/worldstateObject.dart';
+export 'objects/cycleObject.dart';
+export 'objects/eventObject.dart';
+export 'objects/worldstateObject.dart';
