@@ -9,17 +9,11 @@ part of 'news.dart';
 OrbiterNews _$OrbiterNewsFromJson(Map<String, dynamic> json) {
   return OrbiterNews(
     id: json['id'] as String,
-    activation: json['activation'] == null
-        ? null
-        : DateTime.parse(json['activation'] as String),
-    expiry: json['expiry'] == null
-        ? null
-        : DateTime.parse(json['expiry'] as String),
     message: json['message'] as String,
     link: json['link'] as String,
     imageLink: json['imageLink'] as String,
-    date: json['date'] == null ? null : DateTime.parse(json['date'] as String),
     priority: json['priority'] as bool,
+    date: json['date'] == null ? null : DateTime.parse(json['date'] as String),
     update: json['update'] as bool,
     primeAccess: json['primeAccess'] as bool,
     stream: json['stream'] as bool,
@@ -32,8 +26,6 @@ OrbiterNews _$OrbiterNewsFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$OrbiterNewsToJson(OrbiterNews instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'activation': instance.activation?.toIso8601String(),
-      'expiry': instance.expiry?.toIso8601String(),
       'message': instance.message,
       'link': instance.link,
       'imageLink': instance.imageLink,

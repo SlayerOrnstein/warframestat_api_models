@@ -8,21 +8,17 @@ part 'news.g.dart';
 class OrbiterNews extends WorldstateObject {
   OrbiterNews({
     String id,
-    DateTime activation,
-    DateTime expiry,
     this.message,
     this.link,
     this.imageLink,
-    this.date,
     this.priority,
+    this.date,
     this.update,
     this.primeAccess,
     this.stream,
     this.translations,
   }) : super(
           id: id,
-          activation: activation,
-          expiry: expiry,
           props: [
             message,
             link,
