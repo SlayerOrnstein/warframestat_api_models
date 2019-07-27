@@ -15,6 +15,3 @@ export 'src/models/sortie.dart';
 export 'src/models/syndicate.dart';
 export 'src/models/trader.dart';
 export 'src/models/worldstate.dart';
-export 'src/objects/cycleObject.dart';
-export 'src/objects/eventObject.dart';
-export 'src/objects/worldstateObject.dart';

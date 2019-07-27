@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_model/worldstate_model.dart';
+
+import '../objects/eventObject.dart';
+import 'reward.dart';
 
 part 'wmd.g.dart';
 
