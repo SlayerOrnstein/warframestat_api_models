@@ -1,6 +1,6 @@
 name: worldstate_model
 description: A starting point for Dart libraries or applications.
-version: 0.0.3
+version: 0.0.4
 author: Ludwig <blacklightinglr@gmail.com>
 
 environment:
