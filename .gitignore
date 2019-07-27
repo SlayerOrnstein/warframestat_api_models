@@ -11,4 +11,4 @@ build/
 doc/api/
 
 
-**/*.g.dart
+lib/src/models/*.g.dart
