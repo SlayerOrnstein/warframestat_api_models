@@ -55,5 +55,10 @@ class Event extends WorldstateObject {
   final List<Reward> rewards;
   final List<Jobs> jobs;
 
+  Factions get factionValue {
+    return Factions.values.firstWhere((f) =>
+        f.toString().split('.').last == faction.toLowerCase().split(' ').last);
+  }
+
   Map<String, dynamic> toJson() => _$EventToJson(this);
 }
