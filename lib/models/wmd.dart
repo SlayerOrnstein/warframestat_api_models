@@ -16,8 +16,8 @@ class Wmd extends EventObject {
     String victimNode,
     String node,
     String tooltip,
-    List<Reward> rewards,
-    this.health,
+    String health,
+    this.rewards,
   }) : super(
           id: id,
           activation: activation,
@@ -26,16 +26,16 @@ class Wmd extends EventObject {
           description: description,
           node: node,
           victimNode: victimNode,
+          health: double.parse(health),
           tooltip: tooltip,
-          rewards: rewards,
         );
 
   factory Wmd.fromJson(Map<String, dynamic> json) => _$WmdFromJson(json);
 
-  final String health;
+  final List<Reward> rewards;
 
   @override
-  double get eventHealth => double.parse(health);
+  List<Reward> get eventRewards => rewards;
 
-  Map<String, dynamic> toJson() => _$WmdToJson(this);
+  Map<String, dynamic> get toJson => _$WmdToJson(this);
 }

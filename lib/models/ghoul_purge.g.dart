@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'wmd.dart';
+part of 'ghoul_purge.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Wmd _$WmdFromJson(Map<String, dynamic> json) {
-  return Wmd(
+GhoulPurge _$GhoulPurgeFromJson(Map<String, dynamic> json) {
+  return GhoulPurge(
     id: json['id'] as String,
     activation: json['activation'] == null
         ? null
@@ -15,28 +15,26 @@ Wmd _$WmdFromJson(Map<String, dynamic> json) {
     expiry: json['expiry'] == null
         ? null
         : DateTime.parse(json['expiry'] as String),
-    faction: json['faction'] as String,
     description: json['description'] as String,
     victimNode: json['victimNode'] as String,
     node: json['node'] as String,
     tooltip: json['tooltip'] as String,
     health: json['health'] as String,
-    rewards: (json['rewards'] as List)
-        ?.map((e) =>
-            e == null ? null : Reward.fromJson(e as Map<String, dynamic>))
+    jobs: (json['jobs'] as List)
+        ?.map((e) => e == null ? null : Job.fromJson(e as Map<String, dynamic>))
         ?.toList(),
   );
 }
 
-Map<String, dynamic> _$WmdToJson(Wmd instance) => <String, dynamic>{
+Map<String, dynamic> _$GhoulPurgeToJson(GhoulPurge instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'activation': instance.activation?.toIso8601String(),
       'expiry': instance.expiry?.toIso8601String(),
-      'faction': instance.faction,
       'description': instance.description,
       'victimNode': instance.victimNode,
       'node': instance.node,
       'tooltip': instance.tooltip,
       'health': instance.health,
-      'rewards': instance.rewards,
+      'jobs': instance.jobs,
     };

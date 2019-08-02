@@ -6,7 +6,7 @@ enum Factions { grineer, corpus, infestation, sentient, ostrons, solaris }
 @immutable
 abstract class WorldstateObject extends Equatable {
   WorldstateObject({
-    this.id,
+    @required this.id,
     this.activation,
     this.expiry,
     List props = const [],
