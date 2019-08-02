@@ -6,16 +6,15 @@ part of 'worldstate.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Worldstate _$WorldstateFromJson(Map<String, dynamic> json) {
-  return Worldstate(
+Worldstate<T> _$WorldstateFromJson<T>(Map<String, dynamic> json) {
+  return Worldstate<T>(
     timestamp: json['timestamp'] as String,
     news: (json['news'] as List)
         ?.map((e) =>
             e == null ? null : OrbiterNews.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     events: (json['events'] as List)
-        ?.map(
-            (e) => e == null ? null : Event.fromJson(e as Map<String, dynamic>))
+        ?.map(const EventConverter().fromJson)
         ?.toList(),
     alerts: (json['alerts'] as List)
         ?.map(
@@ -63,11 +62,10 @@ Worldstate _$WorldstateFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$WorldstateToJson(Worldstate instance) =>
+Map<String, dynamic> _$WorldstateToJson<T>(Worldstate<T> instance) =>
     <String, dynamic>{
       'timestamp': instance.timestamp,
       'news': instance.news,
-      'events': instance.events,
       'alerts': instance.alerts,
       'sortie': instance.sortie,
       'syndicateMissions': instance.syndicateMissions,
@@ -80,4 +78,5 @@ Map<String, dynamic> _$WorldstateToJson(Worldstate instance) =>
       'cetusCycle': instance.cetusCycle,
       'vallisCycle': instance.vallisCycle,
       'nightwave': instance.nightwave,
+      'events': instance.events?.map(const EventConverter().toJson)?.toList(),
     };
