@@ -27,21 +27,21 @@ class Syndicate extends WorldstateObject {
   final String name;
 
   final bool active;
-  final List<Jobs> jobs;
+  final List<Job> jobs;
 
   Map<String, dynamic> toJson() => _$SyndicateToJson(this);
 }
 
 @JsonSerializable()
-class Jobs extends Equatable {
-  Jobs({
+class Job extends Equatable {
+  Job({
     this.type,
     this.pool,
     this.enemyLevels,
     this.standingStages,
   }) : super([type, pool, enemyLevels, standingStages]);
 
-  factory Jobs.fromJson(Map<String, dynamic> json) => _$JobsFromJson(json);
+  factory Job.fromJson(Map<String, dynamic> json) => _$JobFromJson(json);
 
   final String type;
 
@@ -50,7 +50,7 @@ class Jobs extends Equatable {
 
   final List<int> enemyLevels, standingStages;
 
-  Map<String, dynamic> toJson() => _$JobsToJson(this);
+  Map<String, dynamic> toJson() => _$JobToJson(this);
 
   List<String> get rewardPool =>
       pool is List ? pool.cast<String>() : <String>[];

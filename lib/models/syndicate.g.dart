@@ -18,8 +18,7 @@ Syndicate _$SyndicateFromJson(Map<String, dynamic> json) {
     name: json['syndicate'] as String,
     active: json['active'] as bool,
     jobs: (json['jobs'] as List)
-        ?.map(
-            (e) => e == null ? null : Jobs.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null ? null : Job.fromJson(e as Map<String, dynamic>))
         ?.toList(),
   );
 }
@@ -33,8 +32,8 @@ Map<String, dynamic> _$SyndicateToJson(Syndicate instance) => <String, dynamic>{
       'jobs': instance.jobs,
     };
 
-Jobs _$JobsFromJson(Map<String, dynamic> json) {
-  return Jobs(
+Job _$JobFromJson(Map<String, dynamic> json) {
+  return Job(
     type: json['type'] as String,
     pool: json['rewardPool'],
     enemyLevels: (json['enemyLevels'] as List)?.map((e) => e as int)?.toList(),
@@ -43,7 +42,7 @@ Jobs _$JobsFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$JobsToJson(Jobs instance) => <String, dynamic>{
+Map<String, dynamic> _$JobToJson(Job instance) => <String, dynamic>{
       'type': instance.type,
       'rewardPool': instance.pool,
       'enemyLevels': instance.enemyLevels,
