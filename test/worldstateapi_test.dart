@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:test/test.dart';
 import 'package:worldstate_model/worldstate_models.dart';
+import 'package:worldstate_model/worldstate_objects.dart';
 
 void main() {
   group('A group of tests', () {
@@ -16,8 +17,18 @@ void main() {
       worldstate = Worldstate.fromJson(response);
     });
 
-    test('First Test', () {
-      expect(worldstate, TypeMatcher<Worldstate>());
+    group('Make sure all parts of the worldstate were properly decoded', () {
+      test('Test timestamp', () {
+        expect(worldstate.timestamp, TypeMatcher<String>());
+      });
+
+      test('Test news', () {
+        expect(worldstate.news, TypeMatcher<List<OrbiterNews>>());
+      });
+
+      test('Test EventObject', () {
+        expect(worldstate.events, TypeMatcher<List<EventObject>>());
+      });
     });
   });
 }
