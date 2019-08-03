@@ -35,5 +35,6 @@ class GhoulPurge extends EventObject {
 
   final List<Job> jobs;
 
+  @override
   Map<String, dynamic> get toJson => _$GhoulPurgeToJson(this);
 }
