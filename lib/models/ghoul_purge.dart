@@ -26,7 +26,7 @@ class GhoulPurge extends EventObject {
           node: node,
           victimNode: victimNode,
           tooltip: tooltip,
-          health: double.parse(health),
+          health: health,
           props: [jobs],
         );
 

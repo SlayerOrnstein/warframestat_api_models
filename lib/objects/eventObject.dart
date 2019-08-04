@@ -32,8 +32,7 @@ class EventObject extends WorldstateObject {
           ],
         );
 
-  final String faction, description, victimNode, node, tooltip;
-  final double health;
+  final String faction, description, victimNode, node, tooltip, health;
 
   List<Reward> get eventRewards => <Reward>[];
 }

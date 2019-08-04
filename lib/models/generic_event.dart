@@ -28,9 +28,8 @@ class GenericEvent extends EventObject {
           description: description,
           node: node,
           victimNode: victimNode,
-          health: double.parse(
-            health ?? (100 - (currentScore / maximumScore) * 100).toString(),
-          ),
+          health:
+              '${health ?? (100 - (currentScore / maximumScore) * 100).toString()}',
           tooltip: tooltip,
         );
 
