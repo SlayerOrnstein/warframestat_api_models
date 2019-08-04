@@ -14,5 +14,5 @@ export 'models/reward.dart';
 export 'models/sortie.dart';
 export 'models/syndicate.dart';
 export 'models/trader.dart';
-export 'models/wmd.dart';
+export 'models/generic_event.dart';
 export 'models/worldstate.dart';

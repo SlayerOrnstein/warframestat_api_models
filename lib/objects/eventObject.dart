@@ -1,8 +1,6 @@
-import 'dart:convert';
-
 import 'package:json_annotation/json_annotation.dart';
 import 'package:worldstate_model/models/ghoul_purge.dart';
-import 'package:worldstate_model/models/wmd.dart';
+import 'package:worldstate_model/models/generic_event.dart';
 
 import '../models/reward.dart';
 import 'worldstateObject.dart';
@@ -38,20 +36,6 @@ class EventObject extends WorldstateObject {
   final double health;
 
   List<Reward> get eventRewards => <Reward>[];
-
-  Map<String, dynamic> get toJson {
-    return {
-      'id': id,
-      'activation': activation.toIso8601String(),
-      'expiry': expiry.toIso8601String(),
-      'description': description,
-      'faction': faction,
-      'node': node,
-      'tooltip': tooltip,
-      'health': health,
-      'rewards': json.encode(eventRewards)
-    };
-  }
 }
 
 class EventConverter<T extends EventObject>
@@ -68,12 +52,12 @@ class EventConverter<T extends EventObject>
           continue wmdEvent;
         wmdEvent:
         case 'Fomorian':
-          return Wmd.fromJson(json);
+          return GenericEvent.fromJson(json);
         ostronEvent:
         case 'Ghoul Purge':
           return GhoulPurge.fromJson(json);
         default:
-          return json as EventObject;
+          return GenericEvent.fromJson(json);
       }
     }
 

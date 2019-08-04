@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'wmd.dart';
+part of 'generic_event.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Wmd _$WmdFromJson(Map<String, dynamic> json) {
-  return Wmd(
+GenericEvent _$GenericEventFromJson(Map<String, dynamic> json) {
+  return GenericEvent(
     id: json['id'] as String,
     activation: json['activation'] == null
         ? null
@@ -21,6 +21,8 @@ Wmd _$WmdFromJson(Map<String, dynamic> json) {
     node: json['node'] as String,
     tooltip: json['tooltip'] as String,
     health: json['health'] as String,
+    maximumScore: json['maximumScore'] as num,
+    currentScore: json['currentScore'] as num,
     rewards: (json['rewards'] as List)
         ?.map((e) =>
             e == null ? null : Reward.fromJson(e as Map<String, dynamic>))
@@ -28,7 +30,8 @@ Wmd _$WmdFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$WmdToJson(Wmd instance) => <String, dynamic>{
+Map<String, dynamic> _$GenericEventToJson(GenericEvent instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'activation': instance.activation?.toIso8601String(),
       'expiry': instance.expiry?.toIso8601String(),
@@ -38,5 +41,7 @@ Map<String, dynamic> _$WmdToJson(Wmd instance) => <String, dynamic>{
       'node': instance.node,
       'tooltip': instance.tooltip,
       'health': instance.health,
+      'currentScore': instance.currentScore,
+      'maximumScore': instance.maximumScore,
       'rewards': instance.rewards,
     };

@@ -3,11 +3,11 @@ import 'package:json_annotation/json_annotation.dart';
 import '../objects/eventObject.dart';
 import 'reward.dart';
 
-part 'wmd.g.dart';
+part 'generic_event.g.dart';
 
 @JsonSerializable()
-class Wmd extends EventObject {
-  Wmd({
+class GenericEvent extends EventObject {
+  GenericEvent({
     String id,
     DateTime activation,
     DateTime expiry,
@@ -17,6 +17,8 @@ class Wmd extends EventObject {
     String node,
     String tooltip,
     String health,
+    this.maximumScore,
+    this.currentScore,
     this.rewards,
   }) : super(
           id: id,
@@ -26,16 +28,21 @@ class Wmd extends EventObject {
           description: description,
           node: node,
           victimNode: victimNode,
-          health: double.parse(health),
+          health: double.parse(
+            health ?? (maximumScore / currentScore).toString(),
+          ),
           tooltip: tooltip,
         );
 
-  factory Wmd.fromJson(Map<String, dynamic> json) => _$WmdFromJson(json);
+  final num currentScore, maximumScore;
+
+  factory GenericEvent.fromJson(Map<String, dynamic> json) =>
+      _$GenericEventFromJson(json);
 
   final List<Reward> rewards;
 
   @override
   List<Reward> get eventRewards => rewards;
 
-  Map<String, dynamic> get toJson => _$WmdToJson(this);
+  Map<String, dynamic> get toJson => _$GenericEventToJson(this);
 }
