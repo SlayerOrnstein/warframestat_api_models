@@ -41,7 +41,14 @@ class Event extends WorldstateObject {
   final List<Reward> rewards;
   final List<_InterimStep> interimSteps;
 
-  List<Reward> get eventRewards => <Reward>[];
+  List<String> get eventRewards {
+    return [
+      for (Reward r
+          in rewards..removeWhere((r) => r.itemString.isNotEmpty == false))
+        ...r.itemString.split(' + '),
+      for (_InterimStep i in interimSteps) ...i.reward.itemString.split(' + ')
+    ]..sort();
+  }
 
   Map<String, dynamic> toJson() => _$EventToJson(this);
 }
