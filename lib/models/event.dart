@@ -21,6 +21,7 @@ class Event extends WorldstateObject {
     this.health,
     this.rewards,
     this.interimSteps,
+    this.jobs,
   }) : super(
           id: id,
           activation: activation,
@@ -33,7 +34,8 @@ class Event extends WorldstateObject {
             tooltip,
             health,
             rewards,
-            interimSteps
+            interimSteps,
+            jobs
           ],
         );
 
@@ -43,6 +45,7 @@ class Event extends WorldstateObject {
   final num currentScore, maximumScore;
   final List<Reward> rewards;
   final List<_InterimStep> interimSteps;
+  final List<Job> jobs;
 
   double get eventHealth {
     try {
