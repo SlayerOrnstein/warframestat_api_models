@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:test/test.dart';
 import 'package:worldstate_model/worldstate_models.dart';
-import 'package:worldstate_model/worldstate_objects.dart';
 
 void main() {
   group('A group of tests', () {
@@ -27,7 +26,7 @@ void main() {
       });
 
       test('Test EventObject', () {
-        expect(worldstate.events, TypeMatcher<List<EventObject>>());
+        expect(worldstate.events, TypeMatcher<List<Event>>());
       });
     });
   });

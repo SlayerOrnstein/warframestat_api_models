@@ -14,7 +14,8 @@ Worldstate<T> _$WorldstateFromJson<T>(Map<String, dynamic> json) {
             e == null ? null : OrbiterNews.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     events: (json['events'] as List)
-        ?.map(const EventConverter().fromJson)
+        ?.map(
+            (e) => e == null ? null : Event.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     alerts: (json['alerts'] as List)
         ?.map(
@@ -66,6 +67,7 @@ Map<String, dynamic> _$WorldstateToJson<T>(Worldstate<T> instance) =>
     <String, dynamic>{
       'timestamp': instance.timestamp,
       'news': instance.news,
+      'events': instance.events,
       'alerts': instance.alerts,
       'sortie': instance.sortie,
       'syndicateMissions': instance.syndicateMissions,
@@ -78,5 +80,4 @@ Map<String, dynamic> _$WorldstateToJson<T>(Worldstate<T> instance) =>
       'cetusCycle': instance.cetusCycle,
       'vallisCycle': instance.vallisCycle,
       'nightwave': instance.nightwave,
-      'events': instance.events?.map(const EventConverter().toJson)?.toList(),
     };
