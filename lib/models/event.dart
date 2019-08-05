@@ -16,6 +16,8 @@ class Event extends WorldstateObject {
     this.victimNode,
     this.node,
     this.tooltip,
+    this.maximumScore,
+    this.currentScore,
     this.health,
     this.rewards,
     this.interimSteps,
@@ -38,8 +40,18 @@ class Event extends WorldstateObject {
   factory Event.fromJson(Map<String, dynamic> json) => _$EventFromJson(json);
 
   final String faction, description, victimNode, node, tooltip, health;
+  final num currentScore, maximumScore;
   final List<Reward> rewards;
   final List<_InterimStep> interimSteps;
+
+  double get eventHealth {
+    try {
+      return double.parse(
+          health ?? (100 - (currentScore / maximumScore) * 100).toString());
+    } catch (e) {
+      return null;
+    }
+  }
 
   List<String> get eventRewards {
     return [
