@@ -58,7 +58,7 @@ class Event extends WorldstateObject {
 
   List<String> get eventRewards {
     return [
-      for (Reward r in rewards.where((r) => r.itemString.isNotEmpty == false))
+      for (Reward r in rewards.where((r) => r.itemString.isNotEmpty == true))
         ...r.itemString.split(' + '),
     ]..sort();
   }
