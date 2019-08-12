@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:worldstate_model/models/arbitration.dart';
 import 'package:worldstate_model/models/event.dart';
 
 import 'alerts.dart';
@@ -35,6 +36,7 @@ class Worldstate<T> extends Equatable {
     this.cetusCycle,
     this.vallisCycle,
     this.nightwave,
+    this.arbitration,
   }) : super([
           timestamp,
           news,
@@ -50,7 +52,8 @@ class Worldstate<T> extends Equatable {
           earthCycle,
           cetusCycle,
           vallisCycle,
-          nightwave
+          nightwave,
+          arbitration
         ]);
 
   factory Worldstate.fromJson(Map<String, dynamic> json) =>
@@ -71,6 +74,7 @@ class Worldstate<T> extends Equatable {
   final Earth cetusCycle;
   final Vallis vallisCycle;
   final Nightwave nightwave;
+  final Arbitration arbitration;
 
   Map<String, dynamic> toJson() => _$WorldstateToJson(this);
 }
