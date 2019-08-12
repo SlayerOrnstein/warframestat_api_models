@@ -20,8 +20,8 @@ Earth _$EarthFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$EarthToJson(Earth instance) => <String, dynamic>{
       'id': instance.id,
-      'expiry': instance.expiry?.toIso8601String(),
       'state': instance.state,
       'isDay': instance.isDay,
       'isCetus': instance.isCetus,
+      'expiry': instance.expiry?.toIso8601String(),
     };

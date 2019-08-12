@@ -24,6 +24,21 @@ class Earth extends CycleObject {
   final bool isDay, isCetus;
 
   @override
+  DateTime get expiry {
+    final now = DateTime.now();
+
+    if (super.expiry.isBefore(now)) {
+      if (isDay) {
+        return now.add(isCetus ? cetusDay : earthCycle);
+      } else {
+        return now.add(isCetus ? cetusNight : earthCycle);
+      }
+    }
+
+    return super.expiry;
+  }
+
+  @override
   bool get getStateBool => isDay;
 
   @override

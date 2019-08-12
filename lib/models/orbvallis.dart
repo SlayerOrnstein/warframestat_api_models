@@ -25,6 +25,21 @@ class Vallis extends CycleObject {
   final bool isWarm;
 
   @override
+  DateTime get expiry {
+    final now = DateTime.now();
+
+    if (super.expiry.isBefore(now)) {
+      if (isWarm) {
+        return now.add(const Duration(minutes: 6, seconds: 40));
+      } else {
+        return now.add(const Duration(minutes: 20));
+      }
+    }
+
+    return super.expiry;
+  }
+
+  @override
   bool get getStateBool => isWarm;
 
   @override

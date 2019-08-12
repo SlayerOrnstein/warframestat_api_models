@@ -20,6 +20,8 @@ Event _$EventFromJson(Map<String, dynamic> json) {
     victimNode: json['victimNode'] as String,
     node: json['node'] as String,
     tooltip: json['tooltip'] as String,
+    maximumScore: json['maximumScore'] as num,
+    currentScore: json['currentScore'] as num,
     health: json['health'] as String,
     rewards: (json['rewards'] as List)
         ?.map((e) =>
@@ -28,6 +30,9 @@ Event _$EventFromJson(Map<String, dynamic> json) {
     interimSteps: (json['interimSteps'] as List)
         ?.map((e) =>
             e == null ? null : _InterimStep.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    jobs: (json['jobs'] as List)
+        ?.map((e) => e == null ? null : Job.fromJson(e as Map<String, dynamic>))
         ?.toList(),
   );
 }
@@ -42,8 +47,11 @@ Map<String, dynamic> _$EventToJson(Event instance) => <String, dynamic>{
       'node': instance.node,
       'tooltip': instance.tooltip,
       'health': instance.health,
+      'currentScore': instance.currentScore,
+      'maximumScore': instance.maximumScore,
       'rewards': instance.rewards,
       'interimSteps': instance.interimSteps,
+      'jobs': instance.jobs,
     };
 
 _InterimStep _$_InterimStepFromJson(Map<String, dynamic> json) {
