@@ -37,7 +37,7 @@ class Worldstate<T> extends Equatable {
     this.cetusCycle,
     this.vallisCycle,
     this.nightwave,
-    //this.arbitration,
+    this.arbitration,
   }) : super([
           timestamp,
           news,
@@ -54,7 +54,7 @@ class Worldstate<T> extends Equatable {
           cetusCycle,
           vallisCycle,
           nightwave,
-          //arbitration
+          arbitration
         ]);
 
   factory Worldstate.fromJson(Map<String, dynamic> json) =>
@@ -75,7 +75,7 @@ class Worldstate<T> extends Equatable {
   final Cetus cetusCycle;
   final Vallis vallisCycle;
   final Nightwave nightwave;
-  //final Arbitration arbitration;
+  final Arbitration arbitration;
 
   Map<String, dynamic> toJson() => _$WorldstateToJson(this);
 }
