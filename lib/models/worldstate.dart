@@ -4,6 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:worldstate_model/models/event.dart';
 
 import 'alerts.dart';
+import 'arbitration.dart';
 import 'cetus.dart';
 import 'deals.dart';
 import 'earth.dart';
