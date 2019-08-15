@@ -8,14 +8,14 @@ part 'cetus.g.dart';
 class Cetus extends CycleObject {
   Cetus({
     String id,
-    int activation,
+    // int activation,
     DateTime expiry,
     String state,
     this.isDay,
     this.isCetus,
   }) : super(
           id: id,
-          activation: DateTime.fromMillisecondsSinceEpoch(activation),
+          // activation: DateTime.fromMillisecondsSinceEpoch(activation),
           expiry: expiry,
           state: state,
           props: [isDay, isCetus],

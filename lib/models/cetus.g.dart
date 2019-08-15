@@ -9,7 +9,6 @@ part of 'cetus.dart';
 Cetus _$CetusFromJson(Map<String, dynamic> json) {
   return Cetus(
     id: json['id'] as String,
-    activation: json['activation'] as int,
     expiry: json['expiry'] == null
         ? null
         : DateTime.parse(json['expiry'] as String),
@@ -21,7 +20,6 @@ Cetus _$CetusFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$CetusToJson(Cetus instance) => <String, dynamic>{
       'id': instance.id,
-      'activation': instance.activation?.toIso8601String(),
       'state': instance.state,
       'isDay': instance.isDay,
       'isCetus': instance.isCetus,
