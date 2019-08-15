@@ -17,7 +17,6 @@ Earth _$EarthFromJson(Map<String, dynamic> json) {
         : DateTime.parse(json['expiry'] as String),
     state: json['state'] as String,
     isDay: json['isDay'] as bool,
-    isCetus: json['isCetus'] as bool,
   );
 }
 
@@ -26,6 +25,5 @@ Map<String, dynamic> _$EarthToJson(Earth instance) => <String, dynamic>{
       'activation': instance.activation?.toIso8601String(),
       'state': instance.state,
       'isDay': instance.isDay,
-      'isCetus': instance.isCetus,
       'expiry': instance.expiry?.toIso8601String(),
     };

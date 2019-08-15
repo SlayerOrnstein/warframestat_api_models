@@ -12,7 +12,7 @@ class Cetus extends CycleObject {
     DateTime expiry,
     String state,
     this.isDay,
-    this.isCetus,
+    this.isCetus = true,
   }) : super(
           id: id,
           // activation: DateTime.fromMillisecondsSinceEpoch(activation),

@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_model/models/arbitration.dart';
+// import 'package:worldstate_model/models/arbitration.dart';
 import 'package:worldstate_model/models/event.dart';
 
 import 'alerts.dart';

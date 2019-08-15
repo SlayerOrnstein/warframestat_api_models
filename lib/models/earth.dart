@@ -5,8 +5,6 @@ import '../objects/cycleObject.dart';
 part 'earth.g.dart';
 
 const earthCycle = Duration(hours: 4);
-const cetusDay = Duration(minutes: 100);
-const cetusNight = Duration(minutes: 50);
 
 @JsonSerializable()
 class Earth extends CycleObject {
@@ -16,28 +14,27 @@ class Earth extends CycleObject {
     DateTime expiry,
     String state,
     this.isDay,
-    this.isCetus,
   }) : super(
           id: id,
           activation: activation,
           expiry: expiry,
           state: state,
-          props: [isDay, isCetus],
+          props: [isDay],
         );
 
   factory Earth.fromJson(Map<String, dynamic> json) => _$EarthFromJson(json);
 
-  final bool isDay, isCetus;
+  final bool isDay;
 
   @override
   DateTime get expiry {
     final now = DateTime.now();
 
-    if (super.expiry.isBefore(now)) {
+    if (super.expiry?.isBefore(now) ?? true) {
       if (isDay) {
-        return now.add(isCetus ? cetusDay : earthCycle);
+        return now.add(earthCycle);
       } else {
-        return now.add(isCetus ? cetusNight : earthCycle);
+        return now.add(earthCycle);
       }
     }
 
