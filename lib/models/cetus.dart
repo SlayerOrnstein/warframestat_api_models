@@ -29,7 +29,7 @@ class Cetus extends CycleObject {
   DateTime get expiry {
     final now = DateTime.now();
 
-    if (super.expiry.isBefore(now)) {
+    if (super.expiry?.isBefore(now) ?? true) {
       if (isDay) {
         return now.add(const Duration(minutes: 100));
       } else {
@@ -46,5 +46,5 @@ class Cetus extends CycleObject {
   @override
   String get nextState => !isDay ? 'Day' : 'Night';
 
-  Map<String, dynamic> toJson() => _$CetusToJson(this);
+  Map<String, dynamic> get toJson => _$CetusToJson(this);
 }
