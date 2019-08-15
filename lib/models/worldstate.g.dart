@@ -8,7 +8,9 @@ part of 'worldstate.dart';
 
 Worldstate<T> _$WorldstateFromJson<T>(Map<String, dynamic> json) {
   return Worldstate<T>(
-    timestamp: json['timestamp'] as String,
+    timestamp: json['timestamp'] == null
+        ? null
+        : DateTime.parse(json['timestamp'] as String),
     news: (json['news'] as List)
         ?.map((e) =>
             e == null ? null : OrbiterNews.fromJson(e as Map<String, dynamic>))
@@ -53,7 +55,7 @@ Worldstate<T> _$WorldstateFromJson<T>(Map<String, dynamic> json) {
         : Earth.fromJson(json['earthCycle'] as Map<String, dynamic>),
     cetusCycle: json['cetusCycle'] == null
         ? null
-        : Earth.fromJson(json['cetusCycle'] as Map<String, dynamic>),
+        : Cetus.fromJson(json['cetusCycle'] as Map<String, dynamic>),
     vallisCycle: json['vallisCycle'] == null
         ? null
         : Vallis.fromJson(json['vallisCycle'] as Map<String, dynamic>),
@@ -65,7 +67,7 @@ Worldstate<T> _$WorldstateFromJson<T>(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$WorldstateToJson<T>(Worldstate<T> instance) =>
     <String, dynamic>{
-      'timestamp': instance.timestamp,
+      'timestamp': instance.timestamp?.toIso8601String(),
       'news': instance.news,
       'events': instance.events,
       'alerts': instance.alerts,

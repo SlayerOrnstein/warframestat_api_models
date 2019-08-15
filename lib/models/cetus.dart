@@ -2,30 +2,26 @@ import 'package:json_annotation/json_annotation.dart';
 
 import '../objects/cycleObject.dart';
 
-part 'earth.g.dart';
-
-const earthCycle = Duration(hours: 4);
-const cetusDay = Duration(minutes: 100);
-const cetusNight = Duration(minutes: 50);
+part 'cetus.g.dart';
 
 @JsonSerializable()
-class Earth extends CycleObject {
-  Earth({
+class Cetus extends CycleObject {
+  Cetus({
     String id,
-    DateTime activation,
+    int activation,
     DateTime expiry,
     String state,
     this.isDay,
     this.isCetus,
   }) : super(
           id: id,
-          activation: activation,
+          activation: DateTime.fromMillisecondsSinceEpoch(activation),
           expiry: expiry,
           state: state,
           props: [isDay, isCetus],
         );
 
-  factory Earth.fromJson(Map<String, dynamic> json) => _$EarthFromJson(json);
+  factory Cetus.fromJson(Map<String, dynamic> json) => _$CetusFromJson(json);
 
   final bool isDay, isCetus;
 
@@ -35,9 +31,9 @@ class Earth extends CycleObject {
 
     if (super.expiry.isBefore(now)) {
       if (isDay) {
-        return now.add(isCetus ? cetusDay : earthCycle);
+        return now.add(const Duration(minutes: 100));
       } else {
-        return now.add(isCetus ? cetusNight : earthCycle);
+        return now.add(const Duration(minutes: 50));
       }
     }
 
@@ -50,5 +46,5 @@ class Earth extends CycleObject {
   @override
   String get nextState => !isDay ? 'Day' : 'Night';
 
-  Map<String, dynamic> toJson() => _$EarthToJson(this);
+  Map<String, dynamic> toJson() => _$CetusToJson(this);
 }

@@ -4,6 +4,7 @@ import 'package:worldstate_model/models/arbitration.dart';
 import 'package:worldstate_model/models/event.dart';
 
 import 'alerts.dart';
+import 'cetus.dart';
 import 'deals.dart';
 import 'earth.dart';
 import 'fissure.dart';
@@ -59,7 +60,7 @@ class Worldstate<T> extends Equatable {
   factory Worldstate.fromJson(Map<String, dynamic> json) =>
       _$WorldstateFromJson(json);
 
-  final String timestamp;
+  final DateTime timestamp;
   final List<OrbiterNews> news;
   final List<Event> events;
   final List<Alert> alerts;
@@ -71,7 +72,7 @@ class Worldstate<T> extends Equatable {
   final List<DarvoDeal> dailyDeals;
   final List<PersistentEnemies> persistentEnemies;
   final Earth earthCycle;
-  final Earth cetusCycle;
+  final Cetus cetusCycle;
   final Vallis vallisCycle;
   final Nightwave nightwave;
   //final Arbitration arbitration;
