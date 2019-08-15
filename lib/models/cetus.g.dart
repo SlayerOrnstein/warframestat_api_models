@@ -14,7 +14,7 @@ Cetus _$CetusFromJson(Map<String, dynamic> json) {
         : DateTime.parse(json['expiry'] as String),
     state: json['state'] as String,
     isDay: json['isDay'] as bool,
-    isCetus: json['isCetus'] as bool,
+    isCetus: json['isCetus'] as bool ?? true,
   );
 }
 

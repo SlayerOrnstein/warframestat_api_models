@@ -14,7 +14,7 @@ class VoidTrader extends WorldstateObject {
     this.character,
     this.location,
     this.active,
-    this.inventory = const [],
+    this.inventory,
   }) : super(
           id: id,
           activation: activation,

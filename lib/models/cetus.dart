@@ -12,7 +12,7 @@ class Cetus extends CycleObject {
     DateTime expiry,
     String state,
     this.isDay,
-    this.isCetus = true,
+    this.isCetus,
   }) : super(
           id: id,
           // activation: DateTime.fromMillisecondsSinceEpoch(activation),
@@ -23,7 +23,10 @@ class Cetus extends CycleObject {
 
   factory Cetus.fromJson(Map<String, dynamic> json) => _$CetusFromJson(json);
 
-  final bool isDay, isCetus;
+  final bool isDay;
+
+  @JsonKey(defaultValue: true)
+  final bool isCetus;
 
   @override
   DateTime get expiry {
