@@ -41,5 +41,5 @@ class Arbitration extends WorldstateObject {
 
   final bool archwing, sharkwing;
 
-  Map<String, dynamic> get toJson => _$ArbitrationToJson(this);
+  Map<String, dynamic> toJson() => _$ArbitrationToJson(this);
 }

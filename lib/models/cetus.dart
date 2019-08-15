@@ -46,5 +46,5 @@ class Cetus extends CycleObject {
   @override
   String get nextState => !isDay ? 'Day' : 'Night';
 
-  Map<String, dynamic> get toJson => _$CetusToJson(this);
+  Map<String, dynamic> toJson() => _$CetusToJson(this);
 }
