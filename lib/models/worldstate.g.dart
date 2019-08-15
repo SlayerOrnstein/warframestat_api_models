@@ -62,6 +62,9 @@ Worldstate<T> _$WorldstateFromJson<T>(Map<String, dynamic> json) {
     nightwave: json['nightwave'] == null
         ? null
         : Nightwave.fromJson(json['nightwave'] as Map<String, dynamic>),
+    arbitration: json['arbitration'] == null
+        ? null
+        : Arbitration.fromJson(json['arbitration'] as Map<String, dynamic>),
   );
 }
 
@@ -82,4 +85,5 @@ Map<String, dynamic> _$WorldstateToJson<T>(Worldstate<T> instance) =>
       'cetusCycle': instance.cetusCycle,
       'vallisCycle': instance.vallisCycle,
       'nightwave': instance.nightwave,
+      'arbitration': instance.arbitration,
     };

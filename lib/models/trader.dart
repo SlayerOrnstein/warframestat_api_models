@@ -14,7 +14,7 @@ class VoidTrader extends WorldstateObject {
     this.character,
     this.location,
     this.active,
-    this.inventory,
+    this.inventory = const [],
   }) : super(
           id: id,
           activation: activation,
@@ -25,8 +25,13 @@ class VoidTrader extends WorldstateObject {
   factory VoidTrader.fromJson(Map<String, dynamic> json) =>
       _$VoidTraderFromJson(json);
 
+  @JsonKey(defaultValue: '')
   final String character, location;
+
+  @JsonKey(defaultValue: false)
   final bool active;
+
+  @JsonKey(defaultValue: [])
   final List<InventoryItem> inventory;
 
   Map<String, dynamic> toJson() => _$VoidTraderToJson(this);

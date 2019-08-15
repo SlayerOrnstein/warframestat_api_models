@@ -15,14 +15,15 @@ VoidTrader _$VoidTraderFromJson(Map<String, dynamic> json) {
     expiry: json['expiry'] == null
         ? null
         : DateTime.parse(json['expiry'] as String),
-    character: json['character'] as String,
-    location: json['location'] as String,
-    active: json['active'] as bool,
+    character: json['character'] as String ?? '',
+    location: json['location'] as String ?? '',
+    active: json['active'] as bool ?? false,
     inventory: (json['inventory'] as List)
-        ?.map((e) => e == null
-            ? null
-            : InventoryItem.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+            ?.map((e) => e == null
+                ? null
+                : InventoryItem.fromJson(e as Map<String, dynamic>))
+            ?.toList() ??
+        [],
   );
 }
 
