@@ -12,6 +12,7 @@ class Event extends WorldstateObject {
     DateTime activation,
     DateTime expiry,
     this.faction,
+    this.affiliatedWith,
     this.description,
     this.victimNode,
     this.node,
@@ -28,6 +29,7 @@ class Event extends WorldstateObject {
           expiry: expiry,
           props: [
             faction,
+            affiliatedWith,
             description,
             victimNode,
             node,
@@ -41,7 +43,13 @@ class Event extends WorldstateObject {
 
   factory Event.fromJson(Map<String, dynamic> json) => _$EventFromJson(json);
 
-  final String faction, description, victimNode, node, tooltip, health;
+  final String faction,
+      description,
+      victimNode,
+      node,
+      tooltip,
+      health,
+      affiliatedWith;
   final num currentScore, maximumScore;
   final List<Reward> rewards;
   final List<_InterimStep> interimSteps;

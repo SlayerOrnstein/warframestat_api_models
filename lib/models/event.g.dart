@@ -16,6 +16,7 @@ Event _$EventFromJson(Map<String, dynamic> json) {
         ? null
         : DateTime.parse(json['expiry'] as String),
     faction: json['faction'] as String,
+    affiliatedWith: json['affiliatedWith'] as String,
     description: json['description'] as String,
     victimNode: json['victimNode'] as String,
     node: json['node'] as String,
@@ -47,6 +48,7 @@ Map<String, dynamic> _$EventToJson(Event instance) => <String, dynamic>{
       'node': instance.node,
       'tooltip': instance.tooltip,
       'health': instance.health,
+      'affiliatedWith': instance.affiliatedWith,
       'currentScore': instance.currentScore,
       'maximumScore': instance.maximumScore,
       'rewards': instance.rewards,
