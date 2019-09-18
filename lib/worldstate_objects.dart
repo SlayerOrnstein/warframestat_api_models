@@ -1,4 +1,4 @@
 library worldstate_objects;
 
-export 'objects/cycleObject.dart';
-export 'objects/worldstateObject.dart';
+export 'src/objects/cycleObject.dart';
+export 'src/objects/worldstateObject.dart';

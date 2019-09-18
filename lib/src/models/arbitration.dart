@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_model/objects/worldstateObject.dart';
+import 'package:worldstate_model/src/objects/worldstateObject.dart';
 
 part 'arbitration.g.dart';
 

@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
-
-import '../worldstate_models.dart';
-import '../worldstate_objects.dart';
+import 'package:worldstate_model/src/models/reward.dart';
+import 'package:worldstate_model/src/models/syndicate.dart';
+import 'package:worldstate_model/src/objects/worldstateObject.dart';
 
 part 'event.g.dart';
 
