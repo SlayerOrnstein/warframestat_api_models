@@ -1,8 +1,7 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import 'reward.dart';
 import '../objects/worldstateObject.dart';
+import 'reward.dart';
 
 part 'invasions.g.dart';
 
@@ -23,7 +22,6 @@ class Invasion extends WorldstateObject {
     this.count,
     this.attackerReward,
     this.defenderReward,
-    this.countedItems,
   }) : super(
           id: id,
           activation: activation,
@@ -40,7 +38,6 @@ class Invasion extends WorldstateObject {
             count,
             attackerReward,
             defenderReward,
-            countedItems,
           ],
         );
 
@@ -51,20 +48,6 @@ class Invasion extends WorldstateObject {
   final bool vsInfestation, completed;
   final num completion, count;
   final Reward attackerReward, defenderReward;
-  final List<CountedItem> countedItems;
 
   Map<String, dynamic> toJson() => _$InvasionToJson(this);
-}
-
-@JsonSerializable()
-class CountedItem extends Equatable {
-  CountedItem({this.count, this.type}) : super([count, type]);
-
-  factory CountedItem.fromJson(Map<String, dynamic> json) =>
-      _$CountedItemFromJson(json);
-
-  final num count;
-  final String type;
-
-  Map<String, dynamic> toJson() => _$CountedItemToJson(this);
 }

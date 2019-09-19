@@ -30,10 +30,6 @@ Invasion _$InvasionFromJson(Map<String, dynamic> json) {
     defenderReward: json['defenderReward'] == null
         ? null
         : Reward.fromJson(json['defenderReward'] as Map<String, dynamic>),
-    countedItems: (json['countedItems'] as List)
-        ?.map((e) =>
-            e == null ? null : CountedItem.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
   );
 }
 
@@ -52,18 +48,4 @@ Map<String, dynamic> _$InvasionToJson(Invasion instance) => <String, dynamic>{
       'count': instance.count,
       'attackerReward': instance.attackerReward,
       'defenderReward': instance.defenderReward,
-      'countedItems': instance.countedItems,
-    };
-
-CountedItem _$CountedItemFromJson(Map<String, dynamic> json) {
-  return CountedItem(
-    count: json['count'] as num,
-    type: json['type'] as String,
-  );
-}
-
-Map<String, dynamic> _$CountedItemToJson(CountedItem instance) =>
-    <String, dynamic>{
-      'count': instance.count,
-      'type': instance.type,
     };
