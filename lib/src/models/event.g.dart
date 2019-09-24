@@ -23,7 +23,7 @@ Event _$EventFromJson(Map<String, dynamic> json) {
     tooltip: json['tooltip'] as String,
     maximumScore: json['maximumScore'] as num,
     currentScore: json['currentScore'] as num,
-    health: json['health'] as String,
+    health: json['health'] as num,
     rewards: (json['rewards'] as List)
         ?.map((e) =>
             e == null ? null : Reward.fromJson(e as Map<String, dynamic>))
@@ -47,8 +47,8 @@ Map<String, dynamic> _$EventToJson(Event instance) => <String, dynamic>{
       'victimNode': instance.victimNode,
       'node': instance.node,
       'tooltip': instance.tooltip,
-      'health': instance.health,
       'affiliatedWith': instance.affiliatedWith,
+      'health': instance.health,
       'currentScore': instance.currentScore,
       'maximumScore': instance.maximumScore,
       'rewards': instance.rewards,
