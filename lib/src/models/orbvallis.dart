@@ -6,19 +6,13 @@ part 'orbvallis.g.dart';
 
 @JsonSerializable()
 class Vallis extends CycleObject {
-  Vallis(
-      {String id,
-      DateTime activation,
-      DateTime expiry,
-      String state,
-      this.isWarm})
-      : super(
-          id: id,
-          activation: activation,
-          expiry: expiry,
-          state: state,
-          props: [isWarm],
-        );
+  Vallis({
+    String id,
+    DateTime activation,
+    DateTime expiry,
+    String state,
+    this.isWarm,
+  }) : super(id: id, activation: activation, expiry: expiry, state: state);
 
   factory Vallis.fromJson(Map<String, dynamic> json) => _$VallisFromJson(json);
 
@@ -46,4 +40,7 @@ class Vallis extends CycleObject {
   String get nextState => !isWarm ? 'warm' : 'cold';
 
   Map<String, dynamic> toJson() => _$VallisToJson(this);
+
+  @override
+  List<Object> get props => super.props..add(isWarm);
 }

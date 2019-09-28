@@ -6,8 +6,8 @@ part of 'worldstate.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Worldstate<T> _$WorldstateFromJson<T>(Map<String, dynamic> json) {
-  return Worldstate<T>(
+Worldstate _$WorldstateFromJson(Map<String, dynamic> json) {
+  return Worldstate(
     timestamp: json['timestamp'] == null
         ? null
         : DateTime.parse(json['timestamp'] as String),
@@ -68,7 +68,7 @@ Worldstate<T> _$WorldstateFromJson<T>(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$WorldstateToJson<T>(Worldstate<T> instance) =>
+Map<String, dynamic> _$WorldstateToJson(Worldstate instance) =>
     <String, dynamic>{
       'timestamp': instance.timestamp?.toIso8601String(),
       'news': instance.news,

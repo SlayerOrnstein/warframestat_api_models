@@ -16,12 +16,7 @@ class DarvoDeal extends WorldstateObject {
     this.total,
     this.sold,
     this.discount,
-  }) : super(
-          id: id,
-          activation: activation,
-          expiry: expiry,
-          props: [item, originalPrice, salePrice, total, sold, discount],
-        );
+  }) : super(id: id, activation: activation, expiry: expiry);
 
   factory DarvoDeal.fromJson(Map<String, dynamic> json) =>
       _$DarvoDealFromJson(json);
@@ -30,4 +25,8 @@ class DarvoDeal extends WorldstateObject {
   final num originalPrice, salePrice, total, sold, discount;
 
   Map<String, dynamic> toJson() => _$DarvoDealToJson(this);
+
+  @override
+  List<Object> get props => super.props
+    ..addAll([item, originalPrice, salePrice, total, sold, discount]);
 }

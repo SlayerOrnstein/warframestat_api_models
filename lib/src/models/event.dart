@@ -23,23 +23,7 @@ class Event extends WorldstateObject {
     this.rewards,
     this.interimSteps,
     this.jobs,
-  }) : super(
-          id: id,
-          activation: activation,
-          expiry: expiry,
-          props: [
-            faction,
-            affiliatedWith,
-            description,
-            victimNode,
-            node,
-            tooltip,
-            health,
-            rewards,
-            interimSteps,
-            jobs
-          ],
-        );
+  }) : super(id: id, activation: activation, expiry: expiry);
 
   factory Event.fromJson(Map<String, dynamic> json) => _$EventFromJson(json);
 
@@ -49,14 +33,8 @@ class Event extends WorldstateObject {
   final List<_InterimStep> interimSteps;
   final List<Job> jobs;
 
-  double get eventHealth {
-    try {
-      return double.parse(
-          health ?? (100 - (currentScore / maximumScore) * 100).toString());
-    } catch (e) {
-      return null;
-    }
-  }
+  double get eventHealth =>
+      health ?? (100 - (currentScore / maximumScore) * 100);
 
   List<String> get eventRewards {
     return [
@@ -66,6 +44,21 @@ class Event extends WorldstateObject {
   }
 
   Map<String, dynamic> toJson() => _$EventToJson(this);
+
+  @override
+  List<Object> get props => super.props
+    ..addAll([
+      faction,
+      affiliatedWith,
+      description,
+      victimNode,
+      node,
+      tooltip,
+      health,
+      rewards,
+      interimSteps,
+      jobs
+    ]);
 }
 
 @JsonSerializable()

@@ -47,6 +47,19 @@ class Nightwave extends WorldstateObject {
   }
 
   Map<String, dynamic> toJson() => _$NightwaveToJson(this);
+
+  @override
+  List<Object> get props => super.props
+    ..addAll([
+      startString,
+      tag,
+      active,
+      season,
+      phase,
+      possibleChallenges,
+      activeChallenges,
+      rewardTypes,
+    ]);
 }
 
 @JsonSerializable()
@@ -62,20 +75,7 @@ class Challenge extends WorldstateObject {
     this.isDaily,
     this.isElite,
     this.reputation,
-  }) : super(
-          id: id,
-          activation: activation,
-          expiry: expiry,
-          props: [
-            startString,
-            desc,
-            title,
-            active,
-            isDaily,
-            isElite,
-            reputation
-          ],
-        );
+  }) : super(id: id, activation: activation, expiry: expiry);
 
   factory Challenge.fromJson(Map<String, dynamic> json) =>
       _$ChallengeFromJson(json);
@@ -85,4 +85,8 @@ class Challenge extends WorldstateObject {
   final num reputation;
 
   Map<String, dynamic> toJson() => _$ChallengeToJson(this);
+
+  @override
+  List<Object> get props => super.props
+    ..addAll([startString, desc, title, active, isDaily, isElite, reputation]);
 }

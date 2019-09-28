@@ -20,18 +20,7 @@ class PersistentEnemies extends WorldstateObject {
     this.healthPercent,
     this.isDiscovered,
     this.isUsingTicketing,
-  }) : super(id: id, activation: activation, expiry: expiry, props: [
-          agentType,
-          locationTag,
-          lastDiscoveredAt,
-          lastDiscoveredTime,
-          fleeDamage,
-          region,
-          rank,
-          healthPercent,
-          isDiscovered,
-          isUsingTicketing
-        ]);
+  }) : super(id: id, activation: activation, expiry: expiry);
 
   factory PersistentEnemies.fromJson(Map<String, dynamic> json) =>
       _$PersistentEnemiesFromJson(json);
@@ -43,4 +32,19 @@ class PersistentEnemies extends WorldstateObject {
   final bool isDiscovered, isUsingTicketing;
 
   Map<String, dynamic> toJson() => _$PersistentEnemiesToJson(this);
+
+  @override
+  List<Object> get props => super.props
+    ..addAll([
+      agentType,
+      locationTag,
+      lastDiscoveredAt,
+      lastDiscoveredTime,
+      fleeDamage,
+      region,
+      rank,
+      healthPercent,
+      isDiscovered,
+      isUsingTicketing
+    ]);
 }

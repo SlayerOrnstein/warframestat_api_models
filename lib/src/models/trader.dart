@@ -15,12 +15,7 @@ class VoidTrader extends WorldstateObject {
     this.location,
     this.active,
     this.inventory,
-  }) : super(
-          id: id,
-          activation: activation,
-          expiry: expiry,
-          props: [character, location, active, inventory],
-        );
+  }) : super(id: id, activation: activation, expiry: expiry);
 
   factory VoidTrader.fromJson(Map<String, dynamic> json) =>
       _$VoidTraderFromJson(json);
@@ -35,12 +30,15 @@ class VoidTrader extends WorldstateObject {
   final List<InventoryItem> inventory;
 
   Map<String, dynamic> toJson() => _$VoidTraderToJson(this);
+
+  @override
+  List<Object> get props =>
+      super.props..addAll([character, location, active, inventory]);
 }
 
 @JsonSerializable()
 class InventoryItem extends Equatable {
-  InventoryItem({this.itemName, this.ducats, this.credits})
-      : super([itemName, ducats, credits]);
+  const InventoryItem({this.itemName, this.ducats, this.credits});
 
   factory InventoryItem.fromJson(Map<String, dynamic> json) =>
       _$InventoryItemFromJson(json);
@@ -51,4 +49,7 @@ class InventoryItem extends Equatable {
   final int ducats, credits;
 
   Map<String, dynamic> toJson() => _$InventoryItemToJson(this);
+
+  @override
+  List<Object> get props => [itemName, ducats, credits];
 }

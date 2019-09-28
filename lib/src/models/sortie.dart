@@ -14,12 +14,7 @@ class Sortie extends WorldstateObject {
     this.boss,
     this.faction,
     this.variants,
-  }) : super(
-          id: id,
-          activation: activation,
-          expiry: expiry,
-          props: [boss, faction, variants],
-        );
+  }) : super(id: id, activation: activation, expiry: expiry);
 
   factory Sortie.fromJson(Map<String, dynamic> json) => _$SortieFromJson(json);
 
@@ -27,16 +22,19 @@ class Sortie extends WorldstateObject {
   final List<Variants> variants;
 
   Map<String, dynamic> toJson() => _$SortieToJson(this);
+
+  @override
+  List<Object> get props => super.props..addAll([boss, faction, variants]);
 }
 
 @JsonSerializable()
 class Variants extends Equatable {
-  Variants({
+  const Variants({
     this.missionType,
     this.modifier,
     this.modifierDescription,
     this.node,
-  }) : super([missionType, modifier, modifierDescription, node]);
+  });
 
   factory Variants.fromJson(Map<String, dynamic> json) =>
       _$VariantsFromJson(json);
@@ -44,4 +42,7 @@ class Variants extends Equatable {
   final String missionType, modifier, modifierDescription, node;
 
   Map<String, dynamic> toJson() => _$VariantsToJson(this);
+
+  @override
+  List<Object> get props => [missionType, modifier, modifierDescription, node];
 }

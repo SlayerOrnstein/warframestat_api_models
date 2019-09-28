@@ -14,12 +14,7 @@ class Alert extends WorldstateObject {
     DateTime expiry,
     this.active,
     this.mission,
-  }) : super(
-          id: id,
-          activation: activation,
-          expiry: expiry,
-          props: [active, mission],
-        );
+  }) : super(id: id, activation: activation, expiry: expiry);
 
   factory Alert.fromJson(Map<String, dynamic> json) => _$AlertFromJson(json);
 
@@ -27,11 +22,14 @@ class Alert extends WorldstateObject {
   final Mission mission;
 
   Map<String, dynamic> toJson() => _$AlertToJson(this);
+
+  @override
+  List<Object> get props => super.props..addAll([active, mission]);
 }
 
 @JsonSerializable()
 class Mission extends Equatable {
-  Mission({
+  const Mission({
     this.node,
     this.type,
     this.faction,
@@ -41,16 +39,7 @@ class Mission extends Equatable {
     this.nightmare,
     this.archwingRequired,
     this.reward,
-  }) : super([
-          node,
-          type,
-          minEnemyLevel,
-          maxEnemyLevel,
-          maxWaveNum,
-          nightmare,
-          archwingRequired,
-          reward
-        ]);
+  });
 
   factory Mission.fromJson(Map<String, dynamic> json) =>
       _$MissionFromJson(json);
@@ -62,4 +51,16 @@ class Mission extends Equatable {
   final Reward reward;
 
   Map<String, dynamic> toJson() => _$MissionToJson(this);
+
+  @override
+  List<Object> get props => [
+        node,
+        type,
+        minEnemyLevel,
+        maxEnemyLevel,
+        maxWaveNum,
+        nightmare,
+        archwingRequired,
+        reward
+      ];
 }

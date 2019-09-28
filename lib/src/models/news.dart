@@ -17,20 +17,7 @@ class OrbiterNews extends WorldstateObject {
     this.primeAccess,
     this.stream,
     this.translations,
-  }) : super(
-          id: id,
-          props: [
-            message,
-            link,
-            imageLink,
-            date,
-            priority,
-            update,
-            primeAccess,
-            stream,
-            translations
-          ],
-        );
+  }) : super(id: id);
 
   factory OrbiterNews.fromJson(Map<String, dynamic> json) =>
       _$OrbiterNewsFromJson(json);
@@ -42,4 +29,18 @@ class OrbiterNews extends WorldstateObject {
   final Map<String, String> translations;
 
   Map<String, dynamic> toJson() => _$OrbiterNewsToJson(this);
+
+  @override
+  List<Object> get props => super.props
+    ..addAll([
+      message,
+      link,
+      imageLink,
+      date,
+      priority,
+      update,
+      primeAccess,
+      stream,
+      translations
+    ]);
 }

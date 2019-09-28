@@ -14,11 +14,7 @@ class Syndicate extends WorldstateObject {
     this.name,
     this.active,
     this.jobs,
-  }) : super(
-            id: id,
-            activation: activation,
-            expiry: expiry,
-            props: [name, active, jobs]);
+  }) : super(id: id, activation: activation, expiry: expiry);
 
   factory Syndicate.fromJson(Map<String, dynamic> json) =>
       _$SyndicateFromJson(json);
@@ -30,6 +26,9 @@ class Syndicate extends WorldstateObject {
   final List<Job> jobs;
 
   Map<String, dynamic> toJson() => _$SyndicateToJson(this);
+
+  @override
+  List<Object> get props => super.props..addAll([name, active, jobs]);
 }
 
 @JsonSerializable()
@@ -39,7 +38,7 @@ class Job extends Equatable {
     this.pool,
     this.enemyLevels,
     this.standingStages,
-  }) : super([type, pool, enemyLevels, standingStages]);
+  });
 
   factory Job.fromJson(Map<String, dynamic> json) => _$JobFromJson(json);
 
@@ -54,4 +53,7 @@ class Job extends Equatable {
 
   List<String> get rewardPool =>
       pool is List ? pool.cast<String>() : <String>[];
+
+  @override
+  List<Object> get props => [type, pool, enemyLevels, standingStages];
 }

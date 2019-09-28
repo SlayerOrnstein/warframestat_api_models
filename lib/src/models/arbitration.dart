@@ -18,18 +18,7 @@ class Arbitration extends WorldstateObject {
     this.nodeType,
     this.archwing,
     this.sharkwing,
-  }) : super(activation: activation, expiry: expiry, props: [
-          solnode,
-          node,
-          name,
-          title,
-          planet,
-          enemy,
-          type,
-          nodeType,
-          archwing,
-          sharkwing
-        ]);
+  }) : super(activation: activation, expiry: expiry);
 
   factory Arbitration.fromJson(Map<String, dynamic> json) =>
       _$ArbitrationFromJson(json);
@@ -42,4 +31,19 @@ class Arbitration extends WorldstateObject {
   final bool archwing, sharkwing;
 
   Map<String, dynamic> toJson() => _$ArbitrationToJson(this);
+
+  @override
+  List<Object> get props => super.props
+    ..addAll([
+      solnode,
+      node,
+      name,
+      title,
+      planet,
+      enemy,
+      type,
+      nodeType,
+      archwing,
+      sharkwing
+    ]);
 }

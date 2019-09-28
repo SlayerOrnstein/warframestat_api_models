@@ -5,19 +5,13 @@ part 'reward.g.dart';
 
 @JsonSerializable()
 class Reward extends Equatable {
-  Reward({
+  const Reward({
     this.itemString,
     this.thumbnail,
     this.asString,
     this.credits,
     this.countedItems,
-  }) : super([
-          itemString,
-          thumbnail,
-          asString,
-          credits,
-          countedItems,
-        ]);
+  });
 
   factory Reward.fromJson(Map<String, dynamic> json) => _$RewardFromJson(json);
 
@@ -26,11 +20,20 @@ class Reward extends Equatable {
   final List<CountedItem> countedItems;
 
   Map<String, dynamic> toJson() => _$RewardToJson(this);
+
+  @override
+  List<Object> get props => [
+        itemString,
+        thumbnail,
+        asString,
+        credits,
+        countedItems,
+      ];
 }
 
 @JsonSerializable()
 class CountedItem extends Equatable {
-  CountedItem({this.count, this.type}) : super([count, type]);
+  const CountedItem({this.count, this.type});
 
   factory CountedItem.fromJson(Map<String, dynamic> json) =>
       _$CountedItemFromJson(json);
@@ -39,4 +42,7 @@ class CountedItem extends Equatable {
   final String type;
 
   Map<String, dynamic> toJson() => _$CountedItemToJson(this);
+
+  @override
+  List<Object> get props => [count, type];
 }

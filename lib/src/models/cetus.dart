@@ -8,17 +8,16 @@ part 'cetus.g.dart';
 class Cetus extends CycleObject {
   Cetus({
     String id,
-    // int activation,
+    int activation,
     DateTime expiry,
     String state,
     this.isDay,
     this.isCetus,
   }) : super(
           id: id,
-          // activation: DateTime.fromMillisecondsSinceEpoch(activation),
+          activation: DateTime.fromMillisecondsSinceEpoch(activation),
           expiry: expiry,
           state: state,
-          props: [isDay, isCetus],
         );
 
   factory Cetus.fromJson(Map<String, dynamic> json) => _$CetusFromJson(json);
@@ -50,4 +49,7 @@ class Cetus extends CycleObject {
   String get nextState => !isDay ? 'Day' : 'Night';
 
   Map<String, dynamic> toJson() => _$CetusToJson(this);
+
+  @override
+  List<Object> get props => super.props..addAll([isDay, isCetus]);
 }

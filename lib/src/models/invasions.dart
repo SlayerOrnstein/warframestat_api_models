@@ -22,24 +22,7 @@ class Invasion extends WorldstateObject {
     this.count,
     this.attackerReward,
     this.defenderReward,
-  }) : super(
-          id: id,
-          activation: activation,
-          expiry: expiry,
-          props: [
-            node,
-            desc,
-            attackingFaction,
-            defendingFaction,
-            eta,
-            vsInfestation,
-            completed,
-            completion,
-            count,
-            attackerReward,
-            defenderReward,
-          ],
-        );
+  }) : super(id: id, activation: activation, expiry: expiry);
 
   factory Invasion.fromJson(Map<String, dynamic> json) =>
       _$InvasionFromJson(json);
@@ -50,4 +33,20 @@ class Invasion extends WorldstateObject {
   final Reward attackerReward, defenderReward;
 
   Map<String, dynamic> toJson() => _$InvasionToJson(this);
+
+  @override
+  List<Object> get props => super.props
+    ..addAll([
+      node,
+      desc,
+      attackingFaction,
+      defendingFaction,
+      eta,
+      vsInfestation,
+      completed,
+      completion,
+      count,
+      attackerReward,
+      defenderReward,
+    ]);
 }

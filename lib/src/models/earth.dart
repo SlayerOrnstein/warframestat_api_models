@@ -14,13 +14,7 @@ class Earth extends CycleObject {
     DateTime expiry,
     String state,
     this.isDay,
-  }) : super(
-          id: id,
-          activation: activation,
-          expiry: expiry,
-          state: state,
-          props: [isDay],
-        );
+  }) : super(id: id, activation: activation, expiry: expiry, state: state);
 
   factory Earth.fromJson(Map<String, dynamic> json) => _$EarthFromJson(json);
 
@@ -48,4 +42,7 @@ class Earth extends CycleObject {
   String get nextState => !isDay ? 'Day' : 'Night';
 
   Map<String, dynamic> toJson() => _$EarthToJson(this);
+
+  @override
+  List<Object> get props => super.props..add(isDay);
 }

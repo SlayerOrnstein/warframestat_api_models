@@ -20,8 +20,8 @@ import 'trader.dart';
 part 'worldstate.g.dart';
 
 @JsonSerializable()
-class Worldstate<T> extends Equatable {
-  Worldstate({
+class Worldstate extends Equatable {
+  const Worldstate({
     this.timestamp,
     this.news,
     this.events,
@@ -38,24 +38,7 @@ class Worldstate<T> extends Equatable {
     this.vallisCycle,
     this.nightwave,
     this.arbitration,
-  }) : super([
-          timestamp,
-          news,
-          events,
-          alerts,
-          sortie,
-          syndicateMissions,
-          fissures,
-          invasions,
-          voidTrader,
-          dailyDeals,
-          persistentEnemies,
-          earthCycle,
-          cetusCycle,
-          vallisCycle,
-          nightwave,
-          arbitration
-        ]);
+  });
 
   factory Worldstate.fromJson(Map<String, dynamic> json) =>
       _$WorldstateFromJson(json);
@@ -78,4 +61,24 @@ class Worldstate<T> extends Equatable {
   final Arbitration arbitration;
 
   Map<String, dynamic> toJson() => _$WorldstateToJson(this);
+
+  @override
+  List<Object> get props => [
+        timestamp,
+        news,
+        events,
+        alerts,
+        sortie,
+        syndicateMissions,
+        fissures,
+        invasions,
+        voidTrader,
+        dailyDeals,
+        persistentEnemies,
+        earthCycle,
+        cetusCycle,
+        vallisCycle,
+        nightwave,
+        arbitration
+      ];
 }

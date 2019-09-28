@@ -17,12 +17,7 @@ class VoidFissure extends WorldstateObject {
     this.tierNum,
     this.active,
     this.expired,
-  }) : super(
-          id: id,
-          activation: activation,
-          expiry: expiry,
-          props: [node, missionType, enemy, tier, tierNum, active, expired],
-        );
+  }) : super(id: id, activation: activation, expiry: expiry);
 
   factory VoidFissure.fromJson(Map<String, dynamic> json) =>
       _$VoidFissureFromJson(json);
@@ -32,4 +27,8 @@ class VoidFissure extends WorldstateObject {
   final bool active, expired;
 
   Map<String, dynamic> toJson() => _$VoidFissureToJson(this);
+
+  @override
+  List<Object> get props => super.props
+    ..addAll([node, missionType, enemy, tier, tierNum, active, expired]);
 }

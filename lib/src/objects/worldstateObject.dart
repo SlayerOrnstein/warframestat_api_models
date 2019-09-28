@@ -9,9 +9,11 @@ abstract class WorldstateObject extends Equatable {
     this.id,
     this.activation,
     this.expiry,
-    List props = const [],
-  }) : super([id, activation, expiry, ...props]);
+  });
 
   final String id;
   final DateTime activation, expiry;
+
+  @override
+  List<Object> get props => [id, activation, expiry];
 }
