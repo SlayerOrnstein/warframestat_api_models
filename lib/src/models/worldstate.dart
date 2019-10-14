@@ -60,6 +60,14 @@ class Worldstate extends Equatable {
   final Nightwave nightwave;
   final Arbitration arbitration;
 
+  bool get isAlertActive => alerts?.isNotEmpty ?? false;
+
+  bool get isEventActive => events?.isNotEmpty ?? false;
+
+  bool get areAcolytesActive => persistentEnemies?.isNotEmpty ?? false;
+
+  bool get areDealsActive => dailyDeals?.isNotEmpty ?? false;
+
   Map<String, dynamic> toJson() => _$WorldstateToJson(this);
 
   @override
