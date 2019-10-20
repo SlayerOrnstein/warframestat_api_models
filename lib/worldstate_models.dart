@@ -1,6 +1,7 @@
 library worldstate_model;
 
 export 'src/models/alerts.dart';
+export 'src/models/arbitration.dart';
 export 'src/models/cetus.dart';
 export 'src/models/deals.dart';
 export 'src/models/earth.dart';
