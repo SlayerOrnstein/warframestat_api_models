@@ -66,7 +66,11 @@ class Worldstate extends Equatable {
 
   bool get areAcolytesActive => persistentEnemies?.isNotEmpty ?? false;
 
-  bool get areDealsActive => dailyDeals?.isNotEmpty ?? false;
+  bool get areDealsActive {
+    final deals = dailyDeals..retainWhere((d) => d.total - d.sold != 0);
+
+    return deals.isNotEmpty ?? false;
+  }
 
   bool get activeArbitration => arbitration.expiry.isAfter(DateTime.now());
 
