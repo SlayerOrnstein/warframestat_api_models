@@ -28,6 +28,7 @@ class Arbitration extends WorldstateObject {
   @JsonKey(name: 'node_type')
   final String nodeType;
 
+  @JsonKey(defaultValue: false)
   final bool archwing, sharkwing;
 
   Map<String, dynamic> toJson() => _$ArbitrationToJson(this);

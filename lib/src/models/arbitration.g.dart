@@ -22,8 +22,8 @@ Arbitration _$ArbitrationFromJson(Map<String, dynamic> json) {
     enemy: json['enemy'] as String,
     type: json['type'] as String,
     nodeType: json['node_type'] as String,
-    archwing: json['archwing'] as bool,
-    sharkwing: json['sharkwing'] as bool,
+    archwing: json['archwing'] as bool ?? false,
+    sharkwing: json['sharkwing'] as bool ?? false,
   );
 }
 
