@@ -72,7 +72,7 @@ class Worldstate extends Equatable {
     return deals.isNotEmpty ?? false;
   }
 
-  bool get activeArbitration => arbitration == null;
+  bool get activeArbitration => arbitration != null;
 
   Map<String, dynamic> toJson() => _$WorldstateToJson(this);
 
