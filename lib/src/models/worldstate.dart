@@ -72,7 +72,7 @@ class Worldstate extends Equatable {
     return deals.isNotEmpty ?? false;
   }
 
-  bool get activeArbitration => arbitration.expiry.isAfter(DateTime.now());
+  bool get activeArbitration => arbitration == null;
 
   Map<String, dynamic> toJson() => _$WorldstateToJson(this);
 
