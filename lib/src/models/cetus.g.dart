@@ -9,7 +9,9 @@ part of 'cetus.dart';
 Cetus _$CetusFromJson(Map<String, dynamic> json) {
   return Cetus(
     id: json['id'] as String,
-    activation: json['activation'] as int,
+    activation: json['activation'] == null
+        ? null
+        : DateTime.parse(json['activation'] as String),
     expiry: json['expiry'] == null
         ? null
         : DateTime.parse(json['expiry'] as String),
