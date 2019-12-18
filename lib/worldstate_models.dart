@@ -7,6 +7,7 @@ export 'src/models/earth.dart';
 export 'src/models/event.dart';
 export 'src/models/fissure.dart';
 export 'src/models/invasions.dart';
+export 'src/models/job.dart';
 export 'src/models/news.dart';
 export 'src/models/nightwave.dart';
 export 'src/models/orbvallis.dart';
