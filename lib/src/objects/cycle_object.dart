@@ -1,7 +1,7 @@
-import 'worldstateObject.dart';
+import 'worldstate_object.dart';
 
 abstract class CycleObject extends WorldstateObject {
-  CycleObject({
+  const CycleObject({
     String id,
     DateTime activation,
     DateTime expiry,

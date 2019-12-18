@@ -18,15 +18,15 @@ void main() {
 
     group('Make sure all parts of the worldstate were properly decoded', () {
       test('Test timestamp', () {
-        expect(worldstate.timestamp, TypeMatcher<String>());
+        expect(worldstate.timestamp, const TypeMatcher<String>());
       });
 
       test('Test news', () {
-        expect(worldstate.news, TypeMatcher<List<OrbiterNews>>());
+        expect(worldstate.news, const TypeMatcher<List<OrbiterNews>>());
       });
 
       test('Test EventObject', () {
-        expect(worldstate.events, TypeMatcher<List<Event>>());
+        expect(worldstate.events, const TypeMatcher<List<Event>>());
       });
     });
   });

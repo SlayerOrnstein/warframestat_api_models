@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'persistentEnemies.dart';
+part of 'persistent_enemies.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -24,7 +24,7 @@ PersistentEnemies _$PersistentEnemiesFromJson(Map<String, dynamic> json) {
     fleeDamage: json['fleeDamage'] as int,
     region: json['region'] as int,
     rank: json['rank'] as int,
-    healthPercent: json['healthPercent'] as num,
+    healthPercent: json['healthPercent'] as int,
     isDiscovered: json['isDiscovered'] as bool,
     isUsingTicketing: json['isUsingTicketing'] as bool,
   );

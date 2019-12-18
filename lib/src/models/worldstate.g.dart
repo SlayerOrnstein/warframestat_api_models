@@ -55,7 +55,7 @@ Worldstate _$WorldstateFromJson(Map<String, dynamic> json) {
         : Earth.fromJson(json['earthCycle'] as Map<String, dynamic>),
     cetusCycle: json['cetusCycle'] == null
         ? null
-        : Cetus.fromJson(json['cetusCycle'] as Map<String, dynamic>),
+        : Earth.fromJson(json['cetusCycle'] as Map<String, dynamic>),
     vallisCycle: json['vallisCycle'] == null
         ? null
         : Vallis.fromJson(json['vallisCycle'] as Map<String, dynamic>),

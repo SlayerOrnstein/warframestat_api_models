@@ -30,7 +30,7 @@ Event _$EventFromJson(Map<String, dynamic> json) {
         ?.toList(),
     interimSteps: (json['interimSteps'] as List)
         ?.map((e) =>
-            e == null ? null : _InterimStep.fromJson(e as Map<String, dynamic>))
+            e == null ? null : InterimStep.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     jobs: (json['jobs'] as List)
         ?.map((e) => e == null ? null : Job.fromJson(e as Map<String, dynamic>))
@@ -56,8 +56,8 @@ Map<String, dynamic> _$EventToJson(Event instance) => <String, dynamic>{
       'jobs': instance.jobs,
     };
 
-_InterimStep _$_InterimStepFromJson(Map<String, dynamic> json) {
-  return _InterimStep(
+InterimStep _$InterimStepFromJson(Map<String, dynamic> json) {
+  return InterimStep(
     goal: json['goal'] as int,
     reward: json['reward'] == null
         ? null
@@ -65,7 +65,7 @@ _InterimStep _$_InterimStepFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_InterimStepToJson(_InterimStep instance) =>
+Map<String, dynamic> _$InterimStepToJson(InterimStep instance) =>
     <String, dynamic>{
       'goal': instance.goal,
       'reward': instance.reward,

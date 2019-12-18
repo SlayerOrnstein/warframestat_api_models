@@ -1,12 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
-
-import '../objects/cycleObject.dart';
+import 'package:worldstate_model/src/objects/cycle_object.dart';
 
 part 'orbvallis.g.dart';
 
 @JsonSerializable()
 class Vallis extends CycleObject {
-  Vallis({
+  const Vallis({
     String id,
     DateTime activation,
     DateTime expiry,
@@ -43,4 +42,21 @@ class Vallis extends CycleObject {
 
   @override
   List<Object> get props => super.props..add(isWarm);
+
+  @override
+  Vallis copyWith({
+    String id,
+    DateTime activation,
+    DateTime expiry,
+    String state,
+    bool isWarm,
+  }) {
+    return Vallis(
+      id: id ?? this.id,
+      activation: activation ?? this.activation,
+      expiry: expiry ?? this.expiry,
+      state: state ?? this.state,
+      isWarm: isWarm ?? this.isWarm,
+    );
+  }
 }

@@ -1,14 +1,14 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:worldstate_model/src/objects/worldstate_object.dart';
 
 import 'reward.dart';
-import '../objects/worldstateObject.dart';
 
 part 'alerts.g.dart';
 
 @JsonSerializable()
 class Alert extends WorldstateObject {
-  Alert({
+  const Alert({
     String id,
     DateTime activation,
     DateTime expiry,
@@ -25,6 +25,23 @@ class Alert extends WorldstateObject {
 
   @override
   List<Object> get props => super.props..addAll([active, mission]);
+
+  @override
+  Alert copyWith({
+    String id,
+    DateTime activation,
+    DateTime expiry,
+    bool active,
+    Mission mission,
+  }) {
+    return Alert(
+      id: id ?? this.id,
+      activation: activation ?? this.activation,
+      expiry: expiry ?? this.expiry,
+      active: active ?? this.active,
+      mission: mission ?? this.mission,
+    );
+  }
 }
 
 @JsonSerializable()
@@ -63,4 +80,26 @@ class Mission extends Equatable {
         archwingRequired,
         reward
       ];
+
+  Mission copyWith({
+    String node,
+    String type,
+    String faction,
+    int minEnemyLevel,
+    int maxEnemyLevel,
+    int maxWaveNum,
+    bool nightmare,
+    bool archwingRequired,
+  }) {
+    return Mission(
+      node: node ?? this.node,
+      type: type ?? this.type,
+      faction: faction ?? this.faction,
+      minEnemyLevel: minEnemyLevel ?? this.minEnemyLevel,
+      maxEnemyLevel: maxEnemyLevel ?? this.maxEnemyLevel,
+      maxWaveNum: maxWaveNum ?? this.maxWaveNum,
+      nightmare: nightmare ?? this.nightmare,
+      archwingRequired: archwingRequired ?? this.archwingRequired,
+    );
+  }
 }

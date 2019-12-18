@@ -1,13 +1,13 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:worldstate_model/src/objects/worldstate_object.dart';
 
-import '../objects/worldstateObject.dart';
+import 'job.dart';
 
 part 'syndicate.g.dart';
 
 @JsonSerializable()
 class Syndicate extends WorldstateObject {
-  Syndicate({
+  const Syndicate({
     String id,
     DateTime activation,
     DateTime expiry,
@@ -29,31 +29,23 @@ class Syndicate extends WorldstateObject {
 
   @override
   List<Object> get props => super.props..addAll([name, active, jobs]);
-}
-
-@JsonSerializable()
-class Job extends Equatable {
-  Job({
-    this.type,
-    this.pool,
-    this.enemyLevels,
-    this.standingStages,
-  });
-
-  factory Job.fromJson(Map<String, dynamic> json) => _$JobFromJson(json);
-
-  final String type;
-
-  @JsonKey(name: 'rewardPool')
-  final dynamic pool;
-
-  final List<int> enemyLevels, standingStages;
-
-  Map<String, dynamic> toJson() => _$JobToJson(this);
-
-  List<String> get rewardPool =>
-      pool is List ? pool.cast<String>() : <String>[];
 
   @override
-  List<Object> get props => [type, pool, enemyLevels, standingStages];
+  Syndicate copyWith({
+    String id,
+    DateTime activation,
+    DateTime expiry,
+    String name,
+    bool active,
+    List<Job> jobs,
+  }) {
+    return Syndicate(
+      id: id ?? this.id,
+      activation: activation ?? this.activation,
+      expiry: expiry ?? this.expiry,
+      name: name ?? this.name,
+      active: active ?? this.active,
+      jobs: jobs ?? this.jobs,
+    );
+  }
 }

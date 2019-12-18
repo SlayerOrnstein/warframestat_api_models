@@ -1,11 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_model/src/objects/worldstateObject.dart';
+import 'package:worldstate_model/src/objects/worldstate_object.dart';
 
 part 'arbitration.g.dart';
 
 @JsonSerializable()
 class Arbitration extends WorldstateObject {
-  Arbitration({
+  const Arbitration({
     DateTime activation,
     DateTime expiry,
     this.solnode,
@@ -31,6 +31,8 @@ class Arbitration extends WorldstateObject {
   @JsonKey(defaultValue: false)
   final bool archwing, sharkwing;
 
+  bool get archwingRequired => archwing || sharkwing || false;
+
   Map<String, dynamic> toJson() => _$ArbitrationToJson(this);
 
   @override
@@ -47,4 +49,35 @@ class Arbitration extends WorldstateObject {
       archwing,
       sharkwing
     ]);
+
+  @override
+  Arbitration copyWith({
+    DateTime activation,
+    DateTime expiry,
+    String solnode,
+    String node,
+    String name,
+    String title,
+    String planet,
+    String enemy,
+    String type,
+    String nodeType,
+    bool archwing,
+    bool sharkwing,
+  }) {
+    return Arbitration(
+      activation: activation ?? activation,
+      expiry: expiry ?? this.expiry,
+      solnode: solnode ?? this.solnode,
+      node: node ?? this.node,
+      name: name ?? this.name,
+      title: title ?? this.title,
+      planet: planet ?? this.planet,
+      enemy: enemy ?? this.enemy,
+      type: type ?? this.type,
+      nodeType: nodeType ?? this.nodeType,
+      archwing: archwing ?? this.archwing,
+      sharkwing: sharkwing ?? this.sharkwing,
+    );
+  }
 }

@@ -31,20 +31,3 @@ Map<String, dynamic> _$SyndicateToJson(Syndicate instance) => <String, dynamic>{
       'active': instance.active,
       'jobs': instance.jobs,
     };
-
-Job _$JobFromJson(Map<String, dynamic> json) {
-  return Job(
-    type: json['type'] as String,
-    pool: json['rewardPool'],
-    enemyLevels: (json['enemyLevels'] as List)?.map((e) => e as int)?.toList(),
-    standingStages:
-        (json['standingStages'] as List)?.map((e) => e as int)?.toList(),
-  );
-}
-
-Map<String, dynamic> _$JobToJson(Job instance) => <String, dynamic>{
-      'type': instance.type,
-      'rewardPool': instance.pool,
-      'enemyLevels': instance.enemyLevels,
-      'standingStages': instance.standingStages,
-    };

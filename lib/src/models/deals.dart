@@ -1,12 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
-
-import '../objects/worldstateObject.dart';
+import 'package:worldstate_model/src/objects/worldstate_object.dart';
 
 part 'deals.g.dart';
 
 @JsonSerializable()
 class DarvoDeal extends WorldstateObject {
-  DarvoDeal({
+  const DarvoDeal({
     String id,
     DateTime activation,
     DateTime expiry,
@@ -29,4 +28,29 @@ class DarvoDeal extends WorldstateObject {
   @override
   List<Object> get props => super.props
     ..addAll([item, originalPrice, salePrice, total, sold, discount]);
+
+  @override
+  WorldstateObject copyWith({
+    String id,
+    DateTime activation,
+    DateTime expiry,
+    String item,
+    num originalPrice,
+    num salePrice,
+    num total,
+    num sold,
+    num discount,
+  }) {
+    return DarvoDeal(
+      id: id ?? this.id,
+      activation: activation ?? this.activation,
+      expiry: expiry ?? this.expiry,
+      item: item ?? this.item,
+      originalPrice: originalPrice ?? this.originalPrice,
+      salePrice: salePrice ?? this.salePrice,
+      total: total ?? this.total,
+      sold: sold ?? this.sold,
+      discount: discount ?? this.discount,
+    );
+  }
 }

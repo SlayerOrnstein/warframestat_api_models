@@ -19,7 +19,7 @@ Sortie _$SortieFromJson(Map<String, dynamic> json) {
     faction: json['faction'] as String,
     variants: (json['variants'] as List)
         ?.map((e) =>
-            e == null ? null : Variants.fromJson(e as Map<String, dynamic>))
+            e == null ? null : Variant.fromJson(e as Map<String, dynamic>))
         ?.toList(),
   );
 }
@@ -33,8 +33,8 @@ Map<String, dynamic> _$SortieToJson(Sortie instance) => <String, dynamic>{
       'variants': instance.variants,
     };
 
-Variants _$VariantsFromJson(Map<String, dynamic> json) {
-  return Variants(
+Variant _$VariantFromJson(Map<String, dynamic> json) {
+  return Variant(
     missionType: json['missionType'] as String,
     modifier: json['modifier'] as String,
     modifierDescription: json['modifierDescription'] as String,
@@ -42,7 +42,7 @@ Variants _$VariantsFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$VariantsToJson(Variants instance) => <String, dynamic>{
+Map<String, dynamic> _$VariantToJson(Variant instance) => <String, dynamic>{
       'missionType': instance.missionType,
       'modifier': instance.modifier,
       'modifierDescription': instance.modifierDescription,

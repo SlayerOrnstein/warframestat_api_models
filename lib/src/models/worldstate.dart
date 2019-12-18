@@ -3,7 +3,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'alerts.dart';
 import 'arbitration.dart';
-import 'cetus.dart';
 import 'deals.dart';
 import 'earth.dart';
 import 'event.dart';
@@ -12,7 +11,7 @@ import 'invasions.dart';
 import 'news.dart';
 import 'nightwave.dart';
 import 'orbvallis.dart';
-import 'persistentEnemies.dart';
+import 'persistent_enemies.dart';
 import 'sortie.dart';
 import 'syndicate.dart';
 import 'trader.dart';
@@ -54,8 +53,7 @@ class Worldstate extends Equatable {
   final VoidTrader voidTrader;
   final List<DarvoDeal> dailyDeals;
   final List<PersistentEnemies> persistentEnemies;
-  final Earth earthCycle;
-  final Cetus cetusCycle;
+  final Earth earthCycle, cetusCycle;
   final Vallis vallisCycle;
   final Nightwave nightwave;
   final Arbitration arbitration;
@@ -95,4 +93,42 @@ class Worldstate extends Equatable {
         nightwave,
         arbitration
       ];
+
+  Worldstate copyWith({
+    String timestamp,
+    List<OrbiterNews> news,
+    Event events,
+    List<Alert> alerts,
+    Sortie sortie,
+    List<Syndicate> syndicateMissions,
+    List<VoidFissure> fissures,
+    List<Invasion> invasions,
+    VoidTrader voidTrader,
+    List<DarvoDeal> dailyDeals,
+    List<PersistentEnemies> persistentEnemies,
+    Earth earthCycle,
+    Earth cetusCycle,
+    Vallis vallisCycle,
+    Nightwave nightwave,
+    Arbitration arbitration,
+  }) {
+    return Worldstate(
+      timestamp: timestamp ?? this.timestamp,
+      news: news ?? this.news,
+      events: events ?? this.events,
+      alerts: alerts ?? this.alerts,
+      sortie: sortie ?? this.sortie,
+      syndicateMissions: syndicateMissions ?? this.syndicateMissions,
+      fissures: fissures ?? this.fissures,
+      invasions: invasions ?? this.invasions,
+      voidTrader: voidTrader ?? this.voidTrader,
+      dailyDeals: dailyDeals ?? this.dailyDeals,
+      persistentEnemies: persistentEnemies ?? this.persistentEnemies,
+      earthCycle: earthCycle ?? this.earthCycle,
+      cetusCycle: cetusCycle ?? this.cetusCycle,
+      vallisCycle: vallisCycle ?? this.vallisCycle,
+      nightwave: nightwave ?? this.nightwave,
+      arbitration: arbitration ?? this.arbitration,
+    );
+  }
 }

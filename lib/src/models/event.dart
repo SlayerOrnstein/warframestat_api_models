@@ -1,13 +1,14 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_model/src/models/reward.dart';
-import 'package:worldstate_model/src/models/syndicate.dart';
-import 'package:worldstate_model/src/objects/worldstateObject.dart';
+import 'package:worldstate_model/src/objects/worldstate_object.dart';
+
+import 'job.dart';
+import 'reward.dart';
 
 part 'event.g.dart';
 
 @JsonSerializable()
 class Event extends WorldstateObject {
-  Event({
+  const Event({
     String id,
     DateTime activation,
     DateTime expiry,
@@ -30,11 +31,10 @@ class Event extends WorldstateObject {
   final String faction, description, victimNode, node, tooltip, affiliatedWith;
   final num health, currentScore, maximumScore;
   final List<Reward> rewards;
-  final List<_InterimStep> interimSteps;
+  final List<InterimStep> interimSteps;
   final List<Job> jobs;
 
-  num get eventHealth =>
-      health ?? (100 - (currentScore / maximumScore) * 100);
+  num get eventHealth => health ?? (100 - (currentScore / maximumScore) * 100);
 
   List<String> get eventRewards {
     return [
@@ -55,21 +55,63 @@ class Event extends WorldstateObject {
       node,
       tooltip,
       health,
+      currentScore,
+      maximumScore,
       rewards,
       interimSteps,
       jobs
     ]);
+
+  @override
+  Event copyWith({
+    String id,
+    DateTime activation,
+    DateTime expiry,
+    String faction,
+    String affiliatedWith,
+    String description,
+    String victimNode,
+    String node,
+    String tooltip,
+    num health,
+    num currentScore,
+    num maximumScore,
+    List<Reward> rewards,
+    List<InterimStep> interimSteps,
+    List<Job> jobs,
+  }) {
+    return Event(
+      id: id ?? this.id,
+      activation: activation ?? this.activation,
+      expiry: expiry ?? this.expiry,
+      faction: faction ?? this.faction,
+      description: description ?? this.description,
+      victimNode: victimNode ?? this.victimNode,
+      node: node ?? this.node,
+      tooltip: tooltip ?? this.tooltip,
+      health: health ?? this.health,
+      currentScore: currentScore ?? this.currentScore,
+      maximumScore: maximumScore ?? this.maximumScore,
+      rewards: rewards ?? this.rewards,
+      interimSteps: interimSteps ?? this.interimSteps,
+      jobs: jobs ?? this.jobs,
+    );
+  }
 }
 
 @JsonSerializable()
-class _InterimStep {
-  _InterimStep({this.goal, this.reward});
+class InterimStep {
+  InterimStep({this.goal, this.reward});
 
-  factory _InterimStep.fromJson(Map<String, dynamic> json) =>
-      _$_InterimStepFromJson(json);
+  factory InterimStep.fromJson(Map<String, dynamic> json) =>
+      _$InterimStepFromJson(json);
 
   int goal;
   Reward reward;
 
-  Map<String, dynamic> toJson() => _$_InterimStepToJson(this);
+  Map<String, dynamic> toJson() => _$InterimStepToJson(this);
+
+  InterimStep copyWith({int goal, Reward reward}) {
+    return InterimStep(goal: goal ?? this.goal, reward: reward ?? this.reward);
+  }
 }
