@@ -1,4 +1,4 @@
-name: worldstate_model
+name: worldstate_api_model
 description: A starting point for Dart libraries or applications.
 version: 1.4.0+1
 author: Ludwig <blacklightinglr@gmail.com>

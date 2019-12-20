@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:worldstate_model/worldstate_models.dart';
+import 'package:worldstate_api_model/worldstate_models.dart';
 import 'package:http/http.dart' as http;
 
 Future<void> main() async {
@@ -10,5 +10,5 @@ Future<void> main() async {
   final worldstate = Worldstate.fromJson(worldstateJson);
 
   print(worldstate.timestamp); //prints the generated timestamp from worldstate
-  print(worldstate.cetusCycle.activation.toIso8601String());
+  print(worldstate.activeArbitration);
 }

@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:test/test.dart';
-import 'package:worldstate_model/worldstate_models.dart';
+import 'package:worldstate_api_model/worldstate_models.dart';
 
 void main() {
   group('A group of tests', () {
