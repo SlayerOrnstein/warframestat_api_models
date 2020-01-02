@@ -37,7 +37,7 @@ class Worldstate extends Equatable {
     this.cetusCycle,
     this.vallisCycle,
     this.nightwave,
-    this.sentientOutpost,
+    this.sentientOutposts,
     this.arbitration,
   });
 
@@ -58,7 +58,7 @@ class Worldstate extends Equatable {
   final Earth earthCycle, cetusCycle;
   final Vallis vallisCycle;
   final Nightwave nightwave;
-  final SentientOutpost sentientOutpost;
+  final SentientOutpost sentientOutposts;
   final Arbitration arbitration;
 
   bool get alertsActive => alerts?.isNotEmpty ?? false;
@@ -75,7 +75,7 @@ class Worldstate extends Equatable {
 
   bool get arbitrationActive => arbitration?.node != null;
 
-  bool get outpostActive => sentientOutpost.active;
+  bool get outpostActive => sentientOutposts.active;
 
   Map<String, dynamic> toJson() => _$WorldstateToJson(this);
 
@@ -96,7 +96,7 @@ class Worldstate extends Equatable {
         cetusCycle,
         vallisCycle,
         nightwave,
-        sentientOutpost,
+        sentientOutposts,
         arbitration
       ];
 
@@ -135,7 +135,7 @@ class Worldstate extends Equatable {
       cetusCycle: cetusCycle ?? this.cetusCycle,
       vallisCycle: vallisCycle ?? this.vallisCycle,
       nightwave: nightwave ?? this.nightwave,
-      sentientOutpost: sentientOutpost ?? this.sentientOutpost,
+      sentientOutposts: sentientOutpost ?? this.sentientOutposts,
       arbitration: arbitration ?? this.arbitration,
     );
   }

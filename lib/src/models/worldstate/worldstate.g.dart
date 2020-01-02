@@ -62,10 +62,10 @@ Worldstate _$WorldstateFromJson(Map<String, dynamic> json) {
     nightwave: json['nightwave'] == null
         ? null
         : Nightwave.fromJson(json['nightwave'] as Map<String, dynamic>),
-    sentientOutpost: json['sentientOutpost'] == null
+    sentientOutposts: json['sentientOutposts'] == null
         ? null
         : SentientOutpost.fromJson(
-            json['sentientOutpost'] as Map<String, dynamic>),
+            json['sentientOutposts'] as Map<String, dynamic>),
     arbitration: json['arbitration'] == null
         ? null
         : Arbitration.fromJson(json['arbitration'] as Map<String, dynamic>),
@@ -89,6 +89,6 @@ Map<String, dynamic> _$WorldstateToJson(Worldstate instance) =>
       'cetusCycle': instance.cetusCycle,
       'vallisCycle': instance.vallisCycle,
       'nightwave': instance.nightwave,
-      'sentientOutpost': instance.sentientOutpost,
+      'sentientOutposts': instance.sentientOutposts,
       'arbitration': instance.arbitration,
     };
