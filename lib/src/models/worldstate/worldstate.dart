@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:worldstate_api_model/src/models/worldstate/sentient_outpost.dart';
 
 import 'alerts.dart';
 import 'arbitration.dart';
@@ -36,6 +37,7 @@ class Worldstate extends Equatable {
     this.cetusCycle,
     this.vallisCycle,
     this.nightwave,
+    this.sentientOutpost,
     this.arbitration,
   });
 
@@ -56,6 +58,7 @@ class Worldstate extends Equatable {
   final Earth earthCycle, cetusCycle;
   final Vallis vallisCycle;
   final Nightwave nightwave;
+  final SentientOutpost sentientOutpost;
   final Arbitration arbitration;
 
   bool get alertsActive => alerts?.isNotEmpty ?? false;
@@ -71,6 +74,8 @@ class Worldstate extends Equatable {
   }
 
   bool get arbitrationActive => arbitration?.node != null;
+
+  bool get outpostActive => sentientOutpost.active;
 
   Map<String, dynamic> toJson() => _$WorldstateToJson(this);
 
@@ -91,6 +96,7 @@ class Worldstate extends Equatable {
         cetusCycle,
         vallisCycle,
         nightwave,
+        sentientOutpost,
         arbitration
       ];
 
@@ -110,6 +116,7 @@ class Worldstate extends Equatable {
     Earth cetusCycle,
     Vallis vallisCycle,
     Nightwave nightwave,
+    SentientOutpost sentientOutpost,
     Arbitration arbitration,
   }) {
     return Worldstate(
@@ -128,6 +135,7 @@ class Worldstate extends Equatable {
       cetusCycle: cetusCycle ?? this.cetusCycle,
       vallisCycle: vallisCycle ?? this.vallisCycle,
       nightwave: nightwave ?? this.nightwave,
+      sentientOutpost: sentientOutpost ?? this.sentientOutpost,
       arbitration: arbitration ?? this.arbitration,
     );
   }
