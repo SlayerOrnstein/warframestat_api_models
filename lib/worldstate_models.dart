@@ -11,6 +11,7 @@ export 'src/models/worldstate/nightwave.dart';
 export 'src/models/worldstate/orbvallis.dart';
 export 'src/models/worldstate/persistent_enemies.dart';
 export 'src/models/worldstate/reward.dart';
+export 'src/models/worldstate/sentient_outpost.dart';
 export 'src/models/worldstate/sortie.dart';
 export 'src/models/worldstate/syndicate.dart';
 export 'src/models/worldstate/trader.dart';

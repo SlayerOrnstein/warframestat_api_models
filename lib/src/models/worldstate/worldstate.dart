@@ -58,19 +58,19 @@ class Worldstate extends Equatable {
   final Nightwave nightwave;
   final Arbitration arbitration;
 
-  bool get isAlertActive => alerts?.isNotEmpty ?? false;
+  bool get alertsActive => alerts?.isNotEmpty ?? false;
 
-  bool get isEventActive => events?.isNotEmpty ?? false;
+  bool get eventsActive => events?.isNotEmpty ?? false;
 
-  bool get areAcolytesActive => persistentEnemies?.isNotEmpty ?? false;
+  bool get acolytesActive => persistentEnemies?.isNotEmpty ?? false;
 
-  bool get areDealsActive {
+  bool get dealsActive {
     final deals = dailyDeals..retainWhere((d) => d.total - d.sold != 0);
 
     return deals.isNotEmpty ?? false;
   }
 
-  bool get activeArbitration => arbitration?.node != null;
+  bool get arbitrationActive => arbitration?.node != null;
 
   Map<String, dynamic> toJson() => _$WorldstateToJson(this);
 
