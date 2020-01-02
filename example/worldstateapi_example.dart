@@ -10,5 +10,4 @@ Future<void> main() async {
   final worldstate = Worldstate.fromJson(worldstateJson);
 
   print(worldstate.timestamp); //prints the generated timestamp from worldstate
-  print(worldstate.activeArbitration);
 }
