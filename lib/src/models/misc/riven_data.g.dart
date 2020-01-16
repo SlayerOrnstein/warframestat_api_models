@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'riven_mod.dart';
+part of 'riven_data.dart';
 
 // **************************************************************************
 // CopyWithGenerator
 // **************************************************************************
 
-extension $RivenModCopyWith on RivenMod {
-  RivenMod copyWith({
+extension $RivenDataCopyWith on RivenData {
+  RivenData copyWith({
     RivenRoll rerolled,
     RivenRoll unrolled,
   }) {
-    return RivenMod(
+    return RivenData(
       rerolled: rerolled ?? this.rerolled,
       unrolled: unrolled ?? this.unrolled,
     );
@@ -22,8 +22,8 @@ extension $RivenModCopyWith on RivenMod {
 // JsonSerializableGenerator
 // **************************************************************************
 
-RivenMod _$RivenModFromJson(Map<String, dynamic> json) {
-  return RivenMod(
+RivenData _$RivenDataFromJson(Map<String, dynamic> json) {
+  return RivenData(
     rerolled: json['rerolled'] == null
         ? null
         : RivenRoll.fromJson(json['rerolled'] as Map<String, dynamic>),
@@ -33,7 +33,7 @@ RivenMod _$RivenModFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$RivenModToJson(RivenMod instance) => <String, dynamic>{
+Map<String, dynamic> _$RivenDataToJson(RivenData instance) => <String, dynamic>{
       'rerolled': instance.rerolled,
       'unrolled': instance.unrolled,
     };
