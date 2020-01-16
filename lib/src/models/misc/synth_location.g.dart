@@ -3,6 +3,32 @@
 part of 'synth_location.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+extension $SynthLocationCopyWith on SynthLocation {
+  SynthLocation copyWith({
+    String lastVerified,
+    String spawnRate,
+    String level,
+    String faction,
+    String mission,
+    String planet,
+    String type,
+  }) {
+    return SynthLocation(
+      lastVerified: lastVerified ?? this.lastVerified,
+      spawnRate: spawnRate ?? this.spawnRate,
+      level: level ?? this.level,
+      faction: faction ?? this.faction,
+      mission: mission ?? this.mission,
+      planet: planet ?? this.planet,
+      type: type ?? this.type,
+    );
+  }
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

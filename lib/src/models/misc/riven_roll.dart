@@ -1,7 +1,9 @@
+import 'package:copy_with_annotation/copy_with_annotation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'riven_roll.g.dart';
 
+@CopyWith()
 @JsonSerializable()
 class RivenRoll {
   RivenRoll({

@@ -3,6 +3,22 @@
 part of 'synth_target.dart';
 
 // **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+extension $SynthTargetCopyWith on SynthTarget {
+  SynthTarget copyWith({
+    String name,
+    List<SynthLocation> locations,
+  }) {
+    return SynthTarget(
+      name: name ?? this.name,
+      locations: locations ?? this.locations,
+    );
+  }
+}
+
+// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
