@@ -34,7 +34,9 @@ class Event extends WorldstateObject {
   final List<InterimStep> interimSteps;
   final List<Job> jobs;
 
-  num get eventHealth => health ?? (100 - (currentScore / maximumScore) * 100);
+  num get eventHealth {
+    return health ?? (100 - (currentScore ?? 0 / maximumScore ?? 0) * 100);
+  }
 
   List<String> get eventRewards {
     return [
