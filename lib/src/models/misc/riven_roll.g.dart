@@ -3,36 +3,6 @@
 part of 'riven_roll.dart';
 
 // **************************************************************************
-// CopyWithGenerator
-// **************************************************************************
-
-extension $RivenRollCopyWith on RivenRoll {
-  RivenRoll copyWith({
-    String itemType,
-    String compatibility,
-    bool rerolled,
-    double avg,
-    double stddev,
-    double median,
-    int min,
-    int max,
-    int pop,
-  }) {
-    return RivenRoll(
-      itemType: itemType ?? this.itemType,
-      compatibility: compatibility ?? this.compatibility,
-      rerolled: rerolled ?? this.rerolled,
-      avg: avg ?? this.avg,
-      stddev: stddev ?? this.stddev,
-      median: median ?? this.median,
-      min: min ?? this.min,
-      max: max ?? this.max,
-      pop: pop ?? this.pop,
-    );
-  }
-}
-
-// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 

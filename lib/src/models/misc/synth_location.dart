@@ -1,11 +1,10 @@
-import 'package:copy_with_annotation/copy_with_annotation.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'synth_location.g.dart';
 
-@CopyWith()
 @JsonSerializable()
-class SynthLocation {
+class SynthLocation extends Equatable {
   const SynthLocation({
     this.lastVerified,
     this.level,
@@ -29,4 +28,9 @@ class SynthLocation {
   final String mission, planet, type;
 
   Map<String, dynamic> toJson() => _$SynthLocationToJson(this);
+
+  @override
+  List<Object> get props {
+    return [lastVerified, level, faction, spawnRate, mission, planet, type];
+  }
 }

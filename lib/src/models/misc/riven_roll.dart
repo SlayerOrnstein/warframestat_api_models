@@ -1,12 +1,11 @@
-import 'package:copy_with_annotation/copy_with_annotation.dart';
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'riven_roll.g.dart';
 
-@CopyWith()
 @JsonSerializable()
-class RivenRoll {
-  RivenRoll({
+class RivenRoll extends Equatable {
+  const RivenRoll({
     this.itemType,
     this.compatibility,
     this.rerolled,
@@ -28,4 +27,19 @@ class RivenRoll {
   final int min, max, pop;
 
   Map<String, dynamic> toJson() => _$RivenRollToJson(this);
+
+  @override
+  List<Object> get props {
+    return [
+      itemType,
+      compatibility,
+      rerolled,
+      avg,
+      stddev,
+      median,
+      min,
+      max,
+      pop
+    ];
+  }
 }

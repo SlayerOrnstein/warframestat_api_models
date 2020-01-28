@@ -3,22 +3,6 @@
 part of 'riven_data.dart';
 
 // **************************************************************************
-// CopyWithGenerator
-// **************************************************************************
-
-extension $RivenDataCopyWith on RivenData {
-  RivenData copyWith({
-    RivenRoll rerolled,
-    RivenRoll unrolled,
-  }) {
-    return RivenData(
-      rerolled: rerolled ?? this.rerolled,
-      unrolled: unrolled ?? this.unrolled,
-    );
-  }
-}
-
-// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
