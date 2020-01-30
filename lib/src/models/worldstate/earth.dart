@@ -31,7 +31,7 @@ class Earth extends CycleObject {
     final now = DateTime.now();
 
     if (super.expiry?.isBefore(now) ?? true) {
-      if (isDay) {
+      if (!isDay) {
         return now.add(isCetus ? cetusDay : earthCycle);
       } else {
         return now.add(isCetus ? cetusNight : earthCycle);
