@@ -18,28 +18,9 @@ class Earth extends CycleObject {
   factory Earth.fromJson(Map<String, dynamic> json) => _$EarthFromJson(json);
 
   final bool isDay;
-
-  @JsonKey(defaultValue: true)
   final bool isCetus;
 
-  @override
-  DateTime get expiry {
-    const earthCycle = Duration(hours: 4);
-    const cetusDay = Duration(minutes: 100);
-    const cetusNight = Duration(minutes: 50);
-
-    final now = DateTime.now();
-
-    if (super.expiry?.isBefore(now) ?? true) {
-      if (!isDay) {
-        return now.add(isCetus ? cetusDay : earthCycle);
-      } else {
-        return now.add(isCetus ? cetusNight : earthCycle);
-      }
-    }
-
-    return super.expiry;
-  }
+  Map<String, dynamic> toJson() => _$EarthToJson(this);
 
   @override
   bool get getStateBool => isDay;
@@ -47,7 +28,8 @@ class Earth extends CycleObject {
   @override
   String get nextState => !isDay ? 'Day' : 'Night';
 
-  Map<String, dynamic> toJson() => _$EarthToJson(this);
+  @override
+  Duration get remaining => expiry.difference(DateTime.now().toUtc());
 
   @override
   List<Object> get props => super.props..add(isDay);

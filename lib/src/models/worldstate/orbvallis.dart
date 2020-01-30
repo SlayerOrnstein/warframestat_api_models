@@ -18,20 +18,7 @@ class Vallis extends CycleObject {
 
   final bool isWarm;
 
-  @override
-  DateTime get expiry {
-    final now = DateTime.now();
-
-    if (super.expiry.isBefore(now)) {
-      if (isWarm) {
-        return now.add(const Duration(minutes: 6, seconds: 40));
-      } else {
-        return now.add(const Duration(minutes: 20));
-      }
-    }
-
-    return super.expiry;
-  }
+  Map<String, dynamic> toJson() => _$VallisToJson(this);
 
   @override
   bool get getStateBool => isWarm;
@@ -39,7 +26,8 @@ class Vallis extends CycleObject {
   @override
   String get nextState => !isWarm ? 'warm' : 'cold';
 
-  Map<String, dynamic> toJson() => _$VallisToJson(this);
+  @override
+  Duration get remaining => expiry.difference(DateTime.now().toUtc());
 
   @override
   List<Object> get props => super.props..add(isWarm);
