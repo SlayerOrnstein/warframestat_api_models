@@ -43,7 +43,7 @@ class Event extends WorldstateObject {
     final _rewards = List<Reward>.from(rewards);
 
     return _rewards
-      ..addAll(interimSteps.map<Reward>((i) => i.reward))
+      ..addAll(interimSteps?.map<Reward>((i) => i.reward) ?? [])
       ..removeWhere((r) => r.itemString.isEmpty);
   }
 
