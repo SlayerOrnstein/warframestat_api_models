@@ -40,7 +40,7 @@ class Event extends WorldstateObject {
   }
 
   List<Reward> get eventRewards {
-    final _rewards = List.from(rewards);
+    final _rewards = List<Reward>.from(rewards);
 
     return _rewards..addAll(interimSteps.map<Reward>((i) => i.reward));
   }
