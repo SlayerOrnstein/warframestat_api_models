@@ -44,7 +44,7 @@ class Event extends WorldstateObject {
 
     return _rewards
       ..addAll(interimSteps.map<Reward>((i) => i.reward))
-      ..removeWhere((r) => r.itemString.isNotEmpty);
+      ..removeWhere((r) => r.itemString.isEmpty);
   }
 
   Map<String, dynamic> toJson() => _$EventToJson(this);
