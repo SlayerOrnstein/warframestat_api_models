@@ -40,7 +40,9 @@ class Event extends WorldstateObject {
   }
 
   List<Reward> get eventRewards {
-    return rewards..addAll(interimSteps.map<Reward>((i) => i.reward));
+    final _rewards = List.from(rewards);
+
+    return _rewards..addAll(interimSteps.map<Reward>((i) => i.reward));
   }
 
   Map<String, dynamic> toJson() => _$EventToJson(this);
