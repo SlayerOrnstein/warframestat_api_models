@@ -39,11 +39,8 @@ class Event extends WorldstateObject {
         (100 - ((currentScore ?? 0.0) / (maximumScore ?? 0.0)) * 100);
   }
 
-  List<String> get eventRewards {
-    return [
-      for (Reward r in rewards.where((r) => r.itemString.isNotEmpty == true))
-        ...r.itemString.split(' + '),
-    ]..sort();
+  List<Reward> get eventRewards {
+    return rewards..addAll(interimSteps.map<Reward>((i) => i.reward));
   }
 
   Map<String, dynamic> toJson() => _$EventToJson(this);
