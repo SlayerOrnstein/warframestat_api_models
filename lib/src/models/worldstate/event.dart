@@ -42,27 +42,31 @@ class Event extends WorldstateObject {
   List<Reward> get eventRewards {
     final _rewards = List<Reward>.from(rewards);
 
-    return _rewards..addAll(interimSteps.map<Reward>((i) => i.reward));
+    return _rewards
+      ..addAll(interimSteps.map<Reward>((i) => i.reward))
+      ..removeWhere((r) => r.itemString.isNotEmpty);
   }
 
   Map<String, dynamic> toJson() => _$EventToJson(this);
 
   @override
-  List<Object> get props => super.props
-    ..addAll([
-      faction,
-      affiliatedWith,
-      description,
-      victimNode,
-      node,
-      tooltip,
-      health,
-      currentScore,
-      maximumScore,
-      rewards,
-      interimSteps,
-      jobs
-    ]);
+  List<Object> get props {
+    return super.props
+      ..addAll([
+        faction,
+        affiliatedWith,
+        description,
+        victimNode,
+        node,
+        tooltip,
+        health,
+        currentScore,
+        maximumScore,
+        rewards,
+        interimSteps,
+        jobs
+      ]);
+  }
 
   @override
   Event copyWith({
