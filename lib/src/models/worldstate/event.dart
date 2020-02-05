@@ -35,8 +35,9 @@ class Event extends WorldstateObject {
   final List<Job> jobs;
 
   double get eventHealth {
-    return health ??
-        (100 - ((currentScore ?? 0.0) / (maximumScore ?? 0.0)) * 100);
+    return (health ??
+            (100 - ((currentScore ?? 0.0) / (maximumScore ?? 0.0)) * 100))
+        .toDouble();
   }
 
   List<Reward> get eventRewards {
