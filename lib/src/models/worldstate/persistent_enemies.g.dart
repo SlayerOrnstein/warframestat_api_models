@@ -24,7 +24,7 @@ PersistentEnemies _$PersistentEnemiesFromJson(Map<String, dynamic> json) {
     fleeDamage: json['fleeDamage'] as int,
     region: json['region'] as int,
     rank: json['rank'] as int,
-    healthPercent: json['healthPercent'] as int,
+    healthPercent: (json['healthPercent'] as num)?.toDouble(),
     isDiscovered: json['isDiscovered'] as bool,
     isUsingTicketing: json['isUsingTicketing'] as bool,
   );

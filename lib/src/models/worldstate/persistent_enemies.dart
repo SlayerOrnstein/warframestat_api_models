@@ -27,7 +27,8 @@ class PersistentEnemies extends WorldstateObject {
 
   final String agentType, locationTag, lastDiscoveredAt;
   final DateTime lastDiscoveredTime;
-  final int fleeDamage, region, rank, healthPercent;
+  final int fleeDamage, region, rank;
+  final double healthPercent;
   final bool isDiscovered, isUsingTicketing;
 
   Map<String, dynamic> toJson() => _$PersistentEnemiesToJson(this);
