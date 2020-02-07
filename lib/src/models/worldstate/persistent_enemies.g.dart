@@ -22,7 +22,6 @@ PersistentEnemies _$PersistentEnemiesFromJson(Map<String, dynamic> json) {
         ? null
         : DateTime.parse(json['lastDiscoveredTime'] as String),
     fleeDamage: json['fleeDamage'] as int,
-    region: json['region'] as int,
     rank: json['rank'] as int,
     healthPercent: (json['healthPercent'] as num)?.toDouble(),
     isDiscovered: json['isDiscovered'] as bool,
@@ -40,7 +39,6 @@ Map<String, dynamic> _$PersistentEnemiesToJson(PersistentEnemies instance) =>
       'lastDiscoveredAt': instance.lastDiscoveredAt,
       'lastDiscoveredTime': instance.lastDiscoveredTime?.toIso8601String(),
       'fleeDamage': instance.fleeDamage,
-      'region': instance.region,
       'rank': instance.rank,
       'healthPercent': instance.healthPercent,
       'isDiscovered': instance.isDiscovered,

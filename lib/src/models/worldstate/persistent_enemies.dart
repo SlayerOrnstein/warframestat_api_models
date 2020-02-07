@@ -15,7 +15,6 @@ class PersistentEnemies extends WorldstateObject {
     this.lastDiscoveredAt,
     this.lastDiscoveredTime,
     this.fleeDamage,
-    this.region,
     this.rank,
     this.healthPercent,
     this.isDiscovered,
@@ -27,7 +26,7 @@ class PersistentEnemies extends WorldstateObject {
 
   final String agentType, locationTag, lastDiscoveredAt;
   final DateTime lastDiscoveredTime;
-  final int fleeDamage, region, rank;
+  final int fleeDamage, rank;
   final double healthPercent;
   final bool isDiscovered, isUsingTicketing;
 
@@ -41,7 +40,6 @@ class PersistentEnemies extends WorldstateObject {
       lastDiscoveredAt,
       lastDiscoveredTime,
       fleeDamage,
-      region,
       rank,
       healthPercent,
       isDiscovered,
@@ -58,7 +56,6 @@ class PersistentEnemies extends WorldstateObject {
     String lastDiscoveredAt,
     DateTime lastDiscoveredTime,
     num fleeDamage,
-    num region,
     num rank,
     num healthPercent,
     bool isDiscovered,
@@ -73,7 +70,6 @@ class PersistentEnemies extends WorldstateObject {
       lastDiscoveredAt: lastDiscoveredAt ?? this.lastDiscoveredAt,
       lastDiscoveredTime: lastDiscoveredTime ?? this.lastDiscoveredTime,
       fleeDamage: fleeDamage ?? this.fleeDamage,
-      region: region ?? this.region,
       rank: rank ?? this.rank,
       healthPercent: healthPercent ?? this.healthPercent,
       isDiscovered: isDiscovered ?? this.isDiscovered,
