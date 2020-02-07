@@ -23,7 +23,7 @@ Vallis _$VallisFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$VallisToJson(Vallis instance) => <String, dynamic>{
       'id': instance.id,
       'activation': instance.activation?.toIso8601String(),
+      'expiry': instance.expiry?.toIso8601String(),
       'state': instance.state,
       'isWarm': instance.isWarm,
-      'expiry': instance.expiry?.toIso8601String(),
     };
