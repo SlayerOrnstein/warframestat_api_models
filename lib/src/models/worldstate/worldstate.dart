@@ -9,6 +9,7 @@ import 'earth.dart';
 import 'event.dart';
 import 'fissure.dart';
 import 'invasions.dart';
+import 'kuva.dart';
 import 'news.dart';
 import 'nightwave.dart';
 import 'orbvallis.dart';
@@ -38,6 +39,7 @@ class Worldstate extends Equatable {
     this.vallisCycle,
     this.nightwave,
     this.sentientOutposts,
+    this.kuva,
     this.arbitration,
   });
 
@@ -59,6 +61,7 @@ class Worldstate extends Equatable {
   final Vallis vallisCycle;
   final Nightwave nightwave;
   final SentientOutpost sentientOutposts;
+  final List<Kuva> kuva;
   final Arbitration arbitration;
 
   bool get alertsActive => alerts?.isNotEmpty ?? false;
@@ -97,46 +100,7 @@ class Worldstate extends Equatable {
         vallisCycle,
         nightwave,
         sentientOutposts,
+        kuva,
         arbitration
       ];
-
-  Worldstate copyWith({
-    String timestamp,
-    List<OrbiterNews> news,
-    Event events,
-    List<Alert> alerts,
-    Sortie sortie,
-    List<Syndicate> syndicateMissions,
-    List<VoidFissure> fissures,
-    List<Invasion> invasions,
-    VoidTrader voidTrader,
-    List<DarvoDeal> dailyDeals,
-    List<PersistentEnemies> persistentEnemies,
-    Earth earthCycle,
-    Earth cetusCycle,
-    Vallis vallisCycle,
-    Nightwave nightwave,
-    SentientOutpost sentientOutpost,
-    Arbitration arbitration,
-  }) {
-    return Worldstate(
-      timestamp: timestamp ?? this.timestamp,
-      news: news ?? this.news,
-      events: events ?? this.events,
-      alerts: alerts ?? this.alerts,
-      sortie: sortie ?? this.sortie,
-      syndicateMissions: syndicateMissions ?? this.syndicateMissions,
-      fissures: fissures ?? this.fissures,
-      invasions: invasions ?? this.invasions,
-      voidTrader: voidTrader ?? this.voidTrader,
-      dailyDeals: dailyDeals ?? this.dailyDeals,
-      persistentEnemies: persistentEnemies ?? this.persistentEnemies,
-      earthCycle: earthCycle ?? this.earthCycle,
-      cetusCycle: cetusCycle ?? this.cetusCycle,
-      vallisCycle: vallisCycle ?? this.vallisCycle,
-      nightwave: nightwave ?? this.nightwave,
-      sentientOutposts: sentientOutpost ?? this.sentientOutposts,
-      arbitration: arbitration ?? this.arbitration,
-    );
-  }
 }
