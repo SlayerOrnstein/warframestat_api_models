@@ -6,6 +6,7 @@ export 'src/models/worldstate/event.dart';
 export 'src/models/worldstate/fissure.dart';
 export 'src/models/worldstate/invasions.dart';
 export 'src/models/worldstate/job.dart';
+export 'src/models/worldstate/kuva.dart';
 export 'src/models/worldstate/news.dart';
 export 'src/models/worldstate/nightwave.dart';
 export 'src/models/worldstate/orbvallis.dart';
