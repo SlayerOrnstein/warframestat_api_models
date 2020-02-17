@@ -49,39 +49,4 @@ class Invasion extends WorldstateObject {
       attackerReward,
       defenderReward,
     ]);
-
-  @override
-  Invasion copyWith({
-    String id,
-    DateTime activation,
-    DateTime expiry,
-    String node,
-    String desc,
-    String attackingFaction,
-    String defendingFaction,
-    String eta,
-    bool vsInfestation,
-    bool completed,
-    num completion,
-    num count,
-    Reward attackerReward,
-    Reward defenderReward,
-  }) {
-    return Invasion(
-      id: id ?? this.id,
-      activation: activation ?? this.activation,
-      expiry: expiry ?? this.expiry,
-      node: node ?? this.node,
-      desc: desc ?? this.desc,
-      attackingFaction: attackingFaction ?? this.attackingFaction,
-      defendingFaction: defendingFaction ?? this.defendingFaction,
-      eta: eta ?? this.eta,
-      vsInfestation: vsInfestation ?? this.vsInfestation,
-      completed: completed ?? this.completed,
-      completion: completion ?? this.completion,
-      count: count ?? this.count,
-      attackerReward: attackerReward ?? attackerReward,
-      defenderReward: defenderReward ?? defenderReward,
-    );
-  }
 }

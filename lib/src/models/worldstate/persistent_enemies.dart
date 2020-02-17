@@ -45,35 +45,4 @@ class PersistentEnemies extends WorldstateObject {
       isDiscovered,
       isUsingTicketing
     ]);
-
-  @override
-  WorldstateObject copyWith({
-    String id,
-    DateTime activation,
-    DateTime expiry,
-    String agentType,
-    String locationTag,
-    String lastDiscoveredAt,
-    DateTime lastDiscoveredTime,
-    num fleeDamage,
-    num rank,
-    num healthPercent,
-    bool isDiscovered,
-    bool isUsingTicketing,
-  }) {
-    return PersistentEnemies(
-      id: id ?? this.id,
-      activation: activation ?? this.activation,
-      expiry: expiry ?? this.expiry,
-      agentType: agentType ?? this.agentType,
-      locationTag: locationTag ?? this.locationTag,
-      lastDiscoveredAt: lastDiscoveredAt ?? this.lastDiscoveredAt,
-      lastDiscoveredTime: lastDiscoveredTime ?? this.lastDiscoveredTime,
-      fleeDamage: fleeDamage ?? this.fleeDamage,
-      rank: rank ?? this.rank,
-      healthPercent: healthPercent ?? this.healthPercent,
-      isDiscovered: isDiscovered ?? this.isDiscovered,
-      isUsingTicketing: isUsingTicketing ?? this.isUsingTicketing,
-    );
-  }
 }

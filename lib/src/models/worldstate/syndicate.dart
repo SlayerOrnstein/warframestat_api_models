@@ -29,23 +29,4 @@ class Syndicate extends WorldstateObject {
 
   @override
   List<Object> get props => super.props..addAll([name, active, jobs]);
-
-  @override
-  Syndicate copyWith({
-    String id,
-    DateTime activation,
-    DateTime expiry,
-    String name,
-    bool active,
-    List<Job> jobs,
-  }) {
-    return Syndicate(
-      id: id ?? this.id,
-      activation: activation ?? this.activation,
-      expiry: expiry ?? this.expiry,
-      name: name ?? this.name,
-      active: active ?? this.active,
-      jobs: jobs ?? this.jobs,
-    );
-  }
 }

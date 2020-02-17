@@ -33,23 +33,4 @@ class Earth extends CycleObject {
 
   @override
   List<Object> get props => super.props..add(isDay);
-
-  @override
-  Earth copyWith({
-    String id,
-    DateTime activation,
-    DateTime expiry,
-    String state,
-    bool isDay,
-    bool isCetus,
-  }) {
-    return Earth(
-      id: id ?? this.id,
-      activation: activation ?? this.activation,
-      expiry: expiry ?? this.expiry,
-      state: state ?? this.state,
-      isDay: isDay ?? this.isDay,
-      isCetus: isCetus ?? this.isCetus,
-    );
-  }
 }

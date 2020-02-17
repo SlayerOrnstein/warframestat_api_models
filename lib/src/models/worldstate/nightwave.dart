@@ -60,35 +60,6 @@ class Nightwave extends WorldstateObject {
       activeChallenges,
       rewardTypes,
     ]);
-
-  @override
-  WorldstateObject copyWith({
-    String id,
-    DateTime activation,
-    DateTime expiry,
-    String startString,
-    String tag,
-    bool active,
-    num season,
-    num phase,
-    List<Challenge> possibleChallenges,
-    List<Challenge> activeChallenges,
-    List<String> rewardTypes,
-  }) {
-    return Nightwave(
-      id: id ?? this.id,
-      activation: activation ?? this.activation,
-      expiry: expiry ?? expiry,
-      startString: startString ?? this.startString,
-      tag: tag ?? this.tag,
-      active: active ?? this.active,
-      season: season ?? this.season,
-      phase: phase ?? this.phase,
-      possibleChallenges: possibleChallenges ?? this.possibleChallenges,
-      activeChallenges: activeChallenges ?? this.activeChallenges,
-      rewardTypes: rewardTypes ?? this.rewardTypes,
-    );
-  }
 }
 
 @JsonSerializable()
@@ -118,30 +89,4 @@ class Challenge extends WorldstateObject {
   @override
   List<Object> get props => super.props
     ..addAll([startString, desc, title, active, isDaily, isElite, reputation]);
-
-  @override
-  WorldstateObject copyWith({
-    String id,
-    DateTime activation,
-    DateTime expiry,
-    String startString,
-    String desc,
-    String title,
-    bool active,
-    bool isDaily,
-    bool isElite,
-    num reputation,
-  }) {
-    return Challenge(
-      id: id ?? this.id,
-      activation: activation ?? this.activation,
-      expiry: expiry ?? this.expiry,
-      startString: startString ?? this.startString,
-      desc: desc ?? this.desc,
-      title: title ?? this.title,
-      active: active ?? this.active,
-      isDaily: isDaily ?? this.isElite,
-      reputation: reputation ?? this.reputation,
-    );
-  }
 }

@@ -12,4 +12,6 @@ Future<void> main() async {
   print(worldstate.timestamp); //prints the generated timestamp from worldstate
 
   print(worldstate.events.first.eventHealth);
+
+  print(worldstate.cetusCycle.expiry.isUtc);
 }

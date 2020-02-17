@@ -31,31 +31,4 @@ class VoidFissure extends WorldstateObject {
   @override
   List<Object> get props => super.props
     ..addAll([node, missionType, enemy, tier, tierNum, active, expired]);
-
-  @override
-  VoidFissure copyWith({
-    String id,
-    DateTime activation,
-    DateTime expiry,
-    String node,
-    String missionType,
-    String enemy,
-    String tier,
-    int tierNum,
-    bool active,
-    bool expired,
-  }) {
-    return VoidFissure(
-      id: id ?? this.id,
-      activation: activation ?? this.activation,
-      expiry: expiry ?? this.expiry,
-      node: node ?? this.node,
-      missionType: missionType ?? this.missionType,
-      enemy: enemy ?? this.enemy,
-      tier: tier ?? this.tier,
-      tierNum: tierNum ?? this.tierNum,
-      active: active ?? this.active,
-      expired: expired ?? this.expired,
-    );
-  }
 }

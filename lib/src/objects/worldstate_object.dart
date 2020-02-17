@@ -14,8 +14,12 @@ abstract class WorldstateObject extends Equatable {
   final String id;
   final DateTime activation, expiry;
 
+  Duration get remaining => expiry.toLocal().difference(DateTime.now());
+
   @override
   List<Object> get props => [id, activation, expiry];
 
-  WorldstateObject copyWith();
+  // String _timestampFormatting(String locale) {
+  //   final format = DateFormat();
+  // }
 }

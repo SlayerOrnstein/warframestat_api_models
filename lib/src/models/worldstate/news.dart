@@ -43,31 +43,4 @@ class OrbiterNews extends WorldstateObject {
       stream,
       translations
     ]);
-
-  @override
-  OrbiterNews copyWith({
-    String id,
-    String message,
-    String link,
-    String imageLink,
-    DateTime date,
-    bool priority,
-    bool update,
-    bool primeAccess,
-    bool stream,
-    Map<String, String> translations,
-  }) {
-    return OrbiterNews(
-      id: id ?? this.id,
-      message: message ?? this.message,
-      link: link ?? this.link,
-      imageLink: imageLink ?? this.imageLink,
-      date: date ?? this.date,
-      priority: priority ?? this.priority,
-      update: update ?? this.update,
-      primeAccess: primeAccess ?? this.primeAccess,
-      stream: stream ?? this.stream,
-      translations: translations ?? this.translations,
-    );
-  }
 }

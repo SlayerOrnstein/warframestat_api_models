@@ -68,42 +68,6 @@ class Event extends WorldstateObject {
         jobs
       ]);
   }
-
-  @override
-  Event copyWith({
-    String id,
-    DateTime activation,
-    DateTime expiry,
-    String faction,
-    String affiliatedWith,
-    String description,
-    String victimNode,
-    String node,
-    String tooltip,
-    num health,
-    num currentScore,
-    num maximumScore,
-    List<Reward> rewards,
-    List<InterimStep> interimSteps,
-    List<Job> jobs,
-  }) {
-    return Event(
-      id: id ?? this.id,
-      activation: activation ?? this.activation,
-      expiry: expiry ?? this.expiry,
-      faction: faction ?? this.faction,
-      description: description ?? this.description,
-      victimNode: victimNode ?? this.victimNode,
-      node: node ?? this.node,
-      tooltip: tooltip ?? this.tooltip,
-      health: health ?? this.health,
-      currentScore: currentScore ?? this.currentScore,
-      maximumScore: maximumScore ?? this.maximumScore,
-      rewards: rewards ?? this.rewards,
-      interimSteps: interimSteps ?? this.interimSteps,
-      jobs: jobs ?? this.jobs,
-    );
-  }
 }
 
 @JsonSerializable()
@@ -117,8 +81,4 @@ class InterimStep {
   Reward reward;
 
   Map<String, dynamic> toJson() => _$InterimStepToJson(this);
-
-  InterimStep copyWith({int goal, Reward reward}) {
-    return InterimStep(goal: goal ?? this.goal, reward: reward ?? this.reward);
-  }
 }

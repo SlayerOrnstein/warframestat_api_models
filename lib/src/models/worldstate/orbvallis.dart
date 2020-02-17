@@ -31,21 +31,4 @@ class Vallis extends CycleObject {
 
   @override
   List<Object> get props => super.props..add(isWarm);
-
-  @override
-  Vallis copyWith({
-    String id,
-    DateTime activation,
-    DateTime expiry,
-    String state,
-    bool isWarm,
-  }) {
-    return Vallis(
-      id: id ?? this.id,
-      activation: activation ?? this.activation,
-      expiry: expiry ?? this.expiry,
-      state: state ?? this.state,
-      isWarm: isWarm ?? this.isWarm,
-    );
-  }
 }

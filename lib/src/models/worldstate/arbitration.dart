@@ -50,35 +50,4 @@ class Arbitration extends WorldstateObject {
       archwing,
       sharkwing
     ]);
-
-  @override
-  Arbitration copyWith({
-    DateTime activation,
-    DateTime expiry,
-    String solnode,
-    String node,
-    String name,
-    String title,
-    String planet,
-    String enemy,
-    String type,
-    String nodeType,
-    bool archwing,
-    bool sharkwing,
-  }) {
-    return Arbitration(
-      activation: activation ?? activation,
-      expiry: expiry ?? this.expiry,
-      solnode: solnode ?? this.solnode,
-      node: node ?? this.node,
-      name: name ?? this.name,
-      title: title ?? this.title,
-      planet: planet ?? this.planet,
-      enemy: enemy ?? this.enemy,
-      type: type ?? this.type,
-      nodeType: nodeType ?? this.nodeType,
-      archwing: archwing ?? this.archwing,
-      sharkwing: sharkwing ?? this.sharkwing,
-    );
-  }
 }

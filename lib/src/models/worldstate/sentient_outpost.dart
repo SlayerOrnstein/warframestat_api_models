@@ -26,21 +26,4 @@ class SentientOutpost extends WorldstateObject {
   final bool active;
 
   Map<String, dynamic> toJson() => _$SentientOutpostToJson(this);
-
-  @override
-  SentientOutpost copyWith({
-    String id,
-    DateTime activation,
-    DateTime expiry,
-    Mission mission,
-    bool active,
-  }) {
-    return SentientOutpost(
-      id: id ?? this.id,
-      activation: activation ?? this.activation,
-      expiry: expiry ?? this.expiry,
-      mission: mission ?? this.mission,
-      active: active ?? this.active,
-    );
-  }
 }

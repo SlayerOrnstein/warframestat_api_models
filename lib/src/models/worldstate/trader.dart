@@ -34,27 +34,6 @@ class VoidTrader extends WorldstateObject {
   @override
   List<Object> get props =>
       super.props..addAll([character, location, active, inventory]);
-
-  @override
-  VoidTrader copyWith({
-    String id,
-    DateTime activation,
-    DateTime expiry,
-    String character,
-    String location,
-    bool active,
-    List<InventoryItem> inventory,
-  }) {
-    return VoidTrader(
-      id: id ?? this.id,
-      activation: activation ?? this.activation,
-      expiry: expiry ?? this.expiry,
-      character: character ?? this.character,
-      location: location ?? this.location,
-      active: active ?? this.active,
-      inventory: inventory ?? this.inventory,
-    );
-  }
 }
 
 @JsonSerializable()
@@ -73,12 +52,4 @@ class InventoryItem extends Equatable {
 
   @override
   List<Object> get props => [itemName, ducats, credits];
-
-  InventoryItem copyWith({String itemName, int ducats, int credits}) {
-    return InventoryItem(
-      itemName: itemName ?? this.itemName,
-      ducats: ducats ?? this.ducats,
-      credits: credits ?? this.credits,
-    );
-  }
 }

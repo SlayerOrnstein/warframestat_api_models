@@ -25,25 +25,6 @@ class Sortie extends WorldstateObject {
 
   @override
   List<Object> get props => super.props..addAll([boss, faction, variants]);
-
-  @override
-  Sortie copyWith({
-    String id,
-    DateTime activation,
-    DateTime expiry,
-    String boss,
-    String faction,
-    List<Variant> variants,
-  }) {
-    return Sortie(
-      id: id ?? this.id,
-      activation: activation ?? this.activation,
-      expiry: expiry ?? this.expiry,
-      boss: boss ?? this.boss,
-      faction: faction ?? this.faction,
-      variants: variants ?? this.variants,
-    );
-  }
 }
 
 @JsonSerializable()
@@ -64,18 +45,4 @@ class Variant extends Equatable {
 
   @override
   List<Object> get props => [missionType, modifier, modifierDescription, node];
-
-  Variant copyWith({
-    String missionType,
-    String modifier,
-    String modifierDescription,
-    String node,
-  }) {
-    return Variant(
-      missionType: missionType ?? this.missionType,
-      modifier: modifier ?? this.modifier,
-      modifierDescription: modifierDescription ?? this.modifierDescription,
-      node: node ?? this.node,
-    );
-  }
 }
