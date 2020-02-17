@@ -66,6 +66,10 @@ Worldstate _$WorldstateFromJson(Map<String, dynamic> json) {
         ? null
         : SentientOutpost.fromJson(
             json['sentientOutposts'] as Map<String, dynamic>),
+    kuva: (json['kuva'] as List)
+        ?.map(
+            (e) => e == null ? null : Kuva.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
     arbitration: json['arbitration'] == null
         ? null
         : Arbitration.fromJson(json['arbitration'] as Map<String, dynamic>),
@@ -90,5 +94,6 @@ Map<String, dynamic> _$WorldstateToJson(Worldstate instance) =>
       'vallisCycle': instance.vallisCycle,
       'nightwave': instance.nightwave,
       'sentientOutposts': instance.sentientOutposts,
+      'kuva': instance.kuva,
       'arbitration': instance.arbitration,
     };

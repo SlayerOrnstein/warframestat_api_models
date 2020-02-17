@@ -76,6 +76,8 @@ class Worldstate extends Equatable {
     return deals.isNotEmpty ?? false;
   }
 
+  bool get kuvaActive => kuva?.isNotEmpty ?? false;
+
   bool get arbitrationActive => arbitration?.node != null;
 
   bool get outpostActive => sentientOutposts.active;
