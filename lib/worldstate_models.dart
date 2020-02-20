@@ -1,5 +1,6 @@
 export 'src/models/worldstate/alerts.dart';
 export 'src/models/worldstate/arbitration.dart';
+export 'src/models/worldstate/construction_progress.dart';
 export 'src/models/worldstate/deals.dart';
 export 'src/models/worldstate/earth.dart';
 export 'src/models/worldstate/event.dart';

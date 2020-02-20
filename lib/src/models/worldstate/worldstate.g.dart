@@ -56,6 +56,10 @@ Worldstate _$WorldstateFromJson(Map<String, dynamic> json) {
     cetusCycle: json['cetusCycle'] == null
         ? null
         : Earth.fromJson(json['cetusCycle'] as Map<String, dynamic>),
+    constructionProgress: json['constructionProgress'] == null
+        ? null
+        : ConstructionProgress.fromJson(
+            json['constructionProgress'] as Map<String, dynamic>),
     vallisCycle: json['vallisCycle'] == null
         ? null
         : Vallis.fromJson(json['vallisCycle'] as Map<String, dynamic>),
@@ -91,6 +95,7 @@ Map<String, dynamic> _$WorldstateToJson(Worldstate instance) =>
       'persistentEnemies': instance.persistentEnemies,
       'earthCycle': instance.earthCycle,
       'cetusCycle': instance.cetusCycle,
+      'constructionProgress': instance.constructionProgress,
       'vallisCycle': instance.vallisCycle,
       'nightwave': instance.nightwave,
       'sentientOutposts': instance.sentientOutposts,

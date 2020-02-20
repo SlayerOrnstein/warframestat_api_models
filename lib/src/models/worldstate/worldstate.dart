@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:worldstate_api_model/src/models/worldstate/construction_progress.dart';
 import 'package:worldstate_api_model/src/models/worldstate/sentient_outpost.dart';
 
 import 'alerts.dart';
@@ -36,6 +37,7 @@ class Worldstate extends Equatable {
     this.persistentEnemies,
     this.earthCycle,
     this.cetusCycle,
+    this.constructionProgress,
     this.vallisCycle,
     this.nightwave,
     this.sentientOutposts,
@@ -58,6 +60,7 @@ class Worldstate extends Equatable {
   final List<DarvoDeal> dailyDeals;
   final List<PersistentEnemies> persistentEnemies;
   final Earth earthCycle, cetusCycle;
+  final ConstructionProgress constructionProgress;
   final Vallis vallisCycle;
   final Nightwave nightwave;
   final SentientOutpost sentientOutposts;
@@ -85,24 +88,27 @@ class Worldstate extends Equatable {
   Map<String, dynamic> toJson() => _$WorldstateToJson(this);
 
   @override
-  List<Object> get props => [
-        timestamp,
-        news,
-        events,
-        alerts,
-        sortie,
-        syndicateMissions,
-        fissures,
-        invasions,
-        voidTrader,
-        dailyDeals,
-        persistentEnemies,
-        earthCycle,
-        cetusCycle,
-        vallisCycle,
-        nightwave,
-        sentientOutposts,
-        kuva,
-        arbitration
-      ];
+  List<Object> get props {
+    return [
+      timestamp,
+      news,
+      events,
+      alerts,
+      sortie,
+      syndicateMissions,
+      fissures,
+      invasions,
+      voidTrader,
+      dailyDeals,
+      persistentEnemies,
+      earthCycle,
+      cetusCycle,
+      constructionProgress,
+      vallisCycle,
+      nightwave,
+      sentientOutposts,
+      kuva,
+      arbitration
+    ];
+  }
 }
