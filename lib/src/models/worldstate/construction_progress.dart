@@ -16,9 +16,7 @@ class ConstructionProgress extends WorldstateObject {
     return _$ConstructionProgressFromJson(json);
   }
 
-  final double fomorianProgress;
-  final double razorbackProgress;
-  final double unknownProgress;
+  final String fomorianProgress, razorbackProgress, unknownProgress;
 
   Map<String, dynamic> toJson() => _$ConstructionProgressToJson(this);
 }

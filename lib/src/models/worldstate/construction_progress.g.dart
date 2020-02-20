@@ -9,9 +9,9 @@ part of 'construction_progress.dart';
 ConstructionProgress _$ConstructionProgressFromJson(Map<String, dynamic> json) {
   return ConstructionProgress(
     id: json['id'] as String,
-    fomorianProgress: (json['fomorianProgress'] as num)?.toDouble(),
-    razorbackProgress: (json['razorbackProgress'] as num)?.toDouble(),
-    unknownProgress: (json['unknownProgress'] as num)?.toDouble(),
+    fomorianProgress: json['fomorianProgress'] as String,
+    razorbackProgress: json['razorbackProgress'] as String,
+    unknownProgress: json['unknownProgress'] as String,
   );
 }
 
