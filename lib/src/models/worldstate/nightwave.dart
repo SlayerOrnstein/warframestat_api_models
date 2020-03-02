@@ -30,36 +30,22 @@ class Nightwave extends WorldstateObject {
   final List<Challenge> possibleChallenges, activeChallenges;
   final List<String> rewardTypes;
 
-  List<Challenge> dailyChallenges() {
-    return activeChallenges.where((c) => c.isDaily == true).toList()
-      ..sort((a, b) => a.expiry.compareTo(b.expiry));
-  }
-
-  List<Challenge> weeklyChallenges() {
-    return activeChallenges.where((c) => c.isDaily == null).toList()
-      ..sort((a, b) {
-        if (a.isElite ?? false) {
-          return 0;
-        } else {
-          return 1;
-        }
-      });
-  }
-
   Map<String, dynamic> toJson() => _$NightwaveToJson(this);
 
   @override
-  List<Object> get props => super.props
-    ..addAll([
-      startString,
-      tag,
-      active,
-      season,
-      phase,
-      possibleChallenges,
-      activeChallenges,
-      rewardTypes,
-    ]);
+  List<Object> get props {
+    return super.props
+      ..addAll([
+        startString,
+        tag,
+        active,
+        season,
+        phase,
+        possibleChallenges,
+        activeChallenges,
+        rewardTypes,
+      ]);
+  }
 }
 
 @JsonSerializable()
@@ -87,6 +73,9 @@ class Challenge extends WorldstateObject {
   Map<String, dynamic> toJson() => _$ChallengeToJson(this);
 
   @override
-  List<Object> get props => super.props
-    ..addAll([startString, desc, title, active, isDaily, isElite, reputation]);
+  List<Object> get props {
+    return super.props
+      ..addAll(
+          [startString, desc, title, active, isDaily, isElite, reputation]);
+  }
 }

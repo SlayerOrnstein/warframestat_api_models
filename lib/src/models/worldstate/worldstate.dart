@@ -67,24 +67,6 @@ class Worldstate extends Equatable {
   final List<Kuva> kuva;
   final Arbitration arbitration;
 
-  bool get alertsActive => alerts?.isNotEmpty ?? false;
-
-  bool get eventsActive => events?.isNotEmpty ?? false;
-
-  bool get acolytesActive => persistentEnemies?.isNotEmpty ?? false;
-
-  bool get dealsActive {
-    final deals = dailyDeals..retainWhere((d) => d.total - d.sold != 0);
-
-    return deals.isNotEmpty ?? false;
-  }
-
-  bool get kuvaActive => kuva?.isNotEmpty ?? false;
-
-  bool get arbitrationActive => arbitration?.node != null;
-
-  bool get outpostActive => sentientOutposts.active;
-
   Map<String, dynamic> toJson() => _$WorldstateToJson(this);
 
   @override
