@@ -8,8 +8,7 @@ environment:
 
 dependencies:
   json_annotation: ^3.0.1
-  equatable: ^1.0.1
-  
+  equatable: ^1.1.1
 
 dev_dependencies:
   extra_pedantic: ^1.1.1+3

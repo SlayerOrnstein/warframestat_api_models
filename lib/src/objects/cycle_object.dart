@@ -14,8 +14,6 @@ abstract class CycleObject extends WorldstateObject {
 
   String get nextState;
 
-  Duration get remaining;
-
   @override
   List<Object> get props => super.props..add(state);
 }
