@@ -18,6 +18,6 @@ RivenData _$RivenDataFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$RivenDataToJson(RivenData instance) => <String, dynamic>{
-      'rerolled': instance.rerolled,
-      'unrolled': instance.unrolled,
+      'rerolled': instance.rerolled?.toJson(),
+      'unrolled': instance.unrolled?.toJson(),
     };

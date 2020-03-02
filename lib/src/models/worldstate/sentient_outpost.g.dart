@@ -27,6 +27,6 @@ Map<String, dynamic> _$SentientOutpostToJson(SentientOutpost instance) =>
       'id': instance.id,
       'activation': instance.activation?.toIso8601String(),
       'expiry': instance.expiry?.toIso8601String(),
-      'mission': instance.mission,
+      'mission': instance.mission?.toJson(),
       'active': instance.active,
     };

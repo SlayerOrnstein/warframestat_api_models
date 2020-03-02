@@ -29,5 +29,5 @@ Map<String, dynamic> _$SyndicateToJson(Syndicate instance) => <String, dynamic>{
       'expiry': instance.expiry?.toIso8601String(),
       'syndicate': instance.name,
       'active': instance.active,
-      'jobs': instance.jobs,
+      'jobs': instance.jobs?.map((e) => e?.toJson())?.toList(),
     };

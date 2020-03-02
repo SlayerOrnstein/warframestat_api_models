@@ -24,7 +24,7 @@ Map<String, dynamic> _$RewardToJson(Reward instance) => <String, dynamic>{
       'thumbnail': instance.thumbnail,
       'asString': instance.asString,
       'credits': instance.credits,
-      'countedItems': instance.countedItems,
+      'countedItems': instance.countedItems?.map((e) => e?.toJson())?.toList(),
     };
 
 CountedItem _$CountedItemFromJson(Map<String, dynamic> json) {

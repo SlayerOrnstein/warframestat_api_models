@@ -30,7 +30,7 @@ Map<String, dynamic> _$SortieToJson(Sortie instance) => <String, dynamic>{
       'expiry': instance.expiry?.toIso8601String(),
       'boss': instance.boss,
       'faction': instance.faction,
-      'variants': instance.variants,
+      'variants': instance.variants?.map((e) => e?.toJson())?.toList(),
     };
 
 Variant _$VariantFromJson(Map<String, dynamic> json) {

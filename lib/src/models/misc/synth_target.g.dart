@@ -20,5 +20,5 @@ SynthTarget _$SynthTargetFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$SynthTargetToJson(SynthTarget instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'locations': instance.locations,
+      'locations': instance.locations?.map((e) => e?.toJson())?.toList(),
     };

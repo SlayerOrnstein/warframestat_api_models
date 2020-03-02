@@ -35,7 +35,7 @@ Map<String, dynamic> _$VoidTraderToJson(VoidTrader instance) =>
       'character': instance.character,
       'location': instance.location,
       'active': instance.active,
-      'inventory': instance.inventory,
+      'inventory': instance.inventory?.map((e) => e?.toJson())?.toList(),
     };
 
 InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) {

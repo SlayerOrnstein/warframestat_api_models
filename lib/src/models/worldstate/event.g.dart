@@ -51,9 +51,9 @@ Map<String, dynamic> _$EventToJson(Event instance) => <String, dynamic>{
       'health': instance.health,
       'currentScore': instance.currentScore,
       'maximumScore': instance.maximumScore,
-      'rewards': instance.rewards,
-      'interimSteps': instance.interimSteps,
-      'jobs': instance.jobs,
+      'rewards': instance.rewards?.map((e) => e?.toJson())?.toList(),
+      'interimSteps': instance.interimSteps?.map((e) => e?.toJson())?.toList(),
+      'jobs': instance.jobs?.map((e) => e?.toJson())?.toList(),
     };
 
 InterimStep _$InterimStepFromJson(Map<String, dynamic> json) {
@@ -68,5 +68,5 @@ InterimStep _$InterimStepFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$InterimStepToJson(InterimStep instance) =>
     <String, dynamic>{
       'goal': instance.goal,
-      'reward': instance.reward,
+      'reward': instance.reward?.toJson(),
     };

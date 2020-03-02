@@ -27,7 +27,7 @@ Map<String, dynamic> _$AlertToJson(Alert instance) => <String, dynamic>{
       'activation': instance.activation?.toIso8601String(),
       'expiry': instance.expiry?.toIso8601String(),
       'active': instance.active,
-      'mission': instance.mission,
+      'mission': instance.mission?.toJson(),
     };
 
 Mission _$MissionFromJson(Map<String, dynamic> json) {
@@ -55,5 +55,5 @@ Map<String, dynamic> _$MissionToJson(Mission instance) => <String, dynamic>{
       'maxWaveNum': instance.maxWaveNum,
       'nightmare': instance.nightmare,
       'archwingRequired': instance.archwingRequired,
-      'reward': instance.reward,
+      'reward': instance.reward?.toJson(),
     };

@@ -42,8 +42,10 @@ Map<String, dynamic> _$NightwaveToJson(Nightwave instance) => <String, dynamic>{
       'active': instance.active,
       'season': instance.season,
       'phase': instance.phase,
-      'possibleChallenges': instance.possibleChallenges,
-      'activeChallenges': instance.activeChallenges,
+      'possibleChallenges':
+          instance.possibleChallenges?.map((e) => e?.toJson())?.toList(),
+      'activeChallenges':
+          instance.activeChallenges?.map((e) => e?.toJson())?.toList(),
       'rewardTypes': instance.rewardTypes,
     };
 
