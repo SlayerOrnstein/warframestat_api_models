@@ -6,7 +6,7 @@ part of 'construction_progress.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ConstructionProgress _$ConstructionProgressFromJson(Map json) {
+ConstructionProgress _$ConstructionProgressFromJson(Map<String, dynamic> json) {
   return ConstructionProgress(
     id: json['id'] as String,
     fomorianProgress: json['fomorianProgress'] as String,

@@ -6,7 +6,7 @@ part of 'nightwave.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Nightwave _$NightwaveFromJson(Map json) {
+Nightwave _$NightwaveFromJson(Map<String, dynamic> json) {
   return Nightwave(
     id: json['id'] as String,
     activation: json['activation'] == null
@@ -21,18 +21,12 @@ Nightwave _$NightwaveFromJson(Map json) {
     season: json['season'] as num,
     phase: json['phase'] as num,
     possibleChallenges: (json['possibleChallenges'] as List)
-        ?.map((e) => e == null
-            ? null
-            : Challenge.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
+        ?.map((e) =>
+            e == null ? null : Challenge.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     activeChallenges: (json['activeChallenges'] as List)
-        ?.map((e) => e == null
-            ? null
-            : Challenge.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
+        ?.map((e) =>
+            e == null ? null : Challenge.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     rewardTypes:
         (json['rewardTypes'] as List)?.map((e) => e as String)?.toList(),
@@ -48,14 +42,12 @@ Map<String, dynamic> _$NightwaveToJson(Nightwave instance) => <String, dynamic>{
       'active': instance.active,
       'season': instance.season,
       'phase': instance.phase,
-      'possibleChallenges':
-          instance.possibleChallenges?.map((e) => e?.toJson())?.toList(),
-      'activeChallenges':
-          instance.activeChallenges?.map((e) => e?.toJson())?.toList(),
+      'possibleChallenges': instance.possibleChallenges,
+      'activeChallenges': instance.activeChallenges,
       'rewardTypes': instance.rewardTypes,
     };
 
-Challenge _$ChallengeFromJson(Map json) {
+Challenge _$ChallengeFromJson(Map<String, dynamic> json) {
   return Challenge(
     id: json['id'] as String,
     activation: json['activation'] == null

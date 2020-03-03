@@ -6,15 +6,13 @@ part of 'synth_target.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SynthTarget _$SynthTargetFromJson(Map json) {
+SynthTarget _$SynthTargetFromJson(Map<String, dynamic> json) {
   return SynthTarget(
     name: json['name'] as String,
     locations: (json['locations'] as List)
         ?.map((e) => e == null
             ? null
-            : SynthLocation.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
+            : SynthLocation.fromJson(e as Map<String, dynamic>))
         ?.toList(),
   );
 }
@@ -22,5 +20,5 @@ SynthTarget _$SynthTargetFromJson(Map json) {
 Map<String, dynamic> _$SynthTargetToJson(SynthTarget instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'locations': instance.locations?.map((e) => e?.toJson())?.toList(),
+      'locations': instance.locations,
     };

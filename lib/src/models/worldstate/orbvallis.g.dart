@@ -6,7 +6,7 @@ part of 'orbvallis.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Vallis _$VallisFromJson(Map json) {
+Vallis _$VallisFromJson(Map<String, dynamic> json) {
   return Vallis(
     id: json['id'] as String,
     activation: json['activation'] == null

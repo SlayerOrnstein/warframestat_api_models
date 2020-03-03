@@ -6,7 +6,7 @@ part of 'riven_roll.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-RivenRoll _$RivenRollFromJson(Map json) {
+RivenRoll _$RivenRollFromJson(Map<String, dynamic> json) {
   return RivenRoll(
     itemType: json['itemType'] as String,
     compatibility: json['compatibility'] as String,

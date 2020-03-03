@@ -6,7 +6,7 @@ part of 'kuva.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Kuva _$KuvaFromJson(Map json) {
+Kuva _$KuvaFromJson(Map<String, dynamic> json) {
   return Kuva(
     activation: json['activation'] == null
         ? null

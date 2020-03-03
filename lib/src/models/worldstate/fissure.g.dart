@@ -6,7 +6,7 @@ part of 'fissure.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-VoidFissure _$VoidFissureFromJson(Map json) {
+VoidFissure _$VoidFissureFromJson(Map<String, dynamic> json) {
   return VoidFissure(
     id: json['id'] as String,
     activation: json['activation'] == null

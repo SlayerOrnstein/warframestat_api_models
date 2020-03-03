@@ -6,7 +6,7 @@ part of 'invasions.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Invasion _$InvasionFromJson(Map json) {
+Invasion _$InvasionFromJson(Map<String, dynamic> json) {
   return Invasion(
     id: json['id'] as String,
     activation: json['activation'] == null
@@ -26,14 +26,10 @@ Invasion _$InvasionFromJson(Map json) {
     count: json['count'] as num,
     attackerReward: json['attackerReward'] == null
         ? null
-        : Reward.fromJson((json['attackerReward'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
+        : Reward.fromJson(json['attackerReward'] as Map<String, dynamic>),
     defenderReward: json['defenderReward'] == null
         ? null
-        : Reward.fromJson((json['defenderReward'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
+        : Reward.fromJson(json['defenderReward'] as Map<String, dynamic>),
   );
 }
 
@@ -50,6 +46,6 @@ Map<String, dynamic> _$InvasionToJson(Invasion instance) => <String, dynamic>{
       'completed': instance.completed,
       'completion': instance.completion,
       'count': instance.count,
-      'attackerReward': instance.attackerReward?.toJson(),
-      'defenderReward': instance.defenderReward?.toJson(),
+      'attackerReward': instance.attackerReward,
+      'defenderReward': instance.defenderReward,
     };

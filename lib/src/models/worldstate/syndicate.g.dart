@@ -6,7 +6,7 @@ part of 'syndicate.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Syndicate _$SyndicateFromJson(Map json) {
+Syndicate _$SyndicateFromJson(Map<String, dynamic> json) {
   return Syndicate(
     id: json['id'] as String,
     activation: json['activation'] == null
@@ -18,11 +18,7 @@ Syndicate _$SyndicateFromJson(Map json) {
     name: json['syndicate'] as String,
     active: json['active'] as bool,
     jobs: (json['jobs'] as List)
-        ?.map((e) => e == null
-            ? null
-            : Job.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
+        ?.map((e) => e == null ? null : Job.fromJson(e as Map<String, dynamic>))
         ?.toList(),
   );
 }
@@ -33,5 +29,5 @@ Map<String, dynamic> _$SyndicateToJson(Syndicate instance) => <String, dynamic>{
       'expiry': instance.expiry?.toIso8601String(),
       'syndicate': instance.name,
       'active': instance.active,
-      'jobs': instance.jobs?.map((e) => e?.toJson())?.toList(),
+      'jobs': instance.jobs,
     };

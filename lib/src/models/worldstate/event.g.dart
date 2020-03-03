@@ -6,7 +6,7 @@ part of 'event.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Event _$EventFromJson(Map json) {
+Event _$EventFromJson(Map<String, dynamic> json) {
   return Event(
     id: json['id'] as String,
     activation: json['activation'] == null
@@ -25,25 +25,15 @@ Event _$EventFromJson(Map json) {
     currentScore: json['currentScore'] as num,
     health: json['health'] as num,
     rewards: (json['rewards'] as List)
-        ?.map((e) => e == null
-            ? null
-            : Reward.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
+        ?.map((e) =>
+            e == null ? null : Reward.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     interimSteps: (json['interimSteps'] as List)
-        ?.map((e) => e == null
-            ? null
-            : InterimStep.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
+        ?.map((e) =>
+            e == null ? null : InterimStep.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     jobs: (json['jobs'] as List)
-        ?.map((e) => e == null
-            ? null
-            : Job.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
+        ?.map((e) => e == null ? null : Job.fromJson(e as Map<String, dynamic>))
         ?.toList(),
   );
 }
@@ -61,24 +51,22 @@ Map<String, dynamic> _$EventToJson(Event instance) => <String, dynamic>{
       'health': instance.health,
       'currentScore': instance.currentScore,
       'maximumScore': instance.maximumScore,
-      'rewards': instance.rewards?.map((e) => e?.toJson())?.toList(),
-      'interimSteps': instance.interimSteps?.map((e) => e?.toJson())?.toList(),
-      'jobs': instance.jobs?.map((e) => e?.toJson())?.toList(),
+      'rewards': instance.rewards,
+      'interimSteps': instance.interimSteps,
+      'jobs': instance.jobs,
     };
 
-InterimStep _$InterimStepFromJson(Map json) {
+InterimStep _$InterimStepFromJson(Map<String, dynamic> json) {
   return InterimStep(
     goal: json['goal'] as int,
     reward: json['reward'] == null
         ? null
-        : Reward.fromJson((json['reward'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
+        : Reward.fromJson(json['reward'] as Map<String, dynamic>),
   );
 }
 
 Map<String, dynamic> _$InterimStepToJson(InterimStep instance) =>
     <String, dynamic>{
       'goal': instance.goal,
-      'reward': instance.reward?.toJson(),
+      'reward': instance.reward,
     };

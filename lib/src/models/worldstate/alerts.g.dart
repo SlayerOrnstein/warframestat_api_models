@@ -6,7 +6,7 @@ part of 'alerts.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Alert _$AlertFromJson(Map json) {
+Alert _$AlertFromJson(Map<String, dynamic> json) {
   return Alert(
     id: json['id'] as String,
     activation: json['activation'] == null
@@ -18,9 +18,7 @@ Alert _$AlertFromJson(Map json) {
     active: json['active'] as bool,
     mission: json['mission'] == null
         ? null
-        : Mission.fromJson((json['mission'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
+        : Mission.fromJson(json['mission'] as Map<String, dynamic>),
   );
 }
 
@@ -29,10 +27,10 @@ Map<String, dynamic> _$AlertToJson(Alert instance) => <String, dynamic>{
       'activation': instance.activation?.toIso8601String(),
       'expiry': instance.expiry?.toIso8601String(),
       'active': instance.active,
-      'mission': instance.mission?.toJson(),
+      'mission': instance.mission,
     };
 
-Mission _$MissionFromJson(Map json) {
+Mission _$MissionFromJson(Map<String, dynamic> json) {
   return Mission(
     node: json['node'] as String,
     type: json['type'] as String,
@@ -44,9 +42,7 @@ Mission _$MissionFromJson(Map json) {
     archwingRequired: json['archwingRequired'] as bool,
     reward: json['reward'] == null
         ? null
-        : Reward.fromJson((json['reward'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
+        : Reward.fromJson(json['reward'] as Map<String, dynamic>),
   );
 }
 
@@ -59,5 +55,5 @@ Map<String, dynamic> _$MissionToJson(Mission instance) => <String, dynamic>{
       'maxWaveNum': instance.maxWaveNum,
       'nightmare': instance.nightmare,
       'archwingRequired': instance.archwingRequired,
-      'reward': instance.reward?.toJson(),
+      'reward': instance.reward,
     };
