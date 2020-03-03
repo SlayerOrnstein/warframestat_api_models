@@ -6,7 +6,7 @@ part of 'synth_location.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SynthLocation _$SynthLocationFromJson(Map<String, dynamic> json) {
+SynthLocation _$SynthLocationFromJson(Map json) {
   return SynthLocation(
     lastVerified: json['last_verified'] as String,
     level: json['level'] as String,

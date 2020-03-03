@@ -6,7 +6,7 @@ part of 'alerts.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Alert _$AlertFromJson(Map<String, dynamic> json) {
+Alert _$AlertFromJson(Map json) {
   return Alert(
     id: json['id'] as String,
     activation: json['activation'] == null
@@ -18,7 +18,9 @@ Alert _$AlertFromJson(Map<String, dynamic> json) {
     active: json['active'] as bool,
     mission: json['mission'] == null
         ? null
-        : Mission.fromJson(json['mission'] as Map<String, dynamic>),
+        : Mission.fromJson((json['mission'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
   );
 }
 
@@ -30,7 +32,7 @@ Map<String, dynamic> _$AlertToJson(Alert instance) => <String, dynamic>{
       'mission': instance.mission?.toJson(),
     };
 
-Mission _$MissionFromJson(Map<String, dynamic> json) {
+Mission _$MissionFromJson(Map json) {
   return Mission(
     node: json['node'] as String,
     type: json['type'] as String,
@@ -42,7 +44,9 @@ Mission _$MissionFromJson(Map<String, dynamic> json) {
     archwingRequired: json['archwingRequired'] as bool,
     reward: json['reward'] == null
         ? null
-        : Reward.fromJson(json['reward'] as Map<String, dynamic>),
+        : Reward.fromJson((json['reward'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
   );
 }
 

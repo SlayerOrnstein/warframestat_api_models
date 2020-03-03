@@ -6,7 +6,7 @@ part of 'event.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Event _$EventFromJson(Map<String, dynamic> json) {
+Event _$EventFromJson(Map json) {
   return Event(
     id: json['id'] as String,
     activation: json['activation'] == null
@@ -25,15 +25,25 @@ Event _$EventFromJson(Map<String, dynamic> json) {
     currentScore: json['currentScore'] as num,
     health: json['health'] as num,
     rewards: (json['rewards'] as List)
-        ?.map((e) =>
-            e == null ? null : Reward.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : Reward.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     interimSteps: (json['interimSteps'] as List)
-        ?.map((e) =>
-            e == null ? null : InterimStep.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : InterimStep.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     jobs: (json['jobs'] as List)
-        ?.map((e) => e == null ? null : Job.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : Job.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
   );
 }
@@ -56,12 +66,14 @@ Map<String, dynamic> _$EventToJson(Event instance) => <String, dynamic>{
       'jobs': instance.jobs?.map((e) => e?.toJson())?.toList(),
     };
 
-InterimStep _$InterimStepFromJson(Map<String, dynamic> json) {
+InterimStep _$InterimStepFromJson(Map json) {
   return InterimStep(
     goal: json['goal'] as int,
     reward: json['reward'] == null
         ? null
-        : Reward.fromJson(json['reward'] as Map<String, dynamic>),
+        : Reward.fromJson((json['reward'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
   );
 }
 

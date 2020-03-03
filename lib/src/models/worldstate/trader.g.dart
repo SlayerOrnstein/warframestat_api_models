@@ -6,7 +6,7 @@ part of 'trader.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-VoidTrader _$VoidTraderFromJson(Map<String, dynamic> json) {
+VoidTrader _$VoidTraderFromJson(Map json) {
   return VoidTrader(
     id: json['id'] as String,
     activation: json['activation'] == null
@@ -21,7 +21,9 @@ VoidTrader _$VoidTraderFromJson(Map<String, dynamic> json) {
     inventory: (json['inventory'] as List)
             ?.map((e) => e == null
                 ? null
-                : InventoryItem.fromJson(e as Map<String, dynamic>))
+                : InventoryItem.fromJson((e as Map)?.map(
+                    (k, e) => MapEntry(k as String, e),
+                  )))
             ?.toList() ??
         [],
   );
@@ -38,7 +40,7 @@ Map<String, dynamic> _$VoidTraderToJson(VoidTrader instance) =>
       'inventory': instance.inventory?.map((e) => e?.toJson())?.toList(),
     };
 
-InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) {
+InventoryItem _$InventoryItemFromJson(Map json) {
   return InventoryItem(
     itemName: json['item'] as String,
     ducats: json['ducats'] as int,

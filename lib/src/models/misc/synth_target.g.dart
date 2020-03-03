@@ -6,13 +6,15 @@ part of 'synth_target.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SynthTarget _$SynthTargetFromJson(Map<String, dynamic> json) {
+SynthTarget _$SynthTargetFromJson(Map json) {
   return SynthTarget(
     name: json['name'] as String,
     locations: (json['locations'] as List)
         ?.map((e) => e == null
             ? null
-            : SynthLocation.fromJson(e as Map<String, dynamic>))
+            : SynthLocation.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
   );
 }
