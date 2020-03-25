@@ -19,7 +19,7 @@ class KuvaModel extends Kuva {
           node: node,
           enemy: enemy,
           type: type,
-          archwingRequired: archwing || sharkwing || false,
+          archwingRequired: (archwing ?? false) || (sharkwing ?? false),
         );
 
   factory KuvaModel.fromJson(Map<String, dynamic> json) {

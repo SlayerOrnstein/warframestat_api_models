@@ -12,6 +12,11 @@ RewardModel _$RewardModelFromJson(Map<String, dynamic> json) {
     thumbnail: json['thumbnail'] as String,
     asString: json['asString'] as String,
     credits: json['credits'] as int,
+    countedItemModels: (json['countedItems'] as List)
+        ?.map((e) => e == null
+            ? null
+            : CountedItemModel.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
   );
 }
 
@@ -21,6 +26,7 @@ Map<String, dynamic> _$RewardModelToJson(RewardModel instance) =>
       'thumbnail': instance.thumbnail,
       'asString': instance.asString,
       'credits': instance.credits,
+      'countedItems': instance.countedItemModels,
     };
 
 CountedItemModel _$CountedItemModelFromJson(Map<String, dynamic> json) {

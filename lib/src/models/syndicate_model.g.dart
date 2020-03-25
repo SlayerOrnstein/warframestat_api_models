@@ -17,6 +17,10 @@ SyndicateModel _$SyndicateModelFromJson(Map<String, dynamic> json) {
         : DateTime.parse(json['expiry'] as String),
     name: json['name'] as String,
     active: json['active'] as bool,
+    jobModels: (json['jobs'] as List)
+        ?.map((e) =>
+            e == null ? null : JobModel.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
   );
 }
 
@@ -27,4 +31,5 @@ Map<String, dynamic> _$SyndicateModelToJson(SyndicateModel instance) =>
       'expiry': instance.expiry?.toIso8601String(),
       'name': instance.name,
       'active': instance.active,
+      'jobs': instance.jobModels,
     };

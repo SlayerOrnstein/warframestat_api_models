@@ -25,28 +25,24 @@ part 'worldstate_model.g.dart';
 class WorldstateModel extends Worldstate {
   const WorldstateModel({
     DateTime timestamp,
-    @JsonKey(name: 'news') List<OrbiterNewsModel> orbiterNewsModels,
-    @JsonKey(name: 'events') List<EventModel> eventModels,
-    @JsonKey(name: 'alerts') List<AlertModel> alertModels,
-    @JsonKey(name: 'sortie') SortieModel sortieModel,
-    @JsonKey(name: 'syndicateMissions')
-        List<SyndicateModel> syndicateMissionModels,
-    @JsonKey(name: 'fissures') List<VoidFissureModel> fissureModels,
-    @JsonKey(name: 'invasions') List<InvasionModel> invasionModels,
-    @JsonKey(name: 'voidTrader') VoidTraderModel voidTraderModel,
-    @JsonKey(name: 'dailyDeals') List<DarvoDealModel> dailyDealModels,
-    @JsonKey(name: 'persistentEnemies')
-        List<PersistentEnemyModel> persistentEnemyModels,
-    @JsonKey(name: 'earthCycle') EarthModel earthCycleModel,
-    @JsonKey(name: 'cetusCycle') EarthModel cetusCycleModel,
-    @JsonKey(name: 'constructionProgress')
-        ConstructionProgressModel constructionProgressModel,
-    @JsonKey(name: 'vallisCycle') VallisModel vallisCycleModel,
-    @JsonKey(name: 'nightwave') NightwaveModel nightwaveModel,
-    @JsonKey(name: 'sentientOutposts')
-        SentientOutpostModel sentientOutpostModel,
-    @JsonKey(name: 'kuva') List<KuvaModel> kuvaModel,
-    @JsonKey(name: 'arbitration') ArbitrationModel arbitrationModel,
+    this.orbiterNewsModels,
+    this.eventModels,
+    this.alertModels,
+    this.sortieModel,
+    this.syndicateMissionModels,
+    this.fissureModels,
+    this.invasionModels,
+    this.voidTraderModel,
+    this.dailyDealModels,
+    this.persistentEnemyModels,
+    this.earthCycleModel,
+    this.cetusCycleModel,
+    this.constructionProgressModel,
+    this.vallisCycleModel,
+    this.nightwaveModel,
+    this.kuvaModel,
+    this.sentientOutpostModel,
+    this.arbitrationModel,
   }) : super(
           timestamp: timestamp,
           news: orbiterNewsModels,
@@ -72,6 +68,60 @@ class WorldstateModel extends Worldstate {
   factory WorldstateModel.fromJson(Map<String, dynamic> json) {
     return _$WorldstateModelFromJson(json);
   }
+
+  @JsonKey(name: 'news')
+  final List<OrbiterNewsModel> orbiterNewsModels;
+
+  @JsonKey(name: 'events')
+  final List<EventModel> eventModels;
+
+  @JsonKey(name: 'alerts')
+  final List<AlertModel> alertModels;
+
+  @JsonKey(name: 'sortie')
+  final SortieModel sortieModel;
+
+  @JsonKey(name: 'syndicateMissions')
+  final List<SyndicateModel> syndicateMissionModels;
+
+  @JsonKey(name: 'fissures')
+  final List<VoidFissureModel> fissureModels;
+
+  @JsonKey(name: 'invasions')
+  final List<InvasionModel> invasionModels;
+
+  @JsonKey(name: 'voidTrader')
+  final VoidTraderModel voidTraderModel;
+
+  @JsonKey(name: 'dailyDeals')
+  final List<DarvoDealModel> dailyDealModels;
+
+  @JsonKey(name: 'persistentEnemies')
+  final List<PersistentEnemyModel> persistentEnemyModels;
+
+  @JsonKey(name: 'earthCycle')
+  final EarthModel earthCycleModel;
+
+  @JsonKey(name: 'cetusCycle')
+  final EarthModel cetusCycleModel;
+
+  @JsonKey(name: 'constructionProgress')
+  final ConstructionProgressModel constructionProgressModel;
+
+  @JsonKey(name: 'vallisCycle')
+  final VallisModel vallisCycleModel;
+
+  @JsonKey(name: 'nightwave')
+  final NightwaveModel nightwaveModel;
+
+  @JsonKey(name: 'sentientOutposts')
+  final SentientOutpostModel sentientOutpostModel;
+
+  @JsonKey(name: 'kuva')
+  final List<KuvaModel> kuvaModel;
+
+  @JsonKey(name: 'arbitration')
+  final ArbitrationModel arbitrationModel;
 
   Map<String, dynamic> toJson() => _$WorldstateModelToJson(this);
 }

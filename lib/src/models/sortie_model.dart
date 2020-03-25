@@ -11,7 +11,7 @@ class SortieModel extends Sortie {
     DateTime expiry,
     String boss,
     String faction,
-    @JsonKey(name: 'variants') List<VariantModel> variantModels,
+    this.variantModels,
   }) : super(
           id: id,
           activation: activation,
@@ -24,6 +24,9 @@ class SortieModel extends Sortie {
   factory SortieModel.fromJson(Map<String, dynamic> json) {
     return _$SortieModelFromJson(json);
   }
+
+  @JsonKey(name: 'variants')
+  final List<VariantModel> variantModels;
 
   Map<String, dynamic> toJson() => _$SortieModelToJson(this);
 }

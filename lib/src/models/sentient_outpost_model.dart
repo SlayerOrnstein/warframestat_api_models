@@ -11,8 +11,8 @@ class SentientOutpostModel extends SentientOutpost {
     String id,
     DateTime activation,
     DateTime expiry,
-    @JsonKey(name: 'mission') MissionModel missionModel,
     bool active,
+    this.missionModel,
   }) : super(
           id: id,
           activation: activation,
@@ -24,6 +24,9 @@ class SentientOutpostModel extends SentientOutpost {
   factory SentientOutpostModel.fromJson(Map<String, dynamic> json) {
     return _$SentientOutpostModelFromJson(json);
   }
+
+  @JsonKey(name: 'mission')
+  final MissionModel missionModel;
 
   Map<String, dynamic> toJson() => _$SentientOutpostModelToJson(this);
 }

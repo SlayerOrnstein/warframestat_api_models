@@ -11,4 +11,5 @@ Future<void> main() async {
       WorldstateModel.fromJson(json.decode(data.body));
 
   print(worldstate.timestamp);
+  print(worldstate.news.first.imageLink);
 }

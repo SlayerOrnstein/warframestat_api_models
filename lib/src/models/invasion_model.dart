@@ -20,8 +20,8 @@ class InvasionModel extends Invasion {
     bool completed,
     double completion,
     int count,
-    RewardModel attackerRewardInfoModel,
-    RewardModel defenderRewardInfoModel,
+    this.attackerRewardInfoModel,
+    this.defenderRewardInfoModel,
   }) : super(
           id: id,
           activation: activation,
@@ -42,6 +42,12 @@ class InvasionModel extends Invasion {
   factory InvasionModel.fromJson(Map<String, dynamic> json) {
     return _$InvasionModelFromJson(json);
   }
+
+  @JsonKey(name: 'attackerReward')
+  final RewardModel attackerRewardInfoModel;
+
+  @JsonKey(name: 'defenderReward')
+  final RewardModel defenderRewardInfoModel;
 
   Map<String, dynamic> toJson() => _$InvasionModelToJson(this);
 }

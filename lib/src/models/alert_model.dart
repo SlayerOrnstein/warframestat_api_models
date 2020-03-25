@@ -12,7 +12,7 @@ class AlertModel extends Alert {
     DateTime activation,
     DateTime expiry,
     bool active,
-    @JsonKey(name: 'mission') MissionModel missionModel,
+    this.missionModel,
   }) : super(
           id: id,
           activation: activation,
@@ -24,6 +24,9 @@ class AlertModel extends Alert {
   factory AlertModel.fromJson(Map<String, dynamic> json) {
     return _$AlertModelFromJson(json);
   }
+
+  @JsonKey(name: 'mission')
+  final MissionModel missionModel;
 
   Map<String, dynamic> toJson() => _$AlertModelToJson(this);
 }

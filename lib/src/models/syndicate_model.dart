@@ -12,7 +12,7 @@ class SyndicateModel extends Syndicate {
     DateTime expiry,
     String name,
     bool active,
-    @JsonKey(name: 'jobs') List<JobModel> jobModels,
+    this.jobModels,
   }) : super(
           id: id,
           activation: activation,
@@ -25,6 +25,9 @@ class SyndicateModel extends Syndicate {
   factory SyndicateModel.fromJson(Map<String, dynamic> json) {
     return _$SyndicateModelFromJson(json);
   }
+
+  @JsonKey(name: 'jobs')
+  final List<JobModel> jobModels;
 
   Map<String, dynamic> toJson() => _$SyndicateModelToJson(this);
 }

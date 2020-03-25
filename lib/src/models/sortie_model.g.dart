@@ -17,6 +17,10 @@ SortieModel _$SortieModelFromJson(Map<String, dynamic> json) {
         : DateTime.parse(json['expiry'] as String),
     boss: json['boss'] as String,
     faction: json['faction'] as String,
+    variantModels: (json['variants'] as List)
+        ?.map((e) =>
+            e == null ? null : VariantModel.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
   );
 }
 
@@ -27,6 +31,7 @@ Map<String, dynamic> _$SortieModelToJson(SortieModel instance) =>
       'expiry': instance.expiry?.toIso8601String(),
       'boss': instance.boss,
       'faction': instance.faction,
+      'variants': instance.variantModels,
     };
 
 VariantModel _$VariantModelFromJson(Map<String, dynamic> json) {

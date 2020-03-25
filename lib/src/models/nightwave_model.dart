@@ -3,6 +3,7 @@ import 'package:worldstate_api_model/src/entities/nigthwave.dart';
 
 part 'nightwave_model.g.dart';
 
+@JsonSerializable()
 class NightwaveModel extends Nightwave {
   const NightwaveModel({
     String id,
@@ -12,8 +13,8 @@ class NightwaveModel extends Nightwave {
     bool active,
     int season,
     int phase,
-    List<ChallengeModel> possibleChallenges,
-    List<ChallengeModel> activeChallenges,
+    this.possibleChallengeModels,
+    this.activeChallengeModels,
     List<String> rewardTypes,
   }) : super(
           id: id,
@@ -23,10 +24,22 @@ class NightwaveModel extends Nightwave {
           active: active,
           season: season,
           phase: phase,
-          possibleChallenges: possibleChallenges,
-          activeChallenges: activeChallenges,
+          possibleChallenges: possibleChallengeModels,
+          activeChallenges: activeChallengeModels,
           rewardTypes: rewardTypes,
         );
+
+  factory NightwaveModel.fromJson(Map<String, dynamic> json) {
+    return _$NightwaveModelFromJson(json);
+  }
+
+  @JsonKey(name: 'possibleChallenges')
+  final List<ChallengeModel> possibleChallengeModels;
+
+  @JsonKey(name: 'activeChallenges')
+  final List<ChallengeModel> activeChallengeModels;
+
+  Map<String, dynamic> toJson() => _$NightwaveModelToJson(this);
 }
 
 @JsonSerializable()
