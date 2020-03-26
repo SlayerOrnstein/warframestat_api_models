@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/sentient_outpost.dart';
+import 'package:worldstate_api_model/src/entities/worldstate/sentient_outpost.dart';
 
 import 'mission_model.dart';
 

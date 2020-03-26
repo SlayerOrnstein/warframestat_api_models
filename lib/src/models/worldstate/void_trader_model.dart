@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/void_trader.dart';
+import 'package:worldstate_api_model/src/entities/worldstate/void_trader.dart';
 
 part 'void_trader_model.g.dart';
 

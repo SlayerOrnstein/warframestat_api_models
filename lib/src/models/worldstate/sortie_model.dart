@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/sortie.dart';
+import 'package:worldstate_api_model/src/entities/worldstate/sortie.dart';
 
 part 'sortie_model.g.dart';
 

@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/vallis.dart';
+import 'package:worldstate_api_model/src/entities/worldstate/vallis.dart';
 
 part 'vallis_model.g.dart';
 

@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/syndicate.dart';
-import 'package:worldstate_api_model/src/models/job_model.dart';
+import 'package:worldstate_api_model/src/entities/worldstate/syndicate.dart';
+
+import 'job_model.dart';
 
 part 'syndicate_model.g.dart';
 

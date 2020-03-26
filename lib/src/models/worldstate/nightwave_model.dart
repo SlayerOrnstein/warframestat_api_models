@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/nigthwave.dart';
+import 'package:worldstate_api_model/src/entities/worldstate/nigthwave.dart';
 
 part 'nightwave_model.g.dart';
 

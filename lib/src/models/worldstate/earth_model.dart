@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/earth.dart';
+import 'package:worldstate_api_model/src/entities/worldstate/earth.dart';
 
 part 'earth_model.g.dart';
 

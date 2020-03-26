@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/kuva.dart';
+import 'package:worldstate_api_model/src/entities/worldstate/kuva.dart';
 
 part 'kuva_model.g.dart';
 
@@ -19,7 +19,7 @@ class KuvaModel extends Kuva {
           node: node,
           enemy: enemy,
           type: type,
-          archwingRequired: (archwing ?? false) || (sharkwing ?? false),
+          archwingRequired: archwing || sharkwing || false,
         );
 
   factory KuvaModel.fromJson(Map<String, dynamic> json) {

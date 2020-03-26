@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/news.dart';
+import 'package:worldstate_api_model/src/entities/worldstate/news.dart';
 
 part 'news_model.g.dart';
 

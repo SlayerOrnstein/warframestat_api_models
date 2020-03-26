@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/arbitration.dart';
+import 'package:worldstate_api_model/src/entities/worldstate/arbitration.dart';
 
 part 'arbitration_model.g.dart';
 
@@ -19,7 +19,7 @@ class ArbitrationModel extends Arbitration {
           node: node,
           enemy: enemy,
           type: type,
-          archwingRequired: (archwing ?? false) || (sharkwing ?? false),
+          archwingRequired: archwing || sharkwing || false,
         );
 
   factory ArbitrationModel.fromJson(Map<String, dynamic> json) {

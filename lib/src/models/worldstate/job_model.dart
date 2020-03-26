@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/job.dart';
+import 'package:worldstate_api_model/src/entities/worldstate/job.dart';
 
 part 'job_model.g.dart';
 
