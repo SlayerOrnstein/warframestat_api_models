@@ -11,8 +11,8 @@ class ArbitrationModel extends Arbitration {
     String node,
     String enemy,
     String type,
-    bool archwing,
-    bool sharkwing,
+    this.archwing,
+    this.sharkwing,
   }) : super(
           activation: activation,
           expiry: expiry,
@@ -25,6 +25,8 @@ class ArbitrationModel extends Arbitration {
   factory ArbitrationModel.fromJson(Map<String, dynamic> json) {
     return _$ArbitrationModelFromJson(json);
   }
+
+  final bool archwing, sharkwing;
 
   Map<String, dynamic> toJson() => _$ArbitrationModelToJson(this);
 }

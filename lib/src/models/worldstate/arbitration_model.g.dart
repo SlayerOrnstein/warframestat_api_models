@@ -17,6 +17,8 @@ ArbitrationModel _$ArbitrationModelFromJson(Map<String, dynamic> json) {
     node: json['node'] as String,
     enemy: json['enemy'] as String,
     type: json['type'] as String,
+    archwing: json['archwing'] as bool,
+    sharkwing: json['sharkwing'] as bool,
   );
 }
 
@@ -27,4 +29,6 @@ Map<String, dynamic> _$ArbitrationModelToJson(ArbitrationModel instance) =>
       'node': instance.node,
       'enemy': instance.enemy,
       'type': instance.type,
+      'archwing': instance.archwing,
+      'sharkwing': instance.sharkwing,
     };

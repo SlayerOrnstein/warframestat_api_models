@@ -11,8 +11,8 @@ class KuvaModel extends Kuva {
     String node,
     String enemy,
     String type,
-    bool archwing,
-    bool sharkwing,
+    this.archwing,
+    this.sharkwing,
   }) : super(
           activation: activation,
           expiry: expiry,
@@ -25,6 +25,8 @@ class KuvaModel extends Kuva {
   factory KuvaModel.fromJson(Map<String, dynamic> json) {
     return _$KuvaModelFromJson(json);
   }
+
+  final bool archwing, sharkwing;
 
   Map<String, dynamic> toJson() => _$KuvaModelToJson(this);
 }
