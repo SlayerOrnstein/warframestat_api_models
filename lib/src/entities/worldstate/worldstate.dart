@@ -66,6 +66,7 @@ class Worldstate extends Equatable {
   bool get activeEvents => events?.isNotEmpty ?? false;
   bool get activeKuva => kuva?.isNotEmpty ?? false;
   bool get anomalyDetected => sentientOutposts.active ?? false;
+  bool get isSaleActive => dailyDeals?.isNotEmpty ?? false;
   bool get enemyActive => persistentEnemies?.isNotEmpty ?? false;
 
   @override
