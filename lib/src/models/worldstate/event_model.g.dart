@@ -62,14 +62,14 @@ Map<String, dynamic> _$EventModelToJson(EventModel instance) =>
 InterimStepModel _$InterimStepModelFromJson(Map<String, dynamic> json) {
   return InterimStepModel(
     goal: json['goal'] as int,
-    rewardModel: json['rewardModel'] == null
+    rewardModel: json['reward'] == null
         ? null
-        : RewardModel.fromJson(json['rewardModel'] as Map<String, dynamic>),
+        : RewardModel.fromJson(json['reward'] as Map<String, dynamic>),
   );
 }
 
 Map<String, dynamic> _$InterimStepModelToJson(InterimStepModel instance) =>
     <String, dynamic>{
       'goal': instance.goal,
-      'rewardModel': instance.rewardModel,
+      'reward': instance.rewardModel,
     };

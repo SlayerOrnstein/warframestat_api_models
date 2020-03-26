@@ -67,6 +67,7 @@ class InterimStepModel extends InterimStep {
     return _$InterimStepModelFromJson(json);
   }
 
+  @JsonKey(name: 'reward')
   final RewardModel rewardModel;
 
   Map<String, dynamic> toJson() => _$InterimStepModelToJson(this);
