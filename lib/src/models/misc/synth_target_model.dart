@@ -16,6 +16,7 @@ class SynthTargetModel extends SynthTarget {
     return _$SynthTargetModelFromJson(json);
   }
 
+  @JsonKey(name: 'locations')
   final List<SynthLocationModel> locationModels;
 
   Map<String, dynamic> toJson() => _$SynthTargetModelToJson(this);

@@ -9,7 +9,7 @@ part of 'synth_target_model.dart';
 SynthTargetModel _$SynthTargetModelFromJson(Map<String, dynamic> json) {
   return SynthTargetModel(
     name: json['name'] as String,
-    locationModels: (json['locationModels'] as List)
+    locationModels: (json['locations'] as List)
         ?.map((e) => e == null
             ? null
             : SynthLocationModel.fromJson(e as Map<String, dynamic>))
@@ -20,5 +20,5 @@ SynthTargetModel _$SynthTargetModelFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$SynthTargetModelToJson(SynthTargetModel instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'locationModels': instance.locationModels,
+      'locations': instance.locationModels,
     };
