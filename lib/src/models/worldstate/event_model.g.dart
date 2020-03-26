@@ -24,6 +24,19 @@ EventModel _$EventModelFromJson(Map<String, dynamic> json) {
     maximumScore: json['maximumScore'] as num,
     currentScore: json['currentScore'] as num,
     health: json['health'] as num,
+    rewardModels: (json['rewards'] as List)
+        ?.map((e) =>
+            e == null ? null : RewardModel.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    interimStepModels: (json['interimSteps'] as List)
+        ?.map((e) => e == null
+            ? null
+            : InterimStepModel.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    jobModels: (json['jobs'] as List)
+        ?.map((e) =>
+            e == null ? null : JobModel.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
   );
 }
 
@@ -41,6 +54,9 @@ Map<String, dynamic> _$EventModelToJson(EventModel instance) =>
       'health': instance.health,
       'currentScore': instance.currentScore,
       'maximumScore': instance.maximumScore,
+      'rewards': instance.rewardModels,
+      'interimSteps': instance.interimStepModels,
+      'jobs': instance.jobModels,
     };
 
 InterimStepModel _$InterimStepModelFromJson(Map<String, dynamic> json) {

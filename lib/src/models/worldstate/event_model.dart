@@ -21,9 +21,9 @@ class EventModel extends Event {
     num maximumScore,
     num currentScore,
     num health,
-    List<RewardModel> rewardModels,
-    List<InterimStepModel> interimStepModels,
-    List<JobModel> jobModels,
+    this.rewardModels,
+    this.interimStepModels,
+    this.jobModels,
   }) : super(
           id: id,
           activation: activation,
@@ -45,6 +45,15 @@ class EventModel extends Event {
   factory EventModel.fromJson(Map<String, dynamic> json) {
     return _$EventModelFromJson(json);
   }
+
+  @JsonKey(name: 'rewards')
+  final List<RewardModel> rewardModels;
+
+  @JsonKey(name: 'interimSteps')
+  final List<InterimStepModel> interimStepModels;
+
+  @JsonKey(name: 'jobs')
+  final List<JobModel> jobModels;
 
   Map<String, dynamic> toJson() => _$EventModelToJson(this);
 }

@@ -24,7 +24,7 @@ class Nightwave extends WorldstateObject {
 
   /// Filters [activeChallenges] and exports only daily challenges
   List<Challenge> get daily {
-    return activeChallenges.where((c) => c.isDaily).toList()
+    return activeChallenges.where((c) => c.isDaily ?? false).toList()
       ..sort((a, b) => a.expiry.compareTo(b.expiry));
   }
 
