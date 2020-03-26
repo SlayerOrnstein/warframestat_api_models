@@ -8,19 +8,17 @@ part of 'riven_data_model.dart';
 
 RivenDataModel _$RivenDataModelFromJson(Map<String, dynamic> json) {
   return RivenDataModel(
-    rerolledModel: json['rerolledModel'] == null
+    rerolledModel: json['rerolled'] == null
         ? null
-        : RivenRollModel.fromJson(
-            json['rerolledModel'] as Map<String, dynamic>),
-    unrolledModel: json['unrolledModel'] == null
+        : RivenRollModel.fromJson(json['rerolled'] as Map<String, dynamic>),
+    unrolledModel: json['unrolled'] == null
         ? null
-        : RivenRollModel.fromJson(
-            json['unrolledModel'] as Map<String, dynamic>),
+        : RivenRollModel.fromJson(json['unrolled'] as Map<String, dynamic>),
   );
 }
 
 Map<String, dynamic> _$RivenDataModelToJson(RivenDataModel instance) =>
     <String, dynamic>{
-      'rerolledModel': instance.rerolledModel,
-      'unrolledModel': instance.unrolledModel,
+      'rerolled': instance.rerolledModel,
+      'unrolled': instance.unrolledModel,
     };

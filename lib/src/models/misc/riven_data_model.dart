@@ -14,7 +14,10 @@ class RivenDataModel extends RivenData {
     return _$RivenDataModelFromJson(json);
   }
 
+  @JsonKey(name: 'rerolled')
   final RivenRollModel rerolledModel;
+
+  @JsonKey(name: 'unrolled')
   final RivenRollModel unrolledModel;
 
   Map<String, dynamic> toJson() => _$RivenDataModelToJson(this);
