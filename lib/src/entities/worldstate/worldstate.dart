@@ -19,6 +19,26 @@ import 'vallis.dart';
 import 'void_trader.dart';
 
 class Worldstate extends Equatable {
+  final DateTime timestamp;
+
+  final List<OrbiterNews> news;
+  final List<Event> events;
+  final List<Alert> alerts;
+  final Sortie sortie;
+  final List<Syndicate> syndicateMissions;
+  final List<VoidFissure> fissures;
+  final List<Invasion> invasions;
+  final VoidTrader voidTrader;
+  final List<DarvoDeal> dailyDeals;
+  final List<PersistentEnemy> persistentEnemies;
+  final Earth earthCycle, cetusCycle;
+  final ConstructionProgress constructionProgress;
+  final Vallis vallisCycle;
+  final Nightwave nightwave;
+  final SentientOutpost sentientOutposts;
+  final List<Kuva> kuva;
+  final Arbitration arbitration;
+
   const Worldstate({
     this.timestamp,
     this.news,
@@ -41,24 +61,12 @@ class Worldstate extends Equatable {
     this.arbitration,
   });
 
-  final DateTime timestamp;
-  final List<OrbiterNews> news;
-  final List<Event> events;
-  final List<Alert> alerts;
-  final Sortie sortie;
-  final List<Syndicate> syndicateMissions;
-  final List<VoidFissure> fissures;
-  final List<Invasion> invasions;
-  final VoidTrader voidTrader;
-  final List<DarvoDeal> dailyDeals;
-  final List<PersistentEnemy> persistentEnemies;
-  final Earth earthCycle, cetusCycle;
-  final ConstructionProgress constructionProgress;
-  final Vallis vallisCycle;
-  final Nightwave nightwave;
-  final SentientOutpost sentientOutposts;
-  final List<Kuva> kuva;
-  final Arbitration arbitration;
+  bool get activeAlerts => alerts?.isNotEmpty ?? false;
+  bool get activeArbitration => arbitration != null;
+  bool get activeEvents => events?.isNotEmpty ?? false;
+  bool get activeKuva => kuva?.isNotEmpty ?? false;
+  bool get anomalyDetected => sentientOutposts.active ?? false;
+  bool get enemyActive => persistentEnemies?.isNotEmpty ?? false;
 
   @override
   List<Object> get props {
