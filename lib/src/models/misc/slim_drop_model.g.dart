@@ -11,7 +11,7 @@ SlimDropModel _$SlimDropModelFromJson(Map<String, dynamic> json) {
     place: json['place'] as String,
     item: json['item'] as String,
     rarity: json['rarity'] as String,
-    chance: json['chance'] as num,
+    dropchance: json['chance'],
   );
 }
 
@@ -20,5 +20,5 @@ Map<String, dynamic> _$SlimDropModelToJson(SlimDropModel instance) =>
       'place': instance.place,
       'item': instance.item,
       'rarity': instance.rarity,
-      'chance': instance.chance,
+      'chance': instance.dropchance,
     };

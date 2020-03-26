@@ -9,17 +9,20 @@ class SlimDropModel extends SlimDrop {
     String place,
     String item,
     String rarity,
-    num chance,
+    this.dropchance,
   }) : super(
           place: place,
           item: item,
           rarity: rarity,
-          chance: chance,
+          dropChance: dropchance,
         );
 
   factory SlimDropModel.fromJson(Map<String, dynamic> json) {
     return _$SlimDropModelFromJson(json);
   }
+
+  @JsonKey(name: 'chance')
+  final dynamic dropchance;
 
   Map<String, dynamic> toJson() => _$SlimDropModelToJson(this);
 }
