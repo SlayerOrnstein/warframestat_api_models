@@ -60,12 +60,14 @@ class EventModel extends Event {
 
 @JsonSerializable()
 class InterimStepModel extends InterimStep {
-  const InterimStepModel({int goal, RewardModel rewardModel})
+  const InterimStepModel({int goal, this.rewardModel})
       : super(goal: goal, reward: rewardModel);
 
   factory InterimStepModel.fromJson(Map<String, dynamic> json) {
     return _$InterimStepModelFromJson(json);
   }
+
+  final RewardModel rewardModel;
 
   Map<String, dynamic> toJson() => _$InterimStepModelToJson(this);
 }
