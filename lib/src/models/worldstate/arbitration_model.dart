@@ -19,7 +19,7 @@ class ArbitrationModel extends Arbitration {
           node: node,
           enemy: enemy,
           type: type,
-          archwingRequired: archwing || sharkwing || false,
+          archwingRequired: (archwing ?? false) || (sharkwing ?? false),
         );
 
   factory ArbitrationModel.fromJson(Map<String, dynamic> json) {
