@@ -1,16 +1,20 @@
 import 'package:equatable/equatable.dart';
 
 class Job extends Equatable {
-  const Job({
+  const Job(
+    this._rewardPool, {
     this.type,
-    this.rewardPool,
     this.enemyLevels,
     this.standingStages,
   });
 
   final String type;
-  final List<String> rewardPool;
+  final dynamic _rewardPool;
   final List<int> enemyLevels, standingStages;
+
+  List<String> get rewardPool {
+    return _rewardPool is String ? <String>[] : _rewardPool;
+  }
 
   /// Calculates total standing per stage
   int get totalStanding => standingStages.fold(0, (a, b) => a + b);

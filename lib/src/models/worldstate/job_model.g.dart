@@ -9,7 +9,7 @@ part of 'job_model.dart';
 JobModel _$JobModelFromJson(Map<String, dynamic> json) {
   return JobModel(
     type: json['type'] as String,
-    rewardPool: (json['rewardPool'] as List)?.map((e) => e as String)?.toList(),
+    rewardpool: json['rewardpool'],
     enemyLevels: (json['enemyLevels'] as List)?.map((e) => e as int)?.toList(),
     standingStages:
         (json['standingStages'] as List)?.map((e) => e as int)?.toList(),
@@ -18,7 +18,7 @@ JobModel _$JobModelFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$JobModelToJson(JobModel instance) => <String, dynamic>{
       'type': instance.type,
-      'rewardPool': instance.rewardPool,
       'enemyLevels': instance.enemyLevels,
       'standingStages': instance.standingStages,
+      'rewardpool': instance.rewardpool,
     };

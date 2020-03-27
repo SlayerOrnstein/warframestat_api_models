@@ -7,12 +7,12 @@ part 'job_model.g.dart';
 class JobModel extends Job {
   const JobModel({
     String type,
-    List<String> rewardPool,
+    this.rewardpool,
     List<int> enemyLevels,
     List<int> standingStages,
   }) : super(
+          rewardpool,
           type: type,
-          rewardPool: rewardPool,
           enemyLevels: enemyLevels,
           standingStages: standingStages,
         );
@@ -20,6 +20,8 @@ class JobModel extends Job {
   factory JobModel.fromJson(Map<String, dynamic> json) {
     return _$JobModelFromJson(json);
   }
+
+  final dynamic rewardpool;
 
   Map<String, dynamic> toJson() => _$JobModelToJson(this);
 }
