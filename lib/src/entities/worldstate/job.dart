@@ -13,7 +13,7 @@ class Job extends Equatable {
   final List<int> enemyLevels, standingStages;
 
   List<String> get rewardPool {
-    return _rewardPool is String ? <String>[] : _rewardPool;
+    return _rewardPool is String ? <String>[] : _rewardPool.cast<String>();
   }
 
   /// Calculates total standing per stage
