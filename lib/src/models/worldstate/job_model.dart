@@ -21,6 +21,7 @@ class JobModel extends Job {
     return _$JobModelFromJson(json);
   }
 
+  @JsonKey(name: 'rewardPool')
   final dynamic rewardpool;
 
   Map<String, dynamic> toJson() => _$JobModelToJson(this);
