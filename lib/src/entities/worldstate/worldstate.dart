@@ -62,7 +62,7 @@ class Worldstate extends Equatable {
   });
 
   bool get activeAlerts => alerts?.isNotEmpty ?? false;
-  bool get activeArbitration => arbitration != null;
+  bool get activeArbitration => arbitration.node != null;
   bool get activeEvents => events?.isNotEmpty ?? false;
   bool get activeKuva => kuva?.isNotEmpty ?? false;
   bool get anomalyDetected => sentientOutposts.active ?? false;
