@@ -14,8 +14,8 @@ jobs:
       image: google/dart:latest
 
     env:
-      PATH: "$PATH":"$HOME/.pub-cache/bin"
-      
+      PATH: $PATH:$HOME/.pub-cache/bin
+
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
