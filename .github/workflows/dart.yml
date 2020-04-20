@@ -1,0 +1,31 @@
+name: Dart CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    container:
+      image:  google/dart:latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: |
+        pub global activate coverage 
+        pub get
+    - name: Run tests
+      run: pub run test --coverage=coverage
+    - name: Format coverage
+      run:  format_coverage --packages=.packages -i coverage/test/worldstate_model_test.dart.vm.json -o coverage/lcov.info
+    - name: Codecov
+      uses: codecov/codecov-action@v1.0.6
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        file: coverage/lcov.info
