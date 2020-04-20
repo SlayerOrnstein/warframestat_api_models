@@ -13,9 +13,6 @@ jobs:
     container:
       image: google/dart:latest
 
-    env:
-      PATH: $PATH:$HOME/.pub-cache/bin
-
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
@@ -25,7 +22,7 @@ jobs:
       - name: Run tests
         run: pub run test --coverage=coverage
       - name: Format coverage
-        run: format_coverage --packages=.packages -i coverage/test/worldstate_model_test.dart.vm.json -o coverage/lcov.info
+        run: pub global run coverage:format_coverage --packages=.packages -i coverage/test/worldstate_model_test.dart.vm.json -o coverage/lcov.info
       - name: Codecov
         uses: codecov/codecov-action@v1.0.6
         with:
