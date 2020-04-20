@@ -21,8 +21,8 @@ jobs:
           pub get
       - name: Run tests
         run: pub run test --coverage=coverage
-      - name: Format coverage
-        run: pub global run coverage:format_coverage --packages=.packages -i coverage/test/worldstate_model_test.dart.vm.json -o coverage/lcov.info
+      - name: Coverage
+        run: pub run test_coverage
       - name: Codecov
         uses: codecov/codecov-action@v1.0.6
         with:
