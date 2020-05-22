@@ -29,7 +29,7 @@ class OrbiterNews extends WorldstateObject {
 
   /// create an elapsed time using [OrbiterNews.date]
   String get timestamp {
-    final Duration duration = date.difference(DateTime.now().toUtc()).abs();
+    final Duration duration = date.toLocal().difference(DateTime.now()).abs();
 
     const Duration hour = Duration(hours: 1);
     const Duration day = Duration(hours: 24);
