@@ -13,8 +13,8 @@ class NightwaveModel extends Nightwave {
     bool active,
     int season,
     int phase,
-    this.possibleChallengeModels,
-    this.activeChallengeModels,
+    this.possibleChallenges,
+    this.activeChallenges,
     List<String> rewardTypes,
   }) : super(
           id: id,
@@ -24,8 +24,6 @@ class NightwaveModel extends Nightwave {
           active: active,
           season: season,
           phase: phase,
-          possibleChallenges: possibleChallengeModels,
-          activeChallenges: activeChallengeModels,
           rewardTypes: rewardTypes,
         );
 
@@ -33,11 +31,11 @@ class NightwaveModel extends Nightwave {
     return _$NightwaveModelFromJson(json);
   }
 
-  @JsonKey(name: 'possibleChallenges')
-  final List<ChallengeModel> possibleChallengeModels;
+  @override
+  final List<ChallengeModel> possibleChallenges;
 
-  @JsonKey(name: 'activeChallenges')
-  final List<ChallengeModel> activeChallengeModels;
+  @override
+  final List<ChallengeModel> activeChallenges;
 
   Map<String, dynamic> toJson() => _$NightwaveModelToJson(this);
 }

@@ -10,21 +10,20 @@ class RewardModel extends Reward {
     String thumbnail,
     String asString,
     int credits,
-    this.countedItemModels,
+    this.countedItems,
   }) : super(
           itemString: itemString,
           thumbnail: thumbnail,
           asString: asString,
           credits: credits,
-          countedItems: countedItemModels,
         );
 
   factory RewardModel.fromJson(Map<String, dynamic> json) {
     return _$RewardModelFromJson(json);
   }
 
-  @JsonKey(name: 'countedItems')
-  final List<CountedItemModel> countedItemModels;
+  @override
+  final List<CountedItemModel> countedItems;
 
   Map<String, dynamic> toJson() => _$RewardModelToJson(this);
 }

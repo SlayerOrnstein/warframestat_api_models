@@ -18,7 +18,7 @@ VoidTraderModel _$VoidTraderModelFromJson(Map<String, dynamic> json) {
     character: json['character'] as String,
     location: json['location'] as String,
     active: json['active'] as bool,
-    inventoryModels: (json['inventory'] as List)
+    inventory: (json['inventory'] as List)
         ?.map((e) => e == null
             ? null
             : InventoryItemModel.fromJson(e as Map<String, dynamic>))
@@ -34,7 +34,7 @@ Map<String, dynamic> _$VoidTraderModelToJson(VoidTraderModel instance) =>
       'character': instance.character,
       'location': instance.location,
       'active': instance.active,
-      'inventory': instance.inventoryModels?.map((e) => e?.toJson())?.toList(),
+      'inventory': instance.inventory?.map((e) => e?.toJson())?.toList(),
     };
 
 InventoryItemModel _$InventoryItemModelFromJson(Map<String, dynamic> json) {

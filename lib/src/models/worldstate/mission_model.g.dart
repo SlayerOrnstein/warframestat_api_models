@@ -16,7 +16,7 @@ MissionModel _$MissionModelFromJson(Map<String, dynamic> json) {
     maxWaveNum: json['maxWaveNum'] as int,
     nightmare: json['nightmare'] as bool,
     archwingRequired: json['archwingRequired'] as bool,
-    rewardModel: json['reward'] == null
+    reward: json['reward'] == null
         ? null
         : RewardModel.fromJson(json['reward'] as Map<String, dynamic>),
   );
@@ -32,5 +32,5 @@ Map<String, dynamic> _$MissionModelToJson(MissionModel instance) =>
       'maxWaveNum': instance.maxWaveNum,
       'nightmare': instance.nightmare,
       'archwingRequired': instance.archwingRequired,
-      'reward': instance.rewardModel?.toJson(),
+      'reward': instance.reward?.toJson(),
     };

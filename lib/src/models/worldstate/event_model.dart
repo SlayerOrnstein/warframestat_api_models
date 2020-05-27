@@ -21,9 +21,9 @@ class EventModel extends Event {
     num maximumScore,
     num currentScore,
     num health,
-    this.rewardModels,
-    this.interimStepModels,
-    this.jobModels,
+    this.rewards,
+    this.interimSteps,
+    this.jobs,
   }) : super(
           id: id,
           activation: activation,
@@ -37,38 +37,34 @@ class EventModel extends Event {
           maximumScore: maximumScore,
           currentScore: currentScore,
           health: health,
-          rewards: rewardModels,
-          interimSteps: interimStepModels,
-          jobs: jobModels,
         );
 
   factory EventModel.fromJson(Map<String, dynamic> json) {
     return _$EventModelFromJson(json);
   }
 
-  @JsonKey(name: 'rewards')
-  final List<RewardModel> rewardModels;
+  @override
+  final List<RewardModel> rewards;
 
-  @JsonKey(name: 'interimSteps')
-  final List<InterimStepModel> interimStepModels;
+  @override
+  final List<InterimStepModel> interimSteps;
 
-  @JsonKey(name: 'jobs')
-  final List<JobModel> jobModels;
+  @override
+  final List<JobModel> jobs;
 
   Map<String, dynamic> toJson() => _$EventModelToJson(this);
 }
 
 @JsonSerializable()
 class InterimStepModel extends InterimStep {
-  const InterimStepModel({int goal, this.rewardModel})
-      : super(goal: goal, reward: rewardModel);
+  const InterimStepModel({int goal, this.reward}) : super(goal: goal);
 
   factory InterimStepModel.fromJson(Map<String, dynamic> json) {
     return _$InterimStepModelFromJson(json);
   }
 
-  @JsonKey(name: 'reward')
-  final RewardModel rewardModel;
+  @override
+  final RewardModel reward;
 
   Map<String, dynamic> toJson() => _$InterimStepModelToJson(this);
 }

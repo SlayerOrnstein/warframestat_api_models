@@ -12,7 +12,7 @@ class VoidTraderModel extends VoidTrader {
     String character,
     String location,
     bool active,
-    this.inventoryModels,
+    this.inventory,
   }) : super(
           id: id,
           activation: activation,
@@ -20,15 +20,14 @@ class VoidTraderModel extends VoidTrader {
           character: character,
           location: location,
           active: active,
-          inventory: inventoryModels,
         );
 
   factory VoidTraderModel.fromJson(Map<String, dynamic> json) {
     return _$VoidTraderModelFromJson(json);
   }
 
-  @JsonKey(name: 'inventory')
-  final List<InventoryItemModel> inventoryModels;
+  @override
+  final List<InventoryItemModel> inventory;
 
   Map<String, dynamic> toJson() => _$VoidTraderModelToJson(this);
 }

@@ -19,12 +19,12 @@ NightwaveModel _$NightwaveModelFromJson(Map<String, dynamic> json) {
     active: json['active'] as bool,
     season: json['season'] as int,
     phase: json['phase'] as int,
-    possibleChallengeModels: (json['possibleChallenges'] as List)
+    possibleChallenges: (json['possibleChallenges'] as List)
         ?.map((e) => e == null
             ? null
             : ChallengeModel.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    activeChallengeModels: (json['activeChallenges'] as List)
+    activeChallenges: (json['activeChallenges'] as List)
         ?.map((e) => e == null
             ? null
             : ChallengeModel.fromJson(e as Map<String, dynamic>))
@@ -45,9 +45,9 @@ Map<String, dynamic> _$NightwaveModelToJson(NightwaveModel instance) =>
       'phase': instance.phase,
       'rewardTypes': instance.rewardTypes,
       'possibleChallenges':
-          instance.possibleChallengeModels?.map((e) => e?.toJson())?.toList(),
+          instance.possibleChallenges?.map((e) => e?.toJson())?.toList(),
       'activeChallenges':
-          instance.activeChallengeModels?.map((e) => e?.toJson())?.toList(),
+          instance.activeChallenges?.map((e) => e?.toJson())?.toList(),
     };
 
 ChallengeModel _$ChallengeModelFromJson(Map<String, dynamic> json) {

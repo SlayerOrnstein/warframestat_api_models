@@ -24,10 +24,10 @@ InvasionModel _$InvasionModelFromJson(Map<String, dynamic> json) {
     completed: json['completed'] as bool,
     completion: (json['completion'] as num)?.toDouble(),
     count: json['count'] as int,
-    attackerRewardInfoModel: json['attackerReward'] == null
+    attackerRewardInfo: json['attackerReward'] == null
         ? null
         : RewardModel.fromJson(json['attackerReward'] as Map<String, dynamic>),
-    defenderRewardInfoModel: json['defenderReward'] == null
+    defenderRewardInfo: json['defenderReward'] == null
         ? null
         : RewardModel.fromJson(json['defenderReward'] as Map<String, dynamic>),
   );
@@ -47,6 +47,6 @@ Map<String, dynamic> _$InvasionModelToJson(InvasionModel instance) =>
       'completed': instance.completed,
       'completion': instance.completion,
       'count': instance.count,
-      'attackerReward': instance.attackerRewardInfoModel?.toJson(),
-      'defenderReward': instance.defenderRewardInfoModel?.toJson(),
+      'attackerReward': instance.attackerRewardInfo?.toJson(),
+      'defenderReward': instance.defenderRewardInfo?.toJson(),
     };

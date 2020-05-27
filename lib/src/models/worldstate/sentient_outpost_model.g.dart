@@ -16,7 +16,7 @@ SentientOutpostModel _$SentientOutpostModelFromJson(Map<String, dynamic> json) {
         ? null
         : DateTime.parse(json['expiry'] as String),
     active: json['active'] as bool,
-    missionModel: json['mission'] == null
+    mission: json['mission'] == null
         ? null
         : MissionModel.fromJson(json['mission'] as Map<String, dynamic>),
   );
@@ -29,5 +29,5 @@ Map<String, dynamic> _$SentientOutpostModelToJson(
       'activation': instance.activation?.toIso8601String(),
       'expiry': instance.expiry?.toIso8601String(),
       'active': instance.active,
-      'mission': instance.missionModel?.toJson(),
+      'mission': instance.mission?.toJson(),
     };

@@ -24,16 +24,16 @@ EventModel _$EventModelFromJson(Map<String, dynamic> json) {
     maximumScore: json['maximumScore'] as num,
     currentScore: json['currentScore'] as num,
     health: json['health'] as num,
-    rewardModels: (json['rewards'] as List)
+    rewards: (json['rewards'] as List)
         ?.map((e) =>
             e == null ? null : RewardModel.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    interimStepModels: (json['interimSteps'] as List)
+    interimSteps: (json['interimSteps'] as List)
         ?.map((e) => e == null
             ? null
             : InterimStepModel.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    jobModels: (json['jobs'] as List)
+    jobs: (json['jobs'] as List)
         ?.map((e) =>
             e == null ? null : JobModel.fromJson(e as Map<String, dynamic>))
         ?.toList(),
@@ -54,16 +54,15 @@ Map<String, dynamic> _$EventModelToJson(EventModel instance) =>
       'health': instance.health,
       'currentScore': instance.currentScore,
       'maximumScore': instance.maximumScore,
-      'rewards': instance.rewardModels?.map((e) => e?.toJson())?.toList(),
-      'interimSteps':
-          instance.interimStepModels?.map((e) => e?.toJson())?.toList(),
-      'jobs': instance.jobModels?.map((e) => e?.toJson())?.toList(),
+      'rewards': instance.rewards?.map((e) => e?.toJson())?.toList(),
+      'interimSteps': instance.interimSteps?.map((e) => e?.toJson())?.toList(),
+      'jobs': instance.jobs?.map((e) => e?.toJson())?.toList(),
     };
 
 InterimStepModel _$InterimStepModelFromJson(Map<String, dynamic> json) {
   return InterimStepModel(
     goal: json['goal'] as int,
-    rewardModel: json['reward'] == null
+    reward: json['reward'] == null
         ? null
         : RewardModel.fromJson(json['reward'] as Map<String, dynamic>),
   );
@@ -72,5 +71,5 @@ InterimStepModel _$InterimStepModelFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$InterimStepModelToJson(InterimStepModel instance) =>
     <String, dynamic>{
       'goal': instance.goal,
-      'reward': instance.rewardModel?.toJson(),
+      'reward': instance.reward?.toJson(),
     };

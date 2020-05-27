@@ -16,7 +16,7 @@ class MissionModel extends Mission {
     int maxWaveNum,
     bool nightmare,
     bool archwingRequired,
-    this.rewardModel,
+    this.reward,
   }) : super(
           node: node,
           type: type,
@@ -26,15 +26,14 @@ class MissionModel extends Mission {
           maxWaveNum: maxWaveNum,
           nightmare: nightmare,
           archwingRequired: archwingRequired,
-          reward: rewardModel,
         );
 
   factory MissionModel.fromJson(Map<String, dynamic> json) {
     return _$MissionModelFromJson(json);
   }
 
-  @JsonKey(name: 'reward')
-  final RewardModel rewardModel;
+  @override
+  final RewardModel reward;
 
   Map<String, dynamic> toJson() => _$MissionModelToJson(this);
 }

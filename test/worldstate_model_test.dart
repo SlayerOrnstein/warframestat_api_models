@@ -9,8 +9,8 @@ Future<void> main() async {
   final file = await File('test/worldstate.json').readAsString();
 
   test('Make sure json is properly decoded', () {
-    final worldstate = WorldstateModel.fromJson(json.decode(file));
+    final Worldstate worldstate = WorldstateModel.fromJson(json.decode(file));
 
-    expect(worldstate, const TypeMatcher<Worldstate>());
+    expect(worldstate, WorldstateModel.fromJson(json.decode(file)));
   });
 }

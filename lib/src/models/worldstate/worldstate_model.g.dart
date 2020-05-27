@@ -11,75 +11,75 @@ WorldstateModel _$WorldstateModelFromJson(Map<String, dynamic> json) {
     timestamp: json['timestamp'] == null
         ? null
         : DateTime.parse(json['timestamp'] as String),
-    orbiterNewsModels: (json['news'] as List)
+    news: (json['news'] as List)
         ?.map((e) => e == null
             ? null
             : OrbiterNewsModel.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    eventModels: (json['events'] as List)
+    events: (json['events'] as List)
         ?.map((e) =>
             e == null ? null : EventModel.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    alertModels: (json['alerts'] as List)
+    alerts: (json['alerts'] as List)
         ?.map((e) =>
             e == null ? null : AlertModel.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    sortieModel: json['sortie'] == null
+    sortie: json['sortie'] == null
         ? null
         : SortieModel.fromJson(json['sortie'] as Map<String, dynamic>),
-    syndicateMissionModels: (json['syndicateMissions'] as List)
+    syndicateMissions: (json['syndicateMissions'] as List)
         ?.map((e) => e == null
             ? null
             : SyndicateModel.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    fissureModels: (json['fissures'] as List)
+    fissures: (json['fissures'] as List)
         ?.map((e) => e == null
             ? null
             : VoidFissureModel.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    invasionModels: (json['invasions'] as List)
+    invasions: (json['invasions'] as List)
         ?.map((e) => e == null
             ? null
             : InvasionModel.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    voidTraderModel: json['voidTrader'] == null
+    voidTrader: json['voidTrader'] == null
         ? null
         : VoidTraderModel.fromJson(json['voidTrader'] as Map<String, dynamic>),
-    dailyDealModels: (json['dailyDeals'] as List)
+    dailyDeals: (json['dailyDeals'] as List)
         ?.map((e) => e == null
             ? null
             : DarvoDealModel.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    persistentEnemyModels: (json['persistentEnemies'] as List)
+    persistentEnemys: (json['persistentEnemys'] as List)
         ?.map((e) => e == null
             ? null
             : PersistentEnemyModel.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    earthCycleModel: json['earthCycle'] == null
+    earthCycle: json['earthCycle'] == null
         ? null
         : EarthModel.fromJson(json['earthCycle'] as Map<String, dynamic>),
-    cetusCycleModel: json['cetusCycle'] == null
+    cetusCycle: json['cetusCycle'] == null
         ? null
         : EarthModel.fromJson(json['cetusCycle'] as Map<String, dynamic>),
-    constructionProgressModel: json['constructionProgress'] == null
+    constructionProgress: json['constructionProgress'] == null
         ? null
         : ConstructionProgressModel.fromJson(
             json['constructionProgress'] as Map<String, dynamic>),
-    vallisCycleModel: json['vallisCycle'] == null
+    vallisCycle: json['vallisCycle'] == null
         ? null
         : VallisModel.fromJson(json['vallisCycle'] as Map<String, dynamic>),
-    nightwaveModel: json['nightwave'] == null
+    nightwave: json['nightwave'] == null
         ? null
         : NightwaveModel.fromJson(json['nightwave'] as Map<String, dynamic>),
-    kuvaModel: (json['kuva'] as List)
+    kuva: (json['kuva'] as List)
         ?.map((e) =>
             e == null ? null : KuvaModel.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    sentientOutpostModel: json['sentientOutposts'] == null
+    sentientOutposts: json['sentientOutposts'] == null
         ? null
         : SentientOutpostModel.fromJson(
             json['sentientOutposts'] as Map<String, dynamic>),
-    arbitrationModel: json['arbitration'] == null
+    arbitration: json['arbitration'] == null
         ? null
         : ArbitrationModel.fromJson(
             json['arbitration'] as Map<String, dynamic>),
@@ -89,24 +89,24 @@ WorldstateModel _$WorldstateModelFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$WorldstateModelToJson(WorldstateModel instance) =>
     <String, dynamic>{
       'timestamp': instance.timestamp?.toIso8601String(),
-      'news': instance.orbiterNewsModels?.map((e) => e?.toJson())?.toList(),
-      'events': instance.eventModels?.map((e) => e?.toJson())?.toList(),
-      'alerts': instance.alertModels?.map((e) => e?.toJson())?.toList(),
-      'sortie': instance.sortieModel?.toJson(),
+      'news': instance.news?.map((e) => e?.toJson())?.toList(),
+      'events': instance.events?.map((e) => e?.toJson())?.toList(),
+      'alerts': instance.alerts?.map((e) => e?.toJson())?.toList(),
+      'sortie': instance.sortie?.toJson(),
       'syndicateMissions':
-          instance.syndicateMissionModels?.map((e) => e?.toJson())?.toList(),
-      'fissures': instance.fissureModels?.map((e) => e?.toJson())?.toList(),
-      'invasions': instance.invasionModels?.map((e) => e?.toJson())?.toList(),
-      'voidTrader': instance.voidTraderModel?.toJson(),
-      'dailyDeals': instance.dailyDealModels?.map((e) => e?.toJson())?.toList(),
-      'persistentEnemies':
-          instance.persistentEnemyModels?.map((e) => e?.toJson())?.toList(),
-      'earthCycle': instance.earthCycleModel?.toJson(),
-      'cetusCycle': instance.cetusCycleModel?.toJson(),
-      'constructionProgress': instance.constructionProgressModel?.toJson(),
-      'vallisCycle': instance.vallisCycleModel?.toJson(),
-      'nightwave': instance.nightwaveModel?.toJson(),
-      'sentientOutposts': instance.sentientOutpostModel?.toJson(),
-      'kuva': instance.kuvaModel?.map((e) => e?.toJson())?.toList(),
-      'arbitration': instance.arbitrationModel?.toJson(),
+          instance.syndicateMissions?.map((e) => e?.toJson())?.toList(),
+      'fissures': instance.fissures?.map((e) => e?.toJson())?.toList(),
+      'invasions': instance.invasions?.map((e) => e?.toJson())?.toList(),
+      'voidTrader': instance.voidTrader?.toJson(),
+      'dailyDeals': instance.dailyDeals?.map((e) => e?.toJson())?.toList(),
+      'persistentEnemys':
+          instance.persistentEnemys?.map((e) => e?.toJson())?.toList(),
+      'earthCycle': instance.earthCycle?.toJson(),
+      'cetusCycle': instance.cetusCycle?.toJson(),
+      'constructionProgress': instance.constructionProgress?.toJson(),
+      'vallisCycle': instance.vallisCycle?.toJson(),
+      'nightwave': instance.nightwave?.toJson(),
+      'sentientOutposts': instance.sentientOutposts?.toJson(),
+      'kuva': instance.kuva?.map((e) => e?.toJson())?.toList(),
+      'arbitration': instance.arbitration?.toJson(),
     };

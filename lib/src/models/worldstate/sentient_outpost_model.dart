@@ -12,12 +12,11 @@ class SentientOutpostModel extends SentientOutpost {
     DateTime activation,
     DateTime expiry,
     bool active,
-    this.missionModel,
+    this.mission,
   }) : super(
           id: id,
           activation: activation,
           expiry: expiry,
-          mission: missionModel,
           active: active,
         );
 
@@ -25,8 +24,8 @@ class SentientOutpostModel extends SentientOutpost {
     return _$SentientOutpostModelFromJson(json);
   }
 
-  @JsonKey(name: 'mission')
-  final MissionModel missionModel;
+  @override
+  final MissionModel mission;
 
   Map<String, dynamic> toJson() => _$SentientOutpostModelToJson(this);
 }
