@@ -34,7 +34,7 @@ class WorldstateModel extends Worldstate {
     this.invasions,
     this.voidTrader,
     this.dailyDeals,
-    this.persistentEnemys,
+    this.persistentEnemies,
     this.earthCycle,
     this.cetusCycle,
     this.constructionProgress,
@@ -77,7 +77,7 @@ class WorldstateModel extends Worldstate {
   final List<DarvoDealModel> dailyDeals;
 
   @override
-  final List<PersistentEnemyModel> persistentEnemys;
+  final List<PersistentEnemyModel> persistentEnemies;
 
   @override
   final EarthModel earthCycle;

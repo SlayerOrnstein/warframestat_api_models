@@ -50,7 +50,7 @@ WorldstateModel _$WorldstateModelFromJson(Map<String, dynamic> json) {
             ? null
             : DarvoDealModel.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    persistentEnemys: (json['persistentEnemys'] as List)
+    persistentEnemies: (json['persistentEnemies'] as List)
         ?.map((e) => e == null
             ? null
             : PersistentEnemyModel.fromJson(e as Map<String, dynamic>))
@@ -99,8 +99,8 @@ Map<String, dynamic> _$WorldstateModelToJson(WorldstateModel instance) =>
       'invasions': instance.invasions?.map((e) => e?.toJson())?.toList(),
       'voidTrader': instance.voidTrader?.toJson(),
       'dailyDeals': instance.dailyDeals?.map((e) => e?.toJson())?.toList(),
-      'persistentEnemys':
-          instance.persistentEnemys?.map((e) => e?.toJson())?.toList(),
+      'persistentEnemies':
+          instance.persistentEnemies?.map((e) => e?.toJson())?.toList(),
       'earthCycle': instance.earthCycle?.toJson(),
       'cetusCycle': instance.cetusCycle?.toJson(),
       'constructionProgress': instance.constructionProgress?.toJson(),
