@@ -1,12 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/misc/riven_data.dart';
 
+import '../../entities/rivens/riven.dart';
 import 'riven_roll_model.dart';
 
-part 'riven_data_model.g.dart';
+part 'riven_model.g.dart';
 
 @JsonSerializable()
-class RivenDataModel extends RivenData {
+class RivenDataModel extends Riven {
   const RivenDataModel({this.rerolledModel, this.unrolledModel})
       : super(rerolled: rerolledModel, unrolled: unrolledModel);
 

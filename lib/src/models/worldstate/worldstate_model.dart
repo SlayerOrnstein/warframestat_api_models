@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/worldstate/worldstate.dart';
 
+import '../../entities/worldstate/worldstate.dart';
 import 'alert_model.dart';
 import 'arbitration_model.dart';
 import 'construction_progress_model.dart';
@@ -43,7 +43,7 @@ class WorldstateModel extends Worldstate {
     this.kuva,
     this.sentientOutposts,
     this.arbitration,
-  });
+  }) : super(timestamp: timestamp);
 
   factory WorldstateModel.fromJson(Map<String, dynamic> json) {
     return _$WorldstateModelFromJson(json);
@@ -93,6 +93,7 @@ class WorldstateModel extends Worldstate {
 
   @override
   final NightwaveModel nightwave;
+
   @override
   final SentientOutpostModel sentientOutposts;
 

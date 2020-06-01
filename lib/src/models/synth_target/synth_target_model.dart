@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/misc/synth_target.dart';
 
+import '../../entities/synth_target/synth_target.dart';
 import 'synth_location_model.dart';
 
 part 'synth_target_model.g.dart';

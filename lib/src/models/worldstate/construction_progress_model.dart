@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/worldstate/construction_progress.dart';
+
+import '../../entities/worldstate/construction_progress.dart';
 
 part 'construction_progress_model.g.dart';
 

@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/worldstate/alert.dart';
 
+import '../../entities/worldstate/alert.dart';
 import 'mission_model.dart';
 
 part 'alert_model.g.dart';

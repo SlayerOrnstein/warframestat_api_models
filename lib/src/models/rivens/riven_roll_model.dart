@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/misc/riven_roll.dart';
+
+import '../../entities/rivens/riven_roll.dart';
 
 part 'riven_roll_model.g.dart';
 

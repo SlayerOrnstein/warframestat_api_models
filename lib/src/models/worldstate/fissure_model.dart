@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/worldstate/fissure.dart';
+
+import '../../entities/worldstate/fissure.dart';
 
 part 'fissure_model.g.dart';
 

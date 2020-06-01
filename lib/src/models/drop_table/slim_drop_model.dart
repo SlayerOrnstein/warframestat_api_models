@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/misc/slim_drop.dart';
+
+import '../../entities/drop_table/slim_drop.dart';
 
 part 'slim_drop_model.g.dart';
 

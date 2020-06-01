@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/worldstate/kuva.dart';
+
+import '../../entities/worldstate/kuva.dart';
 
 part 'kuva_model.g.dart';
 

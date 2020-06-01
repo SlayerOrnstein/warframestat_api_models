@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'riven_data_model.dart';
+part of 'riven_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

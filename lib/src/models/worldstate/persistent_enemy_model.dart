@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/worldstate/persistent_enemy.dart';
+
+import '../../entities/worldstate/persistent_enemy.dart';
 
 part 'persistent_enemy_model.g.dart';
 

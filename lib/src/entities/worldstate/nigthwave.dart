@@ -1,4 +1,4 @@
-import 'package:worldstate_api_model/src/objects/worldstate_object.dart';
+import '../../../objects.dart';
 
 class Nightwave extends WorldstateObject {
   const Nightwave({

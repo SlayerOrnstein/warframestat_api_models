@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:worldstate_api_model/src/entities/worldstate/darvo_deal.dart';
+
+import '../../entities/worldstate/darvo_deal.dart';
 
 part 'darvo_deal_model.g.dart';
 

@@ -1,4 +1,4 @@
-import 'package:worldstate_api_model/src/objects/worldstate_object.dart';
+import '../../../objects.dart';
 
 class OrbiterNews extends WorldstateObject {
   const OrbiterNews({

@@ -1,4 +1,4 @@
-import 'package:worldstate_api_model/src/objects/cycle_object.dart';
+import '../../../objects.dart';
 
 class Earth extends CycleObject {
   const Earth({

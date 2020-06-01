@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:worldstate_api_model/src/objects/worldstate_object.dart';
+import '../../../objects.dart';
 
 class Sortie extends WorldstateObject {
   const Sortie({
