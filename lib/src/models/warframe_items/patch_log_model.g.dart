@@ -6,7 +6,7 @@ part of 'patch_log_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PatchlogModel _$PatchlogModelFromJson(Map<String, dynamic> json) {
+PatchlogModel _$PatchlogModelFromJson(Map json) {
   return PatchlogModel(
     name: json['name'] as String,
     date: json['date'] == null ? null : DateTime.parse(json['date'] as String),

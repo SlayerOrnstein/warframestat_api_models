@@ -6,7 +6,7 @@ part of 'event_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-EventModel _$EventModelFromJson(Map<String, dynamic> json) {
+EventModel _$EventModelFromJson(Map json) {
   return EventModel(
     id: json['id'] as String,
     activation: json['activation'] == null
@@ -25,17 +25,25 @@ EventModel _$EventModelFromJson(Map<String, dynamic> json) {
     currentScore: json['currentScore'] as num,
     health: json['health'] as num,
     rewards: (json['rewards'] as List)
-        ?.map((e) =>
-            e == null ? null : RewardModel.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : RewardModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     interimSteps: (json['interimSteps'] as List)
         ?.map((e) => e == null
             ? null
-            : InterimStepModel.fromJson(e as Map<String, dynamic>))
+            : InterimStepModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     jobs: (json['jobs'] as List)
-        ?.map((e) =>
-            e == null ? null : JobModel.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : JobModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
   );
 }
@@ -59,12 +67,14 @@ Map<String, dynamic> _$EventModelToJson(EventModel instance) =>
       'jobs': instance.jobs?.map((e) => e?.toJson())?.toList(),
     };
 
-InterimStepModel _$InterimStepModelFromJson(Map<String, dynamic> json) {
+InterimStepModel _$InterimStepModelFromJson(Map json) {
   return InterimStepModel(
     goal: json['goal'] as int,
     reward: json['reward'] == null
         ? null
-        : RewardModel.fromJson(json['reward'] as Map<String, dynamic>),
+        : RewardModel.fromJson((json['reward'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
   );
 }
 

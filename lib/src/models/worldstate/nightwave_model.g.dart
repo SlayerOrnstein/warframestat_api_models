@@ -6,7 +6,7 @@ part of 'nightwave_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-NightwaveModel _$NightwaveModelFromJson(Map<String, dynamic> json) {
+NightwaveModel _$NightwaveModelFromJson(Map json) {
   return NightwaveModel(
     id: json['id'] as String,
     activation: json['activation'] == null
@@ -22,12 +22,16 @@ NightwaveModel _$NightwaveModelFromJson(Map<String, dynamic> json) {
     possibleChallenges: (json['possibleChallenges'] as List)
         ?.map((e) => e == null
             ? null
-            : ChallengeModel.fromJson(e as Map<String, dynamic>))
+            : ChallengeModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     activeChallenges: (json['activeChallenges'] as List)
         ?.map((e) => e == null
             ? null
-            : ChallengeModel.fromJson(e as Map<String, dynamic>))
+            : ChallengeModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     rewardTypes:
         (json['rewardTypes'] as List)?.map((e) => e as String)?.toList(),
@@ -50,7 +54,7 @@ Map<String, dynamic> _$NightwaveModelToJson(NightwaveModel instance) =>
           instance.activeChallenges?.map((e) => e?.toJson())?.toList(),
     };
 
-ChallengeModel _$ChallengeModelFromJson(Map<String, dynamic> json) {
+ChallengeModel _$ChallengeModelFromJson(Map json) {
   return ChallengeModel(
     id: json['id'] as String,
     activation: json['activation'] == null

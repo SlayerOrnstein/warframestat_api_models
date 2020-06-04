@@ -6,7 +6,7 @@ part of 'component_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ComponentModel _$ComponentModelFromJson(Map<String, dynamic> json) {
+ComponentModel _$ComponentModelFromJson(Map json) {
   return ComponentModel(
     uniqueName: json['uniqueName'] as String,
     name: json['name'] as String,
@@ -17,7 +17,9 @@ ComponentModel _$ComponentModelFromJson(Map<String, dynamic> json) {
     drops: (json['drops'] as List)
         ?.map((e) => e == null
             ? null
-            : ComponentDropModel.fromJson(e as Map<String, dynamic>))
+            : ComponentDropModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
   );
 }

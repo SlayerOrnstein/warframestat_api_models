@@ -6,7 +6,7 @@ part of 'sentient_outpost_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SentientOutpostModel _$SentientOutpostModelFromJson(Map<String, dynamic> json) {
+SentientOutpostModel _$SentientOutpostModelFromJson(Map json) {
   return SentientOutpostModel(
     id: json['id'] as String,
     activation: json['activation'] == null
@@ -18,7 +18,9 @@ SentientOutpostModel _$SentientOutpostModelFromJson(Map<String, dynamic> json) {
     active: json['active'] as bool,
     mission: json['mission'] == null
         ? null
-        : MissionModel.fromJson(json['mission'] as Map<String, dynamic>),
+        : MissionModel.fromJson((json['mission'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
   );
 }
 

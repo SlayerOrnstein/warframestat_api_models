@@ -6,7 +6,7 @@ part of 'worldstate_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-WorldstateModel _$WorldstateModelFromJson(Map<String, dynamic> json) {
+WorldstateModel _$WorldstateModelFromJson(Map json) {
   return WorldstateModel(
     timestamp: json['timestamp'] == null
         ? null
@@ -14,75 +14,112 @@ WorldstateModel _$WorldstateModelFromJson(Map<String, dynamic> json) {
     news: (json['news'] as List)
         ?.map((e) => e == null
             ? null
-            : OrbiterNewsModel.fromJson(e as Map<String, dynamic>))
+            : OrbiterNewsModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     events: (json['events'] as List)
-        ?.map((e) =>
-            e == null ? null : EventModel.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : EventModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     alerts: (json['alerts'] as List)
-        ?.map((e) =>
-            e == null ? null : AlertModel.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : AlertModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     sortie: json['sortie'] == null
         ? null
-        : SortieModel.fromJson(json['sortie'] as Map<String, dynamic>),
+        : SortieModel.fromJson((json['sortie'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
     syndicateMissions: (json['syndicateMissions'] as List)
         ?.map((e) => e == null
             ? null
-            : SyndicateModel.fromJson(e as Map<String, dynamic>))
+            : SyndicateModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     fissures: (json['fissures'] as List)
         ?.map((e) => e == null
             ? null
-            : VoidFissureModel.fromJson(e as Map<String, dynamic>))
+            : VoidFissureModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     invasions: (json['invasions'] as List)
         ?.map((e) => e == null
             ? null
-            : InvasionModel.fromJson(e as Map<String, dynamic>))
+            : InvasionModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     voidTrader: json['voidTrader'] == null
         ? null
-        : VoidTraderModel.fromJson(json['voidTrader'] as Map<String, dynamic>),
+        : VoidTraderModel.fromJson((json['voidTrader'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
     dailyDeals: (json['dailyDeals'] as List)
         ?.map((e) => e == null
             ? null
-            : DarvoDealModel.fromJson(e as Map<String, dynamic>))
+            : DarvoDealModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     persistentEnemies: (json['persistentEnemies'] as List)
         ?.map((e) => e == null
             ? null
-            : PersistentEnemyModel.fromJson(e as Map<String, dynamic>))
+            : PersistentEnemyModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     earthCycle: json['earthCycle'] == null
         ? null
-        : EarthModel.fromJson(json['earthCycle'] as Map<String, dynamic>),
+        : EarthModel.fromJson((json['earthCycle'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
     cetusCycle: json['cetusCycle'] == null
         ? null
-        : EarthModel.fromJson(json['cetusCycle'] as Map<String, dynamic>),
+        : EarthModel.fromJson((json['cetusCycle'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
     constructionProgress: json['constructionProgress'] == null
         ? null
         : ConstructionProgressModel.fromJson(
-            json['constructionProgress'] as Map<String, dynamic>),
+            (json['constructionProgress'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
     vallisCycle: json['vallisCycle'] == null
         ? null
-        : VallisModel.fromJson(json['vallisCycle'] as Map<String, dynamic>),
+        : VallisModel.fromJson((json['vallisCycle'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
     nightwave: json['nightwave'] == null
         ? null
-        : NightwaveModel.fromJson(json['nightwave'] as Map<String, dynamic>),
+        : NightwaveModel.fromJson((json['nightwave'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
     kuva: (json['kuva'] as List)
-        ?.map((e) =>
-            e == null ? null : KuvaModel.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : KuvaModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     sentientOutposts: json['sentientOutposts'] == null
         ? null
-        : SentientOutpostModel.fromJson(
-            json['sentientOutposts'] as Map<String, dynamic>),
+        : SentientOutpostModel.fromJson((json['sentientOutposts'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
     arbitration: json['arbitration'] == null
         ? null
-        : ArbitrationModel.fromJson(
-            json['arbitration'] as Map<String, dynamic>),
+        : ArbitrationModel.fromJson((json['arbitration'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
   );
 }
 

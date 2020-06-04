@@ -6,7 +6,7 @@ part of 'weapon_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-WeaponModel _$WeaponModelFromJson(Map<String, dynamic> json) {
+WeaponModel _$WeaponModelFromJson(Map json) {
   return WeaponModel(
     uniqueName: json['uniqueName'] as String,
     name: json['name'] as String,
@@ -49,10 +49,14 @@ WeaponModel _$WeaponModelFromJson(Map<String, dynamic> json) {
     components: (json['components'] as List)
         ?.map((e) => e == null
             ? null
-            : ComponentModel.fromJson(e as Map<String, dynamic>))
+            : ComponentModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     damage: json['damage'],
-    damageTypes: json['damageTypes'] as Map<String, dynamic>,
+    damageTypes: (json['damageTypes'] as Map)?.map(
+      (k, e) => MapEntry(k as String, e),
+    ),
     marketCost: json['marketCost'],
     polarites: (json['polarites'] as List)?.map((e) => e as String)?.toList(),
     tags: (json['tags'] as List)?.map((e) => e as String)?.toList(),

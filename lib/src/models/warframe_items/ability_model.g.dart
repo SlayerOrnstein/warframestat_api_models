@@ -6,7 +6,7 @@ part of 'ability_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-AbilityModel _$AbilityModelFromJson(Map<String, dynamic> json) {
+AbilityModel _$AbilityModelFromJson(Map json) {
   return AbilityModel(
     name: json['name'] as String,
     description: json['description'] as String,

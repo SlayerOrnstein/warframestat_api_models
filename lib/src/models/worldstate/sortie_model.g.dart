@@ -6,7 +6,7 @@ part of 'sortie_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SortieModel _$SortieModelFromJson(Map<String, dynamic> json) {
+SortieModel _$SortieModelFromJson(Map json) {
   return SortieModel(
     id: json['id'] as String,
     activation: json['activation'] == null
@@ -18,8 +18,11 @@ SortieModel _$SortieModelFromJson(Map<String, dynamic> json) {
     boss: json['boss'] as String,
     faction: json['faction'] as String,
     variants: (json['variants'] as List)
-        ?.map((e) =>
-            e == null ? null : VariantModel.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : VariantModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
   );
 }
@@ -34,7 +37,7 @@ Map<String, dynamic> _$SortieModelToJson(SortieModel instance) =>
       'variants': instance.variants?.map((e) => e?.toJson())?.toList(),
     };
 
-VariantModel _$VariantModelFromJson(Map<String, dynamic> json) {
+VariantModel _$VariantModelFromJson(Map json) {
   return VariantModel(
     missionType: json['missionType'] as String,
     modifier: json['modifier'] as String,

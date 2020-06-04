@@ -6,7 +6,7 @@ part of 'job_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-JobModel _$JobModelFromJson(Map<String, dynamic> json) {
+JobModel _$JobModelFromJson(Map json) {
   return JobModel(
     type: json['type'] as String,
     rewardpool: json['rewardPool'],

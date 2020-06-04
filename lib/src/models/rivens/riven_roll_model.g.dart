@@ -6,7 +6,7 @@ part of 'riven_roll_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-RivenRollModel _$RivenRollModelFromJson(Map<String, dynamic> json) {
+RivenRollModel _$RivenRollModelFromJson(Map json) {
   return RivenRollModel(
     itemType: json['itemType'] as String,
     compatibility: json['compatibility'] as String,

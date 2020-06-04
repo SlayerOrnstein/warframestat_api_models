@@ -6,7 +6,7 @@ part of 'darvo_deal_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DarvoDealModel _$DarvoDealModelFromJson(Map<String, dynamic> json) {
+DarvoDealModel _$DarvoDealModelFromJson(Map json) {
   return DarvoDealModel(
     id: json['id'] as String,
     activation: json['activation'] == null

@@ -6,7 +6,7 @@ part of 'alert_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-AlertModel _$AlertModelFromJson(Map<String, dynamic> json) {
+AlertModel _$AlertModelFromJson(Map json) {
   return AlertModel(
     id: json['id'] as String,
     activation: json['activation'] == null
@@ -18,7 +18,9 @@ AlertModel _$AlertModelFromJson(Map<String, dynamic> json) {
     active: json['active'] as bool,
     mission: json['mission'] == null
         ? null
-        : MissionModel.fromJson(json['mission'] as Map<String, dynamic>),
+        : MissionModel.fromJson((json['mission'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
   );
 }
 

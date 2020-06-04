@@ -6,7 +6,7 @@ part of 'earth_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-EarthModel _$EarthModelFromJson(Map<String, dynamic> json) {
+EarthModel _$EarthModelFromJson(Map json) {
   return EarthModel(
     id: json['id'] as String,
     activation: json['activation'] == null

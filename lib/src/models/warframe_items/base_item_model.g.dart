@@ -6,7 +6,7 @@ part of 'base_item_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-BaseItemModel _$BaseItemModelFromJson(Map<String, dynamic> json) {
+BaseItemModel _$BaseItemModelFromJson(Map json) {
   return BaseItemModel(
     uniqueName: json['uniqueName'] as String,
     name: json['name'] as String,
@@ -18,7 +18,9 @@ BaseItemModel _$BaseItemModelFromJson(Map<String, dynamic> json) {
     patchlogs: (json['patchlogs'] as List)
         ?.map((e) => e == null
             ? null
-            : PatchlogModel.fromJson(e as Map<String, dynamic>))
+            : PatchlogModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     wikiaUrl: json['wikiaUrl'] as String,
     wikiaThumbnail: json['wikiaThumbnail'] as String,

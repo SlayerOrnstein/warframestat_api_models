@@ -6,7 +6,7 @@ part of 'arbitration_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ArbitrationModel _$ArbitrationModelFromJson(Map<String, dynamic> json) {
+ArbitrationModel _$ArbitrationModelFromJson(Map json) {
   return ArbitrationModel(
     activation: json['activation'] == null
         ? null

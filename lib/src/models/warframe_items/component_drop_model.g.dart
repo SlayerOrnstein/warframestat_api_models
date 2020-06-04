@@ -6,7 +6,7 @@ part of 'component_drop_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ComponentDropModel _$ComponentDropModelFromJson(Map<String, dynamic> json) {
+ComponentDropModel _$ComponentDropModelFromJson(Map json) {
   return ComponentDropModel(
     location: json['location'] as String,
     type: json['type'] as String,

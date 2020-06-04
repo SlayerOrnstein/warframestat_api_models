@@ -6,7 +6,7 @@ part of 'persistent_enemy_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PersistentEnemyModel _$PersistentEnemyModelFromJson(Map<String, dynamic> json) {
+PersistentEnemyModel _$PersistentEnemyModelFromJson(Map json) {
   return PersistentEnemyModel(
     id: json['id'] as String,
     activation: json['activation'] == null

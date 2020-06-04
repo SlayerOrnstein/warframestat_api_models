@@ -6,7 +6,7 @@ part of 'reward_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-RewardModel _$RewardModelFromJson(Map<String, dynamic> json) {
+RewardModel _$RewardModelFromJson(Map json) {
   return RewardModel(
     itemString: json['itemString'] as String,
     thumbnail: json['thumbnail'] as String,
@@ -15,7 +15,9 @@ RewardModel _$RewardModelFromJson(Map<String, dynamic> json) {
     countedItems: (json['countedItems'] as List)
         ?.map((e) => e == null
             ? null
-            : CountedItemModel.fromJson(e as Map<String, dynamic>))
+            : CountedItemModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
   );
 }
@@ -29,7 +31,7 @@ Map<String, dynamic> _$RewardModelToJson(RewardModel instance) =>
       'countedItems': instance.countedItems?.map((e) => e?.toJson())?.toList(),
     };
 
-CountedItemModel _$CountedItemModelFromJson(Map<String, dynamic> json) {
+CountedItemModel _$CountedItemModelFromJson(Map json) {
   return CountedItemModel(
     count: json['count'] as int,
     type: json['type'] as String,

@@ -6,7 +6,7 @@ part of 'slim_drop_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SlimDropModel _$SlimDropModelFromJson(Map<String, dynamic> json) {
+SlimDropModel _$SlimDropModelFromJson(Map json) {
   return SlimDropModel(
     place: json['place'] as String,
     item: json['item'] as String,

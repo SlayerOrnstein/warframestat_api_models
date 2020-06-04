@@ -6,7 +6,7 @@ part of 'synth_location_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SynthLocationModel _$SynthLocationModelFromJson(Map<String, dynamic> json) {
+SynthLocationModel _$SynthLocationModelFromJson(Map json) {
   return SynthLocationModel(
     faction: json['faction'] as String,
     mission: json['mission'] as String,

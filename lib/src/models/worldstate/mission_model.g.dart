@@ -6,7 +6,7 @@ part of 'mission_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MissionModel _$MissionModelFromJson(Map<String, dynamic> json) {
+MissionModel _$MissionModelFromJson(Map json) {
   return MissionModel(
     node: json['node'] as String,
     type: json['type'] as String,
@@ -18,7 +18,9 @@ MissionModel _$MissionModelFromJson(Map<String, dynamic> json) {
     archwingRequired: json['archwingRequired'] as bool,
     reward: json['reward'] == null
         ? null
-        : RewardModel.fromJson(json['reward'] as Map<String, dynamic>),
+        : RewardModel.fromJson((json['reward'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
   );
 }
 

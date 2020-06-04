@@ -6,7 +6,7 @@ part of 'vallis_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-VallisModel _$VallisModelFromJson(Map<String, dynamic> json) {
+VallisModel _$VallisModelFromJson(Map json) {
   return VallisModel(
     id: json['id'] as String,
     activation: json['activation'] == null

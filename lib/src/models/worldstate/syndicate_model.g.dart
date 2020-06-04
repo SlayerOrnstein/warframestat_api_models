@@ -6,7 +6,7 @@ part of 'syndicate_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SyndicateModel _$SyndicateModelFromJson(Map<String, dynamic> json) {
+SyndicateModel _$SyndicateModelFromJson(Map json) {
   return SyndicateModel(
     id: json['id'] as String,
     activation: json['activation'] == null
@@ -18,8 +18,11 @@ SyndicateModel _$SyndicateModelFromJson(Map<String, dynamic> json) {
     syndicate: json['syndicate'] as String,
     active: json['active'] as bool,
     jobs: (json['jobs'] as List)
-        ?.map((e) =>
-            e == null ? null : JobModel.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : JobModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
   );
 }

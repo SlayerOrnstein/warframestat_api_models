@@ -6,7 +6,7 @@ part of 'bio_weapon_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-BioWeaponModel _$BioWeaponModelFromJson(Map<String, dynamic> json) {
+BioWeaponModel _$BioWeaponModelFromJson(Map json) {
   return BioWeaponModel(
     uniqueName: json['uniqueName'] as String,
     name: json['name'] as String,
@@ -20,8 +20,11 @@ BioWeaponModel _$BioWeaponModelFromJson(Map<String, dynamic> json) {
     sprintSpeed: (json['sprintSpeed'] as num)?.toDouble(),
     passiveDescription: json['passiveDescription'] as String,
     abilities: (json['abilities'] as List)
-        ?.map((e) =>
-            e == null ? null : AbilityModel.fromJson(e as Map<String, dynamic>))
+        ?.map((e) => e == null
+            ? null
+            : AbilityModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     buildPrice: json['buildPrice'] as int,
     buildTime: json['buildTime'] as int,
@@ -31,7 +34,9 @@ BioWeaponModel _$BioWeaponModelFromJson(Map<String, dynamic> json) {
     components: (json['components'] as List)
         ?.map((e) => e == null
             ? null
-            : ComponentModel.fromJson(e as Map<String, dynamic>))
+            : ComponentModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     type: json['type'] as String,
     imageName: json['imageName'] as String,
@@ -40,7 +45,9 @@ BioWeaponModel _$BioWeaponModelFromJson(Map<String, dynamic> json) {
     patchlogs: (json['patchlogs'] as List)
         ?.map((e) => e == null
             ? null
-            : PatchlogModel.fromJson(e as Map<String, dynamic>))
+            : PatchlogModel.fromJson((e as Map)?.map(
+                (k, e) => MapEntry(k as String, e),
+              )))
         ?.toList(),
     wikiaThumbnail: json['wikiaThumbnail'] as String,
     wikiaUrl: json['wikiaUrl'] as String,

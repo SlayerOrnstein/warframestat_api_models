@@ -6,7 +6,7 @@ part of 'news_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-OrbiterNewsModel _$OrbiterNewsModelFromJson(Map<String, dynamic> json) {
+OrbiterNewsModel _$OrbiterNewsModelFromJson(Map json) {
   return OrbiterNewsModel(
     id: json['id'] as String,
     message: json['message'] as String,
@@ -17,8 +17,8 @@ OrbiterNewsModel _$OrbiterNewsModelFromJson(Map<String, dynamic> json) {
     update: json['update'] as bool,
     primeAccess: json['primeAccess'] as bool,
     stream: json['stream'] as bool,
-    translations: (json['translations'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(k, e as String),
+    translations: (json['translations'] as Map)?.map(
+      (k, e) => MapEntry(k as String, e as String),
     ),
   );
 }
