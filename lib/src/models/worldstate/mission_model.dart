@@ -17,6 +17,7 @@ class MissionModel extends Mission {
     bool nightmare,
     bool archwingRequired,
     this.reward,
+    String exclusiveWeapon,
   }) : super(
           node: node,
           type: type,
@@ -26,6 +27,7 @@ class MissionModel extends Mission {
           maxWaveNum: maxWaveNum,
           nightmare: nightmare,
           archwingRequired: archwingRequired,
+          exclusiveWeapon: exclusiveWeapon,
         );
 
   factory MissionModel.fromJson(Map<String, dynamic> json) {

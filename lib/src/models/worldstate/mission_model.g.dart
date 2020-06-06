@@ -21,6 +21,7 @@ MissionModel _$MissionModelFromJson(Map json) {
         : RewardModel.fromJson((json['reward'] as Map)?.map(
             (k, e) => MapEntry(k as String, e),
           )),
+    exclusiveWeapon: json['exclusiveWeapon'] as String,
   );
 }
 
@@ -29,6 +30,7 @@ Map<String, dynamic> _$MissionModelToJson(MissionModel instance) =>
       'node': instance.node,
       'type': instance.type,
       'faction': instance.faction,
+      'exclusiveWeapon': instance.exclusiveWeapon,
       'minEnemyLevel': instance.minEnemyLevel,
       'maxEnemyLevel': instance.maxEnemyLevel,
       'maxWaveNum': instance.maxWaveNum,

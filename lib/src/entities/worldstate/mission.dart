@@ -13,9 +13,10 @@ class Mission extends Equatable {
     this.nightmare,
     this.archwingRequired,
     this.reward,
+    this.exclusiveWeapon,
   });
 
-  final String node, type, faction;
+  final String node, type, faction, exclusiveWeapon;
   final int minEnemyLevel, maxEnemyLevel, maxWaveNum;
   final bool nightmare, archwingRequired;
 
