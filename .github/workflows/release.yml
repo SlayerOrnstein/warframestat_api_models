@@ -16,8 +16,9 @@ jobs:
           node-version: 12
       - name: Setup Dart
         uses: cedx/setup-dart@v2
-        run: pub global activate pubspec_version
       - name: Release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx semantic-release
+        run: |
+          pub global activate pubspec_version
+          npx semantic-release
