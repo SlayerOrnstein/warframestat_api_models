@@ -4,6 +4,5 @@ plugins:
   - "@semantic-release/github"
   - - "@semantic-release/exec"
     - prepareCmd: "pubver set ${nextRelease.version}"
-      publishCmd: "publish-package"
 branches:
   - master
