@@ -4,6 +4,6 @@ plugins:
   - "@semantic-release/github"
   - - "@semantic-release/exec"
     - prepareCmd: "pubver set ${nextRelease.version}"
-    - publishCmd: "git add pubspec.yaml && git commit -m ${nextRelease.version} && git push"
+      publishCmd: "git add pubspec.yaml && git commit -m ${nextRelease.version} && git push"
 branches:
   - master
