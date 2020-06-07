@@ -21,4 +21,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           pub global activate pubspec_version
-          npx semantic-release
+          npx semantic-release@17.0.8
