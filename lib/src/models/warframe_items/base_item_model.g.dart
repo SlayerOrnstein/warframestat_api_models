@@ -14,6 +14,7 @@ BaseItemModel _$BaseItemModelFromJson(Map json) {
     type: json['type'] as String,
     imageName: json['imageName'] as String,
     category: json['category'] as String,
+    productCategory: json['productCategory'] as String,
     tradable: json['tradable'] as bool,
     patchlogs: (json['patchlogs'] as List)
         ?.map((e) => e == null
@@ -35,6 +36,7 @@ Map<String, dynamic> _$BaseItemModelToJson(BaseItemModel instance) =>
       'type': instance.type,
       'imageName': instance.imageName,
       'category': instance.category,
+      'productCategory': instance.productCategory,
       'tradable': instance.tradable,
       'wikiaUrl': instance.wikiaUrl,
       'wikiaThumbnail': instance.wikiaThumbnail,

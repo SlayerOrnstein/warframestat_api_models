@@ -10,18 +10,21 @@ class BaseItem extends Equatable {
     this.type,
     this.imageName,
     this.category,
+    this.productCategory,
     this.tradable = false,
     this.patchlogs,
     this.wikiaUrl,
     this.wikiaThumbnail,
   });
 
-  final String uniqueName;
-  final String name;
-  final String description;
-  final String type;
-  final String imageName;
-  final String category;
+  final String uniqueName,
+      name,
+      description,
+      type,
+      imageName,
+      category,
+      productCategory;
+
   final bool tradable;
   final List<Patchlog> patchlogs;
   final String wikiaUrl, wikiaThumbnail;
