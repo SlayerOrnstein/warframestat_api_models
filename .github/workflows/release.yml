@@ -20,5 +20,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
+          npm install -g @semantic-release/exec
           pub global activate pubspec_version
           npx semantic-release@17.0.8
