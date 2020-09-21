@@ -19,21 +19,21 @@ InvasionModel _$InvasionModelFromJson(Map json) {
     desc: json['desc'] as String,
     attackingFaction: json['attackingFaction'] as String,
     defendingFaction: json['defendingFaction'] as String,
+    attacker: json['attacker'] == null
+        ? null
+        : FactionModel.fromJson((json['attacker'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
+    defender: json['defender'] == null
+        ? null
+        : FactionModel.fromJson((json['defender'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
     eta: json['eta'] as String,
     vsInfestation: json['vsInfestation'] as bool,
     completed: json['completed'] as bool,
     completion: (json['completion'] as num)?.toDouble(),
     count: json['count'] as int,
-    attackerRewardInfo: json['attackerReward'] == null
-        ? null
-        : RewardModel.fromJson((json['attackerReward'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    defenderRewardInfo: json['defenderReward'] == null
-        ? null
-        : RewardModel.fromJson((json['defenderReward'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
   );
 }
 
@@ -51,6 +51,25 @@ Map<String, dynamic> _$InvasionModelToJson(InvasionModel instance) =>
       'completed': instance.completed,
       'completion': instance.completion,
       'count': instance.count,
-      'attackerReward': instance.attackerRewardInfo?.toJson(),
-      'defenderReward': instance.defenderRewardInfo?.toJson(),
+      'attacker': instance.attacker?.toJson(),
+      'defender': instance.defender?.toJson(),
+    };
+
+FactionModel _$FactionModelFromJson(Map json) {
+  return FactionModel(
+    reward: json['reward'] == null
+        ? null
+        : RewardModel.fromJson((json['reward'] as Map)?.map(
+            (k, e) => MapEntry(k as String, e),
+          )),
+    faction: json['faction'] as String,
+    factionKey: json['factionKey'] as String,
+  );
+}
+
+Map<String, dynamic> _$FactionModelToJson(FactionModel instance) =>
+    <String, dynamic>{
+      'faction': instance.faction,
+      'factionKey': instance.factionKey,
+      'reward': instance.reward?.toJson(),
     };

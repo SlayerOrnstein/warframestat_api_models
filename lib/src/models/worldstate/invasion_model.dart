@@ -15,13 +15,13 @@ class InvasionModel extends Invasion {
     String desc,
     String attackingFaction,
     String defendingFaction,
+    this.attacker,
+    this.defender,
     String eta,
     bool vsInfestation,
     bool completed,
     double completion,
     int count,
-    this.attackerRewardInfo,
-    this.defenderRewardInfo,
   }) : super(
           id: id,
           activation: activation,
@@ -30,6 +30,8 @@ class InvasionModel extends Invasion {
           desc: desc,
           attackingFaction: attackingFaction,
           defendingFaction: defendingFaction,
+          attacker: attacker,
+          defender: defender,
           eta: eta,
           vsInfestation: vsInfestation,
           completed: completed,
@@ -42,12 +44,22 @@ class InvasionModel extends Invasion {
   }
 
   @override
-  @JsonKey(name: 'attackerReward')
-  final RewardModel attackerRewardInfo;
-
-  @override
-  @JsonKey(name: 'defenderReward')
-  final RewardModel defenderRewardInfo;
+  final FactionModel attacker, defender;
 
   Map<String, dynamic> toJson() => _$InvasionModelToJson(this);
+}
+
+@JsonSerializable()
+class FactionModel extends Faction {
+  const FactionModel({this.reward, String faction, String factionKey})
+      : super(reward: reward, faction: faction, factionKey: factionKey);
+
+  factory FactionModel.fromJson(Map<String, dynamic> json) {
+    return _$FactionModelFromJson(json);
+  }
+
+  @override
+  final RewardModel reward;
+
+  Map<String, dynamic> toJson() => _$FactionModelToJson(this);
 }

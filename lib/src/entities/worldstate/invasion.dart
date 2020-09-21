@@ -1,3 +1,5 @@
+import 'package:equatable/equatable.dart';
+
 import '../../../objects.dart';
 
 import 'reward.dart';
@@ -11,25 +13,25 @@ class Invasion extends WorldstateObject {
     this.desc,
     this.attackingFaction,
     this.defendingFaction,
+    this.attacker,
+    this.defender,
     this.eta,
     this.vsInfestation,
     this.completed,
     this.completion,
     this.count,
-    this.attackerRewardInfo,
-    this.defenderRewardInfo,
   }) : super(id: id, activation: activation, expiry: expiry);
 
   final String node, desc, attackingFaction, defendingFaction, eta;
   final bool vsInfestation, completed;
   final num completion, count;
-  final Reward attackerRewardInfo, defenderRewardInfo;
+  final Faction attacker, defender;
 
-  /// shorthand for [attackerRewardInfo.itemString]
-  String get attackerReward => attackerRewardInfo.itemString;
+  /// shorthand for [attacker.reward]
+  Reward get attackerReward => attacker.reward;
 
-  /// shorthand for [defenderRewardInfo.itemString]
-  String get defenderReward => defenderRewardInfo.itemString;
+  /// shorthand for [defender.reward]
+  Reward get defenderReward => defender.reward;
 
   @override
   List<Object> get props {
@@ -44,8 +46,16 @@ class Invasion extends WorldstateObject {
         completed,
         completion,
         count,
-        attackerReward,
-        defenderReward,
       ]);
   }
+}
+
+class Faction extends Equatable {
+  const Faction({this.reward, this.faction, this.factionKey});
+
+  final Reward reward;
+  final String faction, factionKey;
+
+  @override
+  List<Object> get props => [reward, faction, factionKey];
 }
