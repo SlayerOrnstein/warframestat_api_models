@@ -12,7 +12,7 @@ ComponentDropModel _$ComponentDropModelFromJson(Map json) {
     type: json['type'] as String,
     rarity: json['rarity'] as String,
     rotation: json['rotation'] as String,
-    chance: json['chance'] as String,
+    chance: (json['chance'] as num)?.toDouble(),
   );
 }
 

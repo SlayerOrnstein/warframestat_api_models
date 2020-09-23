@@ -10,7 +10,7 @@ class ComponentDrop extends Equatable {
   });
 
   final String location, type, rarity, rotation;
-  final String chance;
+  final double chance;
 
   @override
   List<Object> get props {

@@ -11,7 +11,7 @@ class ComponentDropModel extends ComponentDrop {
     String type,
     String rarity,
     String rotation,
-    String chance,
+    double chance,
   }) : super(
           location: location,
           type: type,
