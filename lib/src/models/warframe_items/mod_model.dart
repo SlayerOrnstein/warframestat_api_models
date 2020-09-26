@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:warframestat_api_models/src/entities/warframe_items/mods.dart';
+import 'package:warframestat_api_models/src/entities/warframe_items/mod.dart';
 
 import 'patch_log_model.dart';
 

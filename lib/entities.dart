@@ -13,6 +13,7 @@ export 'src/entities/warframe_items/base_item.dart';
 export 'src/entities/warframe_items/bio_weapon.dart';
 export 'src/entities/warframe_items/component.dart';
 export 'src/entities/warframe_items/component_drop.dart';
+export 'src/entities/warframe_items/mod.dart';
 export 'src/entities/warframe_items/patch_log.dart';
 export 'src/entities/warframe_items/weapon.dart';
 export 'src/entities/worldstate/alert.dart';
