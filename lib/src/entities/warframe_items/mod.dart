@@ -32,7 +32,7 @@ class Mod extends BaseItem {
 
   final String polarity, rarity, compatName;
   final int baseDrain, fusionLimit;
-  final List<LevelStats> levelStats;
+  final List<Map<String, List<String>>> levelStats;
   final bool isAugment, transmutable;
 
   @override
@@ -49,13 +49,4 @@ class Mod extends BaseItem {
         transmutable
       ]);
   }
-}
-
-class LevelStats extends Equatable {
-  const LevelStats({this.stats});
-
-  final List<Map<String, List<String>>> stats;
-
-  @override
-  List<Object> get props => [stats];
 }

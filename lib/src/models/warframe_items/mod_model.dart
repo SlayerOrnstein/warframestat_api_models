@@ -16,7 +16,7 @@ class ModModel extends Mod {
     int fusionLimit,
     String compatName,
     String type,
-    this.levelStats,
+    List<Map<String, List<String>>> levelStats,
     String category,
     bool isAugment,
     bool isTradable,
@@ -48,22 +48,7 @@ class ModModel extends Mod {
   }
 
   @override
-  final List<LevelStatsModel> levelStats;
-
-  @override
   final List<PatchlogModel> patchlogs;
 
   Map<String, dynamic> toJson() => _$ModModelToJson(this);
-}
-
-@JsonSerializable()
-class LevelStatsModel extends LevelStats {
-  const LevelStatsModel({List<Map<String, List<String>>> stats})
-      : super(stats: stats);
-
-  factory LevelStatsModel.fromJson(Map<String, dynamic> json) {
-    return _$LevelStatsModelFromJson(json);
-  }
-
-  Map<String, dynamic> toJson() => _$LevelStatsModelToJson(this);
 }

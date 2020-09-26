@@ -17,7 +17,10 @@ ModModel _$ModModelFromJson(Map json) {
     compatName: json['compatName'] as String,
     type: json['type'] as String,
     levelStats: (json['levelStats'] as List)
-        ?.map((e) => e == null ? null : LevelStatsModel.fromJson(e as Map))
+        ?.map((e) => (e as Map)?.map(
+              (k, e) => MapEntry(
+                  k as String, (e as List)?.map((e) => e as String)?.toList()),
+            ))
         ?.toList(),
     category: json['category'] as String,
     isAugment: json['isAugment'] as bool,
@@ -48,24 +51,8 @@ Map<String, dynamic> _$ModModelToJson(ModModel instance) => <String, dynamic>{
       'compatName': instance.compatName,
       'baseDrain': instance.baseDrain,
       'fusionLimit': instance.fusionLimit,
+      'levelStats': instance.levelStats,
       'isAugment': instance.isAugment,
       'transmutable': instance.transmutable,
-      'levelStats': instance.levelStats?.map((e) => e?.toJson())?.toList(),
       'patchlogs': instance.patchlogs?.map((e) => e?.toJson())?.toList(),
-    };
-
-LevelStatsModel _$LevelStatsModelFromJson(Map json) {
-  return LevelStatsModel(
-    stats: (json['stats'] as List)
-        ?.map((e) => (e as Map)?.map(
-              (k, e) => MapEntry(
-                  k as String, (e as List)?.map((e) => e as String)?.toList()),
-            ))
-        ?.toList(),
-  );
-}
-
-Map<String, dynamic> _$LevelStatsModelToJson(LevelStatsModel instance) =>
-    <String, dynamic>{
-      'stats': instance.stats,
     };
