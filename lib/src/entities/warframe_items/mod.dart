@@ -5,6 +5,7 @@ class Mod extends BaseItem {
   const Mod({
     String uniqueName,
     String name,
+    String description,
     this.polarity,
     this.rarity,
     this.baseDrain,
@@ -22,6 +23,7 @@ class Mod extends BaseItem {
   }) : super(
           uniqueName: uniqueName,
           name: name,
+          description: description,
           type: type,
           category: category,
           isTradable: isTradable,

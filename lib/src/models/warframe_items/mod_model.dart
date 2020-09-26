@@ -10,6 +10,7 @@ class ModModel extends Mod {
   const ModModel({
     String uniqueName,
     String name,
+    String description,
     String polarity,
     String rarity,
     int baseDrain,
@@ -27,6 +28,7 @@ class ModModel extends Mod {
   }) : super(
           uniqueName: uniqueName,
           name: name,
+          description: description,
           polarity: polarity,
           rarity: rarity,
           baseDrain: baseDrain,

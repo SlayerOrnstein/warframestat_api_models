@@ -10,6 +10,7 @@ ModModel _$ModModelFromJson(Map json) {
   return ModModel(
     uniqueName: json['uniqueName'] as String,
     name: json['name'] as String,
+    description: json['description'] as String,
     polarity: json['polarity'] as String,
     rarity: json['rarity'] as String,
     baseDrain: json['baseDrain'] as int,
@@ -41,6 +42,7 @@ ModModel _$ModModelFromJson(Map json) {
 Map<String, dynamic> _$ModModelToJson(ModModel instance) => <String, dynamic>{
       'uniqueName': instance.uniqueName,
       'name': instance.name,
+      'description': instance.description,
       'type': instance.type,
       'category': instance.category,
       'isTradable': instance.isTradable,
