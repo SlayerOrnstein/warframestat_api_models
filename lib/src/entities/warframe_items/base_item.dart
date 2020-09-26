@@ -11,7 +11,7 @@ class BaseItem extends Equatable {
     this.imageName,
     this.category,
     this.productCategory,
-    this.tradable = false,
+    this.isTradable = false,
     this.patchlogs,
     this.wikiaUrl,
     this.wikiaThumbnail,
@@ -25,7 +25,7 @@ class BaseItem extends Equatable {
       category,
       productCategory;
 
-  final bool tradable;
+  final bool isTradable;
   final List<Patchlog> patchlogs;
   final String wikiaUrl, wikiaThumbnail;
 
@@ -46,7 +46,7 @@ class BaseItem extends Equatable {
       type,
       imageName,
       category,
-      tradable,
+      isTradable,
       patchlogs,
       wikiaUrl,
       wikiaThumbnail,

@@ -13,7 +13,7 @@ class ComponentModel extends Component {
     String description,
     num itemCount,
     String imageName,
-    bool tradable,
+    bool isTradable,
     this.drops,
   }) : super(
           uniqueName: uniqueName,
@@ -21,7 +21,7 @@ class ComponentModel extends Component {
           description: description,
           itemCount: itemCount,
           imageName: imageName,
-          tradable: tradable,
+          isTradable: isTradable,
           drops: drops,
         );
 

@@ -10,7 +10,7 @@ class Weapon extends BaseItem {
     String imageName,
     String category,
     String productCategory,
-    bool tradable,
+    bool isTradable,
     String wikiaThumbnail,
     String wikiaUrl,
     this.secondsPerShot,
@@ -57,7 +57,7 @@ class Weapon extends BaseItem {
           imageName: imageName,
           category: category,
           productCategory: productCategory,
-          tradable: tradable,
+          isTradable: isTradable,
           wikiaUrl: wikiaUrl,
           wikiaThumbnail: wikiaThumbnail,
         );

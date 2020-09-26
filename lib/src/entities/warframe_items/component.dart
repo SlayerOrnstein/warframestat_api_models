@@ -8,14 +8,14 @@ class Component extends BaseItem {
     String description,
     this.itemCount,
     String imageName,
-    bool tradable,
+    bool isTradable,
     this.drops,
   }) : super(
           uniqueName: uniqueName,
           name: name,
           description: description,
           imageName: imageName,
-          tradable: tradable,
+          isTradable: isTradable,
         );
 
   final num itemCount;

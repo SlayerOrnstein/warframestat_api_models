@@ -13,7 +13,7 @@ ComponentModel _$ComponentModelFromJson(Map json) {
     description: json['description'] as String,
     itemCount: json['itemCount'] as num,
     imageName: json['imageName'] as String,
-    tradable: json['tradable'] as bool,
+    isTradable: json['isTradable'] as bool,
     drops: (json['drops'] as List)
         ?.map((e) => e == null
             ? null
@@ -30,7 +30,7 @@ Map<String, dynamic> _$ComponentModelToJson(ComponentModel instance) =>
       'name': instance.name,
       'description': instance.description,
       'imageName': instance.imageName,
-      'tradable': instance.tradable,
+      'isTradable': instance.isTradable,
       'itemCount': instance.itemCount,
       'drops': instance.drops?.map((e) => e?.toJson())?.toList(),
     };
