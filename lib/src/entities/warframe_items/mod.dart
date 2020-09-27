@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 import 'package:warframestat_api_models/entities.dart';
 
 class Mod extends BaseItem {
@@ -6,6 +5,7 @@ class Mod extends BaseItem {
     String uniqueName,
     String name,
     String description,
+    String imageName,
     this.polarity,
     this.rarity,
     this.baseDrain,
@@ -24,6 +24,7 @@ class Mod extends BaseItem {
           uniqueName: uniqueName,
           name: name,
           description: description,
+          imageName: imageName,
           type: type,
           category: category,
           isTradable: isTradable,
