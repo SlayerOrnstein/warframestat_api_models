@@ -7,63 +7,81 @@ part of 'weapon_model.dart';
 // **************************************************************************
 
 WeaponModel _$WeaponModelFromJson(Map json) {
-  return WeaponModel(
-    uniqueName: json['uniqueName'] as String,
-    name: json['name'] as String,
-    description: json['description'] as String,
-    type: json['type'] as String,
-    imageName: json['imageName'] as String,
-    category: json['category'] as String,
-    productCategory: json['productCategory'] as String,
-    isTradable: json['isTradable'] as bool,
-    wikiaThumbnail: json['wikiaThumbnail'] as String,
-    wikiaUrl: json['wikiaUrl'] as String,
-    secondsPerShot: json['secondsPerShot'] as num,
-    damagePerShot:
-        (json['damagePerShot'] as List)?.map((e) => e as num)?.toList(),
-    magazineSize: json['magazineSize'] as num,
-    reloadTime: json['reloadTime'] as num,
-    totalDamage: json['totalDamage'] as num,
-    damagePerSecond: json['damagePerSecond'] as num,
-    trigger: json['trigger'] as String,
-    accuracy: json['accuracy'] as num,
-    criticalChance: json['criticalChance'] as num,
-    criticalMultiplier: json['criticalMultiplier'] as num,
-    procChance: json['procChance'] as num,
-    fireRate: json['fireRate'] as num,
-    chargeAttack: json['chargeAttack'] as num,
-    spinAttack: json['spinAttack'] as num,
-    leapAttack: json['leapAttack'] as num,
-    wallAttack: json['wallAttack'] as num,
-    slot: json['slot'] as num,
-    noise: json['noise'] as String,
-    sentinel: json['sentinel'] as bool,
-    masteryReq: json['masteryReq'] as num,
-    omegaAttenuation: json['omegaAttenuation'] as num,
-    channelingDrain: json['channelingDrain'] as num,
-    channelingDamagemultiplier: json['channelingDamagemultiplier'] as num,
-    buildPrice: json['buildPrice'] as num,
-    buildTime: json['buildTime'] as num,
-    skipBuildTime: json['skipBuildTime'] as num,
-    buildQuantity: json['buildQuantity'] as num,
-    consumeOnBuild: json['consumeOnBuild'] as bool,
-    components: (json['components'] as List)
-        ?.map((e) => e == null
-            ? null
-            : ComponentModel.fromJson((e as Map)?.map(
+  return $checkedNew('WeaponModel', json, () {
+    final val = WeaponModel(
+      uniqueName: $checkedConvert(json, 'uniqueName', (v) => v as String),
+      name: $checkedConvert(json, 'name', (v) => v as String),
+      description: $checkedConvert(json, 'description', (v) => v as String),
+      type: $checkedConvert(json, 'type', (v) => v as String),
+      imageName: $checkedConvert(json, 'imageName', (v) => v as String),
+      category: $checkedConvert(json, 'category', (v) => v as String),
+      productCategory:
+          $checkedConvert(json, 'productCategory', (v) => v as String),
+      isTradable: $checkedConvert(json, 'isTradable', (v) => v as bool),
+      wikiaThumbnail:
+          $checkedConvert(json, 'wikiaThumbnail', (v) => v as String),
+      wikiaUrl: $checkedConvert(json, 'wikiaUrl', (v) => v as String),
+      secondsPerShot: $checkedConvert(json, 'secondsPerShot', (v) => v as num),
+      damagePerShot: $checkedConvert(json, 'damagePerShot',
+          (v) => (v as List)?.map((e) => e as num)?.toList()),
+      magazineSize: $checkedConvert(json, 'magazineSize', (v) => v as num),
+      reloadTime: $checkedConvert(json, 'reloadTime', (v) => v as num),
+      totalDamage: $checkedConvert(json, 'totalDamage', (v) => v as num),
+      damagePerSecond:
+          $checkedConvert(json, 'damagePerSecond', (v) => v as num),
+      trigger: $checkedConvert(json, 'trigger', (v) => v as String),
+      accuracy: $checkedConvert(json, 'accuracy', (v) => v as num),
+      criticalChance: $checkedConvert(json, 'criticalChance', (v) => v as num),
+      criticalMultiplier:
+          $checkedConvert(json, 'criticalMultiplier', (v) => v as num),
+      procChance: $checkedConvert(json, 'procChance', (v) => v as num),
+      fireRate: $checkedConvert(json, 'fireRate', (v) => v as num),
+      chargeAttack: $checkedConvert(json, 'chargeAttack', (v) => v as num),
+      spinAttack: $checkedConvert(json, 'spinAttack', (v) => v as num),
+      leapAttack: $checkedConvert(json, 'leapAttack', (v) => v as num),
+      wallAttack: $checkedConvert(json, 'wallAttack', (v) => v as num),
+      slot: $checkedConvert(json, 'slot', (v) => v as num),
+      noise: $checkedConvert(json, 'noise', (v) => v as String),
+      sentinel: $checkedConvert(json, 'sentinel', (v) => v as bool),
+      masteryReq: $checkedConvert(json, 'masteryReq', (v) => v as num),
+      omegaAttenuation:
+          $checkedConvert(json, 'omegaAttenuation', (v) => v as num),
+      channelingDrain:
+          $checkedConvert(json, 'channelingDrain', (v) => v as num),
+      channelingDamagemultiplier:
+          $checkedConvert(json, 'channelingDamagemultiplier', (v) => v as num),
+      buildPrice: $checkedConvert(json, 'buildPrice', (v) => v as num),
+      buildTime: $checkedConvert(json, 'buildTime', (v) => v as num),
+      skipBuildTime: $checkedConvert(json, 'skipBuildTime', (v) => v as num),
+      buildQuantity: $checkedConvert(json, 'buildQuantity', (v) => v as num),
+      consumeOnBuild: $checkedConvert(json, 'consumeOnBuild', (v) => v as bool),
+      components: $checkedConvert(
+          json,
+          'components',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : ComponentModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      damage: $checkedConvert(json, 'damage', (v) => v),
+      damageTypes: $checkedConvert(
+          json,
+          'damageTypes',
+          (v) => (v as Map)?.map(
                 (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    damage: json['damage'],
-    damageTypes: (json['damageTypes'] as Map)?.map(
-      (k, e) => MapEntry(k as String, e),
-    ),
-    marketCost: json['marketCost'],
-    polarites: (json['polarites'] as List)?.map((e) => e as String)?.toList(),
-    tags: (json['tags'] as List)?.map((e) => e as String)?.toList(),
-    vaulted: json['vaulted'] as bool,
-    disposition: json['disposition'] as num,
-  );
+              )),
+      marketCost: $checkedConvert(json, 'marketCost', (v) => v),
+      polarites: $checkedConvert(json, 'polarites',
+          (v) => (v as List)?.map((e) => e as String)?.toList()),
+      tags: $checkedConvert(
+          json, 'tags', (v) => (v as List)?.map((e) => e as String)?.toList()),
+      vaulted: $checkedConvert(json, 'vaulted', (v) => v as bool),
+      disposition: $checkedConvert(json, 'disposition', (v) => v as num),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$WeaponModelToJson(WeaponModel instance) =>

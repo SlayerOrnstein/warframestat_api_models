@@ -7,22 +7,30 @@ part of 'mission_model.dart';
 // **************************************************************************
 
 MissionModel _$MissionModelFromJson(Map json) {
-  return MissionModel(
-    node: json['node'] as String,
-    type: json['type'] as String,
-    faction: json['faction'] as String,
-    minEnemyLevel: json['minEnemyLevel'] as int,
-    maxEnemyLevel: json['maxEnemyLevel'] as int,
-    maxWaveNum: json['maxWaveNum'] as int,
-    nightmare: json['nightmare'] as bool,
-    archwingRequired: json['archwingRequired'] as bool,
-    reward: json['reward'] == null
-        ? null
-        : RewardModel.fromJson((json['reward'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    exclusiveWeapon: json['exclusiveWeapon'] as String,
-  );
+  return $checkedNew('MissionModel', json, () {
+    final val = MissionModel(
+      node: $checkedConvert(json, 'node', (v) => v as String),
+      type: $checkedConvert(json, 'type', (v) => v as String),
+      faction: $checkedConvert(json, 'faction', (v) => v as String),
+      minEnemyLevel: $checkedConvert(json, 'minEnemyLevel', (v) => v as int),
+      maxEnemyLevel: $checkedConvert(json, 'maxEnemyLevel', (v) => v as int),
+      maxWaveNum: $checkedConvert(json, 'maxWaveNum', (v) => v as int),
+      nightmare: $checkedConvert(json, 'nightmare', (v) => v as bool),
+      archwingRequired:
+          $checkedConvert(json, 'archwingRequired', (v) => v as bool),
+      reward: $checkedConvert(
+          json,
+          'reward',
+          (v) => v == null
+              ? null
+              : RewardModel.fromJson((v as Map)?.map(
+                  (k, e) => MapEntry(k as String, e),
+                ))),
+      exclusiveWeapon:
+          $checkedConvert(json, 'exclusiveWeapon', (v) => v as String),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$MissionModelToJson(MissionModel instance) =>

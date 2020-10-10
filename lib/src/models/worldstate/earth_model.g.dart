@@ -7,18 +7,19 @@ part of 'earth_model.dart';
 // **************************************************************************
 
 EarthModel _$EarthModelFromJson(Map json) {
-  return EarthModel(
-    id: json['id'] as String,
-    activation: json['activation'] == null
-        ? null
-        : DateTime.parse(json['activation'] as String),
-    expiry: json['expiry'] == null
-        ? null
-        : DateTime.parse(json['expiry'] as String),
-    state: json['state'] as String,
-    isDay: json['isDay'] as bool,
-    isCetus: json['isCetus'] as bool,
-  );
+  return $checkedNew('EarthModel', json, () {
+    final val = EarthModel(
+      id: $checkedConvert(json, 'id', (v) => v as String),
+      activation: $checkedConvert(json, 'activation',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      expiry: $checkedConvert(json, 'expiry',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      state: $checkedConvert(json, 'state', (v) => v as String),
+      isDay: $checkedConvert(json, 'isDay', (v) => v as bool),
+      isCetus: $checkedConvert(json, 'isCetus', (v) => v as bool),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$EarthModelToJson(EarthModel instance) =>

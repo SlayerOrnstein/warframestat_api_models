@@ -7,34 +7,44 @@ part of 'invasion_model.dart';
 // **************************************************************************
 
 InvasionModel _$InvasionModelFromJson(Map json) {
-  return InvasionModel(
-    id: json['id'] as String,
-    activation: json['activation'] == null
-        ? null
-        : DateTime.parse(json['activation'] as String),
-    expiry: json['expiry'] == null
-        ? null
-        : DateTime.parse(json['expiry'] as String),
-    node: json['node'] as String,
-    desc: json['desc'] as String,
-    attackingFaction: json['attackingFaction'] as String,
-    defendingFaction: json['defendingFaction'] as String,
-    attacker: json['attacker'] == null
-        ? null
-        : FactionModel.fromJson((json['attacker'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    defender: json['defender'] == null
-        ? null
-        : FactionModel.fromJson((json['defender'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    eta: json['eta'] as String,
-    vsInfestation: json['vsInfestation'] as bool,
-    completed: json['completed'] as bool,
-    completion: (json['completion'] as num)?.toDouble(),
-    count: json['count'] as int,
-  );
+  return $checkedNew('InvasionModel', json, () {
+    final val = InvasionModel(
+      id: $checkedConvert(json, 'id', (v) => v as String),
+      activation: $checkedConvert(json, 'activation',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      expiry: $checkedConvert(json, 'expiry',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      node: $checkedConvert(json, 'node', (v) => v as String),
+      desc: $checkedConvert(json, 'desc', (v) => v as String),
+      attackingFaction:
+          $checkedConvert(json, 'attackingFaction', (v) => v as String),
+      defendingFaction:
+          $checkedConvert(json, 'defendingFaction', (v) => v as String),
+      attacker: $checkedConvert(
+          json,
+          'attacker',
+          (v) => v == null
+              ? null
+              : FactionModel.fromJson((v as Map)?.map(
+                  (k, e) => MapEntry(k as String, e),
+                ))),
+      defender: $checkedConvert(
+          json,
+          'defender',
+          (v) => v == null
+              ? null
+              : FactionModel.fromJson((v as Map)?.map(
+                  (k, e) => MapEntry(k as String, e),
+                ))),
+      eta: $checkedConvert(json, 'eta', (v) => v as String),
+      vsInfestation: $checkedConvert(json, 'vsInfestation', (v) => v as bool),
+      completed: $checkedConvert(json, 'completed', (v) => v as bool),
+      completion:
+          $checkedConvert(json, 'completion', (v) => (v as num)?.toDouble()),
+      count: $checkedConvert(json, 'count', (v) => v as int),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$InvasionModelToJson(InvasionModel instance) =>
@@ -56,15 +66,21 @@ Map<String, dynamic> _$InvasionModelToJson(InvasionModel instance) =>
     };
 
 FactionModel _$FactionModelFromJson(Map json) {
-  return FactionModel(
-    reward: json['reward'] == null
-        ? null
-        : RewardModel.fromJson((json['reward'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    faction: json['faction'] as String,
-    factionKey: json['factionKey'] as String,
-  );
+  return $checkedNew('FactionModel', json, () {
+    final val = FactionModel(
+      reward: $checkedConvert(
+          json,
+          'reward',
+          (v) => v == null
+              ? null
+              : RewardModel.fromJson((v as Map)?.map(
+                  (k, e) => MapEntry(k as String, e),
+                ))),
+      faction: $checkedConvert(json, 'faction', (v) => v as String),
+      factionKey: $checkedConvert(json, 'factionKey', (v) => v as String),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$FactionModelToJson(FactionModel instance) =>

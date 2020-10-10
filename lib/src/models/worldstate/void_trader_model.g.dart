@@ -7,25 +7,29 @@ part of 'void_trader_model.dart';
 // **************************************************************************
 
 VoidTraderModel _$VoidTraderModelFromJson(Map json) {
-  return VoidTraderModel(
-    id: json['id'] as String,
-    activation: json['activation'] == null
-        ? null
-        : DateTime.parse(json['activation'] as String),
-    expiry: json['expiry'] == null
-        ? null
-        : DateTime.parse(json['expiry'] as String),
-    character: json['character'] as String,
-    location: json['location'] as String,
-    active: json['active'] as bool,
-    inventory: (json['inventory'] as List)
-        ?.map((e) => e == null
-            ? null
-            : InventoryItemModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-  );
+  return $checkedNew('VoidTraderModel', json, () {
+    final val = VoidTraderModel(
+      id: $checkedConvert(json, 'id', (v) => v as String),
+      activation: $checkedConvert(json, 'activation',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      expiry: $checkedConvert(json, 'expiry',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      character: $checkedConvert(json, 'character', (v) => v as String),
+      location: $checkedConvert(json, 'location', (v) => v as String),
+      active: $checkedConvert(json, 'active', (v) => v as bool),
+      inventory: $checkedConvert(
+          json,
+          'inventory',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : InventoryItemModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$VoidTraderModelToJson(VoidTraderModel instance) =>
@@ -40,11 +44,14 @@ Map<String, dynamic> _$VoidTraderModelToJson(VoidTraderModel instance) =>
     };
 
 InventoryItemModel _$InventoryItemModelFromJson(Map json) {
-  return InventoryItemModel(
-    item: json['item'] as String,
-    ducats: json['ducats'] as int,
-    credits: json['credits'] as int,
-  );
+  return $checkedNew('InventoryItemModel', json, () {
+    final val = InventoryItemModel(
+      item: $checkedConvert(json, 'item', (v) => v as String),
+      ducats: $checkedConvert(json, 'ducats', (v) => v as int),
+      credits: $checkedConvert(json, 'credits', (v) => v as int),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$InventoryItemModelToJson(InventoryItemModel instance) =>

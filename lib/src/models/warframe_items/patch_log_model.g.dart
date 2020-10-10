@@ -7,13 +7,17 @@ part of 'patch_log_model.dart';
 // **************************************************************************
 
 PatchlogModel _$PatchlogModelFromJson(Map json) {
-  return PatchlogModel(
-    name: json['name'] as String,
-    date: json['date'] == null ? null : DateTime.parse(json['date'] as String),
-    url: json['url'] as String,
-    changes: json['changes'] as String,
-    fixes: json['fixes'] as String,
-  );
+  return $checkedNew('PatchlogModel', json, () {
+    final val = PatchlogModel(
+      name: $checkedConvert(json, 'name', (v) => v as String),
+      date: $checkedConvert(
+          json, 'date', (v) => v == null ? null : DateTime.parse(v as String)),
+      url: $checkedConvert(json, 'url', (v) => v as String),
+      changes: $checkedConvert(json, 'changes', (v) => v as String),
+      fixes: $checkedConvert(json, 'fixes', (v) => v as String),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$PatchlogModelToJson(PatchlogModel instance) =>

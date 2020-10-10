@@ -7,35 +7,42 @@ part of 'nightwave_model.dart';
 // **************************************************************************
 
 NightwaveModel _$NightwaveModelFromJson(Map json) {
-  return NightwaveModel(
-    id: json['id'] as String,
-    activation: json['activation'] == null
-        ? null
-        : DateTime.parse(json['activation'] as String),
-    expiry: json['expiry'] == null
-        ? null
-        : DateTime.parse(json['expiry'] as String),
-    tag: json['tag'] as String,
-    active: json['active'] as bool,
-    season: json['season'] as int,
-    phase: json['phase'] as int,
-    possibleChallenges: (json['possibleChallenges'] as List)
-        ?.map((e) => e == null
-            ? null
-            : ChallengeModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    activeChallenges: (json['activeChallenges'] as List)
-        ?.map((e) => e == null
-            ? null
-            : ChallengeModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    rewardTypes:
-        (json['rewardTypes'] as List)?.map((e) => e as String)?.toList(),
-  );
+  return $checkedNew('NightwaveModel', json, () {
+    final val = NightwaveModel(
+      id: $checkedConvert(json, 'id', (v) => v as String),
+      activation: $checkedConvert(json, 'activation',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      expiry: $checkedConvert(json, 'expiry',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      tag: $checkedConvert(json, 'tag', (v) => v as String),
+      active: $checkedConvert(json, 'active', (v) => v as bool),
+      season: $checkedConvert(json, 'season', (v) => v as int),
+      phase: $checkedConvert(json, 'phase', (v) => v as int),
+      possibleChallenges: $checkedConvert(
+          json,
+          'possibleChallenges',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : ChallengeModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      activeChallenges: $checkedConvert(
+          json,
+          'activeChallenges',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : ChallengeModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      rewardTypes: $checkedConvert(json, 'rewardTypes',
+          (v) => (v as List)?.map((e) => e as String)?.toList()),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$NightwaveModelToJson(NightwaveModel instance) =>
@@ -55,21 +62,22 @@ Map<String, dynamic> _$NightwaveModelToJson(NightwaveModel instance) =>
     };
 
 ChallengeModel _$ChallengeModelFromJson(Map json) {
-  return ChallengeModel(
-    id: json['id'] as String,
-    activation: json['activation'] == null
-        ? null
-        : DateTime.parse(json['activation'] as String),
-    expiry: json['expiry'] == null
-        ? null
-        : DateTime.parse(json['expiry'] as String),
-    title: json['title'] as String,
-    desc: json['desc'] as String,
-    active: json['active'] as bool,
-    isDaily: json['isDaily'] as bool,
-    isElite: json['isElite'] as bool,
-    reputation: json['reputation'] as int,
-  );
+  return $checkedNew('ChallengeModel', json, () {
+    final val = ChallengeModel(
+      id: $checkedConvert(json, 'id', (v) => v as String),
+      activation: $checkedConvert(json, 'activation',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      expiry: $checkedConvert(json, 'expiry',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      title: $checkedConvert(json, 'title', (v) => v as String),
+      desc: $checkedConvert(json, 'desc', (v) => v as String),
+      active: $checkedConvert(json, 'active', (v) => v as bool),
+      isDaily: $checkedConvert(json, 'isDaily', (v) => v as bool),
+      isElite: $checkedConvert(json, 'isElite', (v) => v as bool),
+      reputation: $checkedConvert(json, 'reputation', (v) => v as int),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$ChallengeModelToJson(ChallengeModel instance) =>

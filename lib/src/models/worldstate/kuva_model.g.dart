@@ -7,19 +7,20 @@ part of 'kuva_model.dart';
 // **************************************************************************
 
 KuvaModel _$KuvaModelFromJson(Map json) {
-  return KuvaModel(
-    activation: json['activation'] == null
-        ? null
-        : DateTime.parse(json['activation'] as String),
-    expiry: json['expiry'] == null
-        ? null
-        : DateTime.parse(json['expiry'] as String),
-    node: json['node'] as String,
-    enemy: json['enemy'] as String,
-    type: json['type'] as String,
-    archwing: json['archwing'] as bool,
-    sharkwing: json['sharkwing'] as bool,
-  );
+  return $checkedNew('KuvaModel', json, () {
+    final val = KuvaModel(
+      activation: $checkedConvert(json, 'activation',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      expiry: $checkedConvert(json, 'expiry',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      node: $checkedConvert(json, 'node', (v) => v as String),
+      enemy: $checkedConvert(json, 'enemy', (v) => v as String),
+      type: $checkedConvert(json, 'type', (v) => v as String),
+      archwing: $checkedConvert(json, 'archwing', (v) => v as bool),
+      sharkwing: $checkedConvert(json, 'sharkwing', (v) => v as bool),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$KuvaModelToJson(KuvaModel instance) => <String, dynamic>{

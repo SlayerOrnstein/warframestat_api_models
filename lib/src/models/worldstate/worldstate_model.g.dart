@@ -7,120 +7,175 @@ part of 'worldstate_model.dart';
 // **************************************************************************
 
 WorldstateModel _$WorldstateModelFromJson(Map json) {
-  return WorldstateModel(
-    timestamp: json['timestamp'] == null
-        ? null
-        : DateTime.parse(json['timestamp'] as String),
-    news: (json['news'] as List)
-        ?.map((e) => e == null
-            ? null
-            : OrbiterNewsModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    events: (json['events'] as List)
-        ?.map((e) => e == null
-            ? null
-            : EventModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    alerts: (json['alerts'] as List)
-        ?.map((e) => e == null
-            ? null
-            : AlertModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    sortie: json['sortie'] == null
-        ? null
-        : SortieModel.fromJson((json['sortie'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    syndicateMissions: (json['syndicateMissions'] as List)
-        ?.map((e) => e == null
-            ? null
-            : SyndicateModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    fissures: (json['fissures'] as List)
-        ?.map((e) => e == null
-            ? null
-            : VoidFissureModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    invasions: (json['invasions'] as List)
-        ?.map((e) => e == null
-            ? null
-            : InvasionModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    voidTrader: json['voidTrader'] == null
-        ? null
-        : VoidTraderModel.fromJson((json['voidTrader'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    dailyDeals: (json['dailyDeals'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DarvoDealModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    persistentEnemies: (json['persistentEnemies'] as List)
-        ?.map((e) => e == null
-            ? null
-            : PersistentEnemyModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    earthCycle: json['earthCycle'] == null
-        ? null
-        : EarthModel.fromJson((json['earthCycle'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    cetusCycle: json['cetusCycle'] == null
-        ? null
-        : EarthModel.fromJson((json['cetusCycle'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    constructionProgress: json['constructionProgress'] == null
-        ? null
-        : ConstructionProgressModel.fromJson(
-            (json['constructionProgress'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    vallisCycle: json['vallisCycle'] == null
-        ? null
-        : VallisModel.fromJson((json['vallisCycle'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    nightwave: json['nightwave'] == null
-        ? null
-        : NightwaveModel.fromJson((json['nightwave'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    kuva: (json['kuva'] as List)
-        ?.map((e) => e == null
-            ? null
-            : KuvaModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    sentientOutposts: json['sentientOutposts'] == null
-        ? null
-        : SentientOutpostModel.fromJson((json['sentientOutposts'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-    arbitration: json['arbitration'] == null
-        ? null
-        : ArbitrationModel.fromJson((json['arbitration'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-  );
+  return $checkedNew('WorldstateModel', json, () {
+    final val = WorldstateModel(
+      timestamp: $checkedConvert(json, 'timestamp',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      news: $checkedConvert(
+          json,
+          'news',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : OrbiterNewsModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      events: $checkedConvert(
+          json,
+          'events',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : EventModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      alerts: $checkedConvert(
+          json,
+          'alerts',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : AlertModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      sortie: $checkedConvert(
+          json,
+          'sortie',
+          (v) => v == null
+              ? null
+              : SortieModel.fromJson((v as Map)?.map(
+                  (k, e) => MapEntry(k as String, e),
+                ))),
+      syndicateMissions: $checkedConvert(
+          json,
+          'syndicateMissions',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : SyndicateModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      fissures: $checkedConvert(
+          json,
+          'fissures',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : VoidFissureModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      invasions: $checkedConvert(
+          json,
+          'invasions',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : InvasionModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      voidTrader: $checkedConvert(
+          json,
+          'voidTrader',
+          (v) => v == null
+              ? null
+              : VoidTraderModel.fromJson((v as Map)?.map(
+                  (k, e) => MapEntry(k as String, e),
+                ))),
+      dailyDeals: $checkedConvert(
+          json,
+          'dailyDeals',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : DarvoDealModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      persistentEnemies: $checkedConvert(
+          json,
+          'persistentEnemies',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : PersistentEnemyModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      earthCycle: $checkedConvert(
+          json,
+          'earthCycle',
+          (v) => v == null
+              ? null
+              : EarthModel.fromJson((v as Map)?.map(
+                  (k, e) => MapEntry(k as String, e),
+                ))),
+      cetusCycle: $checkedConvert(
+          json,
+          'cetusCycle',
+          (v) => v == null
+              ? null
+              : EarthModel.fromJson((v as Map)?.map(
+                  (k, e) => MapEntry(k as String, e),
+                ))),
+      constructionProgress: $checkedConvert(
+          json,
+          'constructionProgress',
+          (v) => v == null
+              ? null
+              : ConstructionProgressModel.fromJson((v as Map)?.map(
+                  (k, e) => MapEntry(k as String, e),
+                ))),
+      vallisCycle: $checkedConvert(
+          json,
+          'vallisCycle',
+          (v) => v == null
+              ? null
+              : VallisModel.fromJson((v as Map)?.map(
+                  (k, e) => MapEntry(k as String, e),
+                ))),
+      nightwave: $checkedConvert(
+          json,
+          'nightwave',
+          (v) => v == null
+              ? null
+              : NightwaveModel.fromJson((v as Map)?.map(
+                  (k, e) => MapEntry(k as String, e),
+                ))),
+      kuva: $checkedConvert(
+          json,
+          'kuva',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : KuvaModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      sentientOutposts: $checkedConvert(
+          json,
+          'sentientOutposts',
+          (v) => v == null
+              ? null
+              : SentientOutpostModel.fromJson((v as Map)?.map(
+                  (k, e) => MapEntry(k as String, e),
+                ))),
+      arbitration: $checkedConvert(
+          json,
+          'arbitration',
+          (v) => v == null
+              ? null
+              : ArbitrationModel.fromJson((v as Map)?.map(
+                  (k, e) => MapEntry(k as String, e),
+                ))),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$WorldstateModelToJson(WorldstateModel instance) =>

@@ -7,21 +7,27 @@ part of 'component_model.dart';
 // **************************************************************************
 
 ComponentModel _$ComponentModelFromJson(Map json) {
-  return ComponentModel(
-    uniqueName: json['uniqueName'] as String,
-    name: json['name'] as String,
-    description: json['description'] as String,
-    itemCount: json['itemCount'] as num,
-    imageName: json['imageName'] as String,
-    isTradable: json['isTradable'] as bool,
-    drops: (json['drops'] as List)
-        ?.map((e) => e == null
-            ? null
-            : ComponentDropModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-  );
+  return $checkedNew('ComponentModel', json, () {
+    final val = ComponentModel(
+      uniqueName: $checkedConvert(json, 'uniqueName', (v) => v as String),
+      name: $checkedConvert(json, 'name', (v) => v as String),
+      description: $checkedConvert(json, 'description', (v) => v as String),
+      itemCount: $checkedConvert(json, 'itemCount', (v) => v as num),
+      imageName: $checkedConvert(json, 'imageName', (v) => v as String),
+      isTradable: $checkedConvert(json, 'isTradable', (v) => v as bool),
+      drops: $checkedConvert(
+          json,
+          'drops',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : ComponentDropModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$ComponentModelToJson(ComponentModel instance) =>

@@ -7,45 +7,56 @@ part of 'event_model.dart';
 // **************************************************************************
 
 EventModel _$EventModelFromJson(Map json) {
-  return EventModel(
-    id: json['id'] as String,
-    activation: json['activation'] == null
-        ? null
-        : DateTime.parse(json['activation'] as String),
-    expiry: json['expiry'] == null
-        ? null
-        : DateTime.parse(json['expiry'] as String),
-    faction: json['faction'] as String,
-    affiliatedWith: json['affiliatedWith'] as String,
-    description: json['description'] as String,
-    victimNode: json['victimNode'] as String,
-    node: json['node'] as String,
-    tooltip: json['tooltip'] as String,
-    maximumScore: json['maximumScore'] as num,
-    currentScore: json['currentScore'] as num,
-    health: json['health'] as num,
-    rewards: (json['rewards'] as List)
-        ?.map((e) => e == null
-            ? null
-            : RewardModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    interimSteps: (json['interimSteps'] as List)
-        ?.map((e) => e == null
-            ? null
-            : InterimStepModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    jobs: (json['jobs'] as List)
-        ?.map((e) => e == null
-            ? null
-            : JobModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-  );
+  return $checkedNew('EventModel', json, () {
+    final val = EventModel(
+      id: $checkedConvert(json, 'id', (v) => v as String),
+      activation: $checkedConvert(json, 'activation',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      expiry: $checkedConvert(json, 'expiry',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      faction: $checkedConvert(json, 'faction', (v) => v as String),
+      affiliatedWith:
+          $checkedConvert(json, 'affiliatedWith', (v) => v as String),
+      description: $checkedConvert(json, 'description', (v) => v as String),
+      victimNode: $checkedConvert(json, 'victimNode', (v) => v as String),
+      node: $checkedConvert(json, 'node', (v) => v as String),
+      tooltip: $checkedConvert(json, 'tooltip', (v) => v as String),
+      maximumScore: $checkedConvert(json, 'maximumScore', (v) => v as num),
+      currentScore: $checkedConvert(json, 'currentScore', (v) => v as num),
+      health: $checkedConvert(json, 'health', (v) => v as num),
+      rewards: $checkedConvert(
+          json,
+          'rewards',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : RewardModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      interimSteps: $checkedConvert(
+          json,
+          'interimSteps',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : InterimStepModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      jobs: $checkedConvert(
+          json,
+          'jobs',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : JobModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$EventModelToJson(EventModel instance) =>
@@ -68,14 +79,20 @@ Map<String, dynamic> _$EventModelToJson(EventModel instance) =>
     };
 
 InterimStepModel _$InterimStepModelFromJson(Map json) {
-  return InterimStepModel(
-    goal: json['goal'] as int,
-    reward: json['reward'] == null
-        ? null
-        : RewardModel.fromJson((json['reward'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-  );
+  return $checkedNew('InterimStepModel', json, () {
+    final val = InterimStepModel(
+      goal: $checkedConvert(json, 'goal', (v) => v as int),
+      reward: $checkedConvert(
+          json,
+          'reward',
+          (v) => v == null
+              ? null
+              : RewardModel.fromJson((v as Map)?.map(
+                  (k, e) => MapEntry(k as String, e),
+                ))),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$InterimStepModelToJson(InterimStepModel instance) =>

@@ -7,13 +7,17 @@ part of 'job_model.dart';
 // **************************************************************************
 
 JobModel _$JobModelFromJson(Map json) {
-  return JobModel(
-    type: json['type'] as String,
-    rewardpool: json['rewardPool'],
-    enemyLevels: (json['enemyLevels'] as List)?.map((e) => e as int)?.toList(),
-    standingStages:
-        (json['standingStages'] as List)?.map((e) => e as int)?.toList(),
-  );
+  return $checkedNew('JobModel', json, () {
+    final val = JobModel(
+      type: $checkedConvert(json, 'type', (v) => v as String),
+      rewardpool: $checkedConvert(json, 'rewardPool', (v) => v),
+      enemyLevels: $checkedConvert(json, 'enemyLevels',
+          (v) => (v as List)?.map((e) => e as int)?.toList()),
+      standingStages: $checkedConvert(json, 'standingStages',
+          (v) => (v as List)?.map((e) => e as int)?.toList()),
+    );
+    return val;
+  }, fieldKeyMap: const {'rewardpool': 'rewardPool'});
 }
 
 Map<String, dynamic> _$JobModelToJson(JobModel instance) => <String, dynamic>{

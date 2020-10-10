@@ -7,21 +7,25 @@ part of 'alert_model.dart';
 // **************************************************************************
 
 AlertModel _$AlertModelFromJson(Map json) {
-  return AlertModel(
-    id: json['id'] as String,
-    activation: json['activation'] == null
-        ? null
-        : DateTime.parse(json['activation'] as String),
-    expiry: json['expiry'] == null
-        ? null
-        : DateTime.parse(json['expiry'] as String),
-    active: json['active'] as bool,
-    mission: json['mission'] == null
-        ? null
-        : MissionModel.fromJson((json['mission'] as Map)?.map(
-            (k, e) => MapEntry(k as String, e),
-          )),
-  );
+  return $checkedNew('AlertModel', json, () {
+    final val = AlertModel(
+      id: $checkedConvert(json, 'id', (v) => v as String),
+      activation: $checkedConvert(json, 'activation',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      expiry: $checkedConvert(json, 'expiry',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      active: $checkedConvert(json, 'active', (v) => v as bool),
+      mission: $checkedConvert(
+          json,
+          'mission',
+          (v) => v == null
+              ? null
+              : MissionModel.fromJson((v as Map)?.map(
+                  (k, e) => MapEntry(k as String, e),
+                ))),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$AlertModelToJson(AlertModel instance) =>

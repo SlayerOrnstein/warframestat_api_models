@@ -7,56 +7,74 @@ part of 'bio_weapon_model.dart';
 // **************************************************************************
 
 BioWeaponModel _$BioWeaponModelFromJson(Map json) {
-  return BioWeaponModel(
-    uniqueName: json['uniqueName'] as String,
-    name: json['name'] as String,
-    description: json['description'] as String,
-    aura: json['aura'] as String,
-    health: json['health'] as int,
-    shield: json['shield'] as int,
-    armor: json['armor'] as int,
-    power: json['power'] as int,
-    masteryReq: json['masteryReq'] as int,
-    sprintSpeed: (json['sprintSpeed'] as num)?.toDouble(),
-    passiveDescription: json['passiveDescription'] as String,
-    abilities: (json['abilities'] as List)
-        ?.map((e) => e == null
-            ? null
-            : AbilityModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    buildPrice: json['buildPrice'] as int,
-    buildTime: json['buildTime'] as int,
-    skipBuildTimePrice: json['skipBuildTimePrice'] as int,
-    buildQuantity: json['buildQuantity'] as int,
-    consumeOnBuild: json['consumeOnBuild'] as bool,
-    components: (json['components'] as List)
-        ?.map((e) => e == null
-            ? null
-            : ComponentModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    type: json['type'] as String,
-    imageName: json['imageName'] as String,
-    category: json['category'] as String,
-    productCategory: json['productCategory'] as String,
-    isTradable: json['isTradable'] as bool,
-    patchlogs: (json['patchlogs'] as List)
-        ?.map((e) => e == null
-            ? null
-            : PatchlogModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-    wikiaThumbnail: json['wikiaThumbnail'] as String,
-    wikiaUrl: json['wikiaUrl'] as String,
-    sex: json['sex'] as String,
-    introduced: json['introduced'] as String,
-    polarities: (json['polarities'] as List)?.map((e) => e as String)?.toList(),
-    color: json['color'] as int,
-  );
+  return $checkedNew('BioWeaponModel', json, () {
+    final val = BioWeaponModel(
+      uniqueName: $checkedConvert(json, 'uniqueName', (v) => v as String),
+      name: $checkedConvert(json, 'name', (v) => v as String),
+      description: $checkedConvert(json, 'description', (v) => v as String),
+      aura: $checkedConvert(json, 'aura', (v) => v as String),
+      health: $checkedConvert(json, 'health', (v) => v as int),
+      shield: $checkedConvert(json, 'shield', (v) => v as int),
+      armor: $checkedConvert(json, 'armor', (v) => v as int),
+      power: $checkedConvert(json, 'power', (v) => v as int),
+      masteryReq: $checkedConvert(json, 'masteryReq', (v) => v as int),
+      sprintSpeed:
+          $checkedConvert(json, 'sprintSpeed', (v) => (v as num)?.toDouble()),
+      passiveDescription:
+          $checkedConvert(json, 'passiveDescription', (v) => v as String),
+      abilities: $checkedConvert(
+          json,
+          'abilities',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : AbilityModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      buildPrice: $checkedConvert(json, 'buildPrice', (v) => v as int),
+      buildTime: $checkedConvert(json, 'buildTime', (v) => v as int),
+      skipBuildTimePrice:
+          $checkedConvert(json, 'skipBuildTimePrice', (v) => v as int),
+      buildQuantity: $checkedConvert(json, 'buildQuantity', (v) => v as int),
+      consumeOnBuild: $checkedConvert(json, 'consumeOnBuild', (v) => v as bool),
+      components: $checkedConvert(
+          json,
+          'components',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : ComponentModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      type: $checkedConvert(json, 'type', (v) => v as String),
+      imageName: $checkedConvert(json, 'imageName', (v) => v as String),
+      category: $checkedConvert(json, 'category', (v) => v as String),
+      productCategory:
+          $checkedConvert(json, 'productCategory', (v) => v as String),
+      isTradable: $checkedConvert(json, 'isTradable', (v) => v as bool),
+      patchlogs: $checkedConvert(
+          json,
+          'patchlogs',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : PatchlogModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      wikiaThumbnail:
+          $checkedConvert(json, 'wikiaThumbnail', (v) => v as String),
+      wikiaUrl: $checkedConvert(json, 'wikiaUrl', (v) => v as String),
+      sex: $checkedConvert(json, 'sex', (v) => v as String),
+      introduced: $checkedConvert(json, 'introduced', (v) => v as String),
+      polarities: $checkedConvert(json, 'polarities',
+          (v) => (v as List)?.map((e) => e as String)?.toList()),
+      color: $checkedConvert(json, 'color', (v) => v as int),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$BioWeaponModelToJson(BioWeaponModel instance) =>

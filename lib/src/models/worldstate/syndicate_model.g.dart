@@ -7,24 +7,28 @@ part of 'syndicate_model.dart';
 // **************************************************************************
 
 SyndicateModel _$SyndicateModelFromJson(Map json) {
-  return SyndicateModel(
-    id: json['id'] as String,
-    activation: json['activation'] == null
-        ? null
-        : DateTime.parse(json['activation'] as String),
-    expiry: json['expiry'] == null
-        ? null
-        : DateTime.parse(json['expiry'] as String),
-    syndicate: json['syndicate'] as String,
-    active: json['active'] as bool,
-    jobs: (json['jobs'] as List)
-        ?.map((e) => e == null
-            ? null
-            : JobModel.fromJson((e as Map)?.map(
-                (k, e) => MapEntry(k as String, e),
-              )))
-        ?.toList(),
-  );
+  return $checkedNew('SyndicateModel', json, () {
+    final val = SyndicateModel(
+      id: $checkedConvert(json, 'id', (v) => v as String),
+      activation: $checkedConvert(json, 'activation',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      expiry: $checkedConvert(json, 'expiry',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      syndicate: $checkedConvert(json, 'syndicate', (v) => v as String),
+      active: $checkedConvert(json, 'active', (v) => v as bool),
+      jobs: $checkedConvert(
+          json,
+          'jobs',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : JobModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$SyndicateModelToJson(SyndicateModel instance) =>

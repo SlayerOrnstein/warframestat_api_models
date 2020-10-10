@@ -7,10 +7,13 @@ part of 'ability_model.dart';
 // **************************************************************************
 
 AbilityModel _$AbilityModelFromJson(Map json) {
-  return AbilityModel(
-    name: json['name'] as String,
-    description: json['description'] as String,
-  );
+  return $checkedNew('AbilityModel', json, () {
+    final val = AbilityModel(
+      name: $checkedConvert(json, 'name', (v) => v as String),
+      description: $checkedConvert(json, 'description', (v) => v as String),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$AbilityModelToJson(AbilityModel instance) =>

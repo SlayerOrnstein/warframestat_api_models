@@ -7,17 +7,18 @@ part of 'vallis_model.dart';
 // **************************************************************************
 
 VallisModel _$VallisModelFromJson(Map json) {
-  return VallisModel(
-    id: json['id'] as String,
-    activation: json['activation'] == null
-        ? null
-        : DateTime.parse(json['activation'] as String),
-    expiry: json['expiry'] == null
-        ? null
-        : DateTime.parse(json['expiry'] as String),
-    state: json['state'] as String,
-    isWarm: json['isWarm'] as bool,
-  );
+  return $checkedNew('VallisModel', json, () {
+    final val = VallisModel(
+      id: $checkedConvert(json, 'id', (v) => v as String),
+      activation: $checkedConvert(json, 'activation',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      expiry: $checkedConvert(json, 'expiry',
+          (v) => v == null ? null : DateTime.parse(v as String)),
+      state: $checkedConvert(json, 'state', (v) => v as String),
+      isWarm: $checkedConvert(json, 'isWarm', (v) => v as bool),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$VallisModelToJson(VallisModel instance) =>

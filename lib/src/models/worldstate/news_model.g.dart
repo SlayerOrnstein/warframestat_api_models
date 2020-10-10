@@ -7,20 +7,27 @@ part of 'news_model.dart';
 // **************************************************************************
 
 OrbiterNewsModel _$OrbiterNewsModelFromJson(Map json) {
-  return OrbiterNewsModel(
-    id: json['id'] as String,
-    message: json['message'] as String,
-    link: json['link'] as String,
-    imageLink: json['imageLink'] as String,
-    priority: json['priority'] as bool,
-    date: json['date'] == null ? null : DateTime.parse(json['date'] as String),
-    update: json['update'] as bool,
-    primeAccess: json['primeAccess'] as bool,
-    stream: json['stream'] as bool,
-    translations: (json['translations'] as Map)?.map(
-      (k, e) => MapEntry(k as String, e as String),
-    ),
-  );
+  return $checkedNew('OrbiterNewsModel', json, () {
+    final val = OrbiterNewsModel(
+      id: $checkedConvert(json, 'id', (v) => v as String),
+      message: $checkedConvert(json, 'message', (v) => v as String),
+      link: $checkedConvert(json, 'link', (v) => v as String),
+      imageLink: $checkedConvert(json, 'imageLink', (v) => v as String),
+      priority: $checkedConvert(json, 'priority', (v) => v as bool),
+      date: $checkedConvert(
+          json, 'date', (v) => v == null ? null : DateTime.parse(v as String)),
+      update: $checkedConvert(json, 'update', (v) => v as bool),
+      primeAccess: $checkedConvert(json, 'primeAccess', (v) => v as bool),
+      stream: $checkedConvert(json, 'stream', (v) => v as bool),
+      translations: $checkedConvert(
+          json,
+          'translations',
+          (v) => (v as Map)?.map(
+                (k, e) => MapEntry(k as String, e as String),
+              )),
+    );
+    return val;
+  });
 }
 
 Map<String, dynamic> _$OrbiterNewsModelToJson(OrbiterNewsModel instance) =>
