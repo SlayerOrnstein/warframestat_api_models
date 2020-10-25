@@ -21,7 +21,7 @@ class MeleeModel extends Melee {
     double criticalChance,
     double criticalMultiplier,
     double procChance,
-    double fireRate,
+    this.attackSpeed,
     int masteryReq,
     int slot,
     double omegaAttenuation,
@@ -72,7 +72,7 @@ class MeleeModel extends Melee {
           criticalChance: criticalChance,
           criticalMultiplier: criticalMultiplier,
           procChance: procChance,
-          attackSpeed: fireRate,
+          attackSpeed: attackSpeed,
           masteryReq: masteryReq,
           slot: slot,
           omegaAttenuation: omegaAttenuation,
@@ -108,6 +108,10 @@ class MeleeModel extends Melee {
   factory MeleeModel.fromjson(Map<String, dynamic> json) {
     return _$MeleeModelFromJson(json);
   }
+
+  @JsonKey(name: 'fireRate')
+  @override
+  final double attackSpeed;
 
   @override
   final List<ComponentModel> components;

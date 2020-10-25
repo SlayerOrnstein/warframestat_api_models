@@ -26,6 +26,8 @@ MeleeModel _$MeleeModelFromJson(Map json) {
           json, 'criticalMultiplier', (v) => (v as num)?.toDouble()),
       procChance:
           $checkedConvert(json, 'procChance', (v) => (v as num)?.toDouble()),
+      attackSpeed:
+          $checkedConvert(json, 'fireRate', (v) => (v as num)?.toDouble()),
       masteryReq: $checkedConvert(json, 'masteryReq', (v) => v as int),
       slot: $checkedConvert(json, 'slot', (v) => v as int),
       omegaAttenuation: $checkedConvert(
@@ -98,7 +100,7 @@ MeleeModel _$MeleeModelFromJson(Map json) {
       wikiaUrl: $checkedConvert(json, 'wikiaUrl', (v) => v as String),
     );
     return val;
-  });
+  }, fieldKeyMap: const {'attackSpeed': 'fireRate'});
 }
 
 Map<String, dynamic> _$MeleeModelToJson(MeleeModel instance) =>
@@ -147,6 +149,7 @@ Map<String, dynamic> _$MeleeModelToJson(MeleeModel instance) =>
       'stancePolarity': instance.stancePolarity,
       'tags': instance.tags,
       'disposition': instance.disposition,
+      'fireRate': instance.attackSpeed,
       'components': instance.components?.map((e) => e?.toJson())?.toList(),
       'patchlogs': instance.patchlogs?.map((e) => e?.toJson())?.toList(),
     };
