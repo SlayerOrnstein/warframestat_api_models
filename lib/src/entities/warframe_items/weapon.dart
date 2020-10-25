@@ -13,29 +13,21 @@ class Weapon extends BaseItem {
     bool isTradable,
     String wikiaThumbnail,
     String wikiaUrl,
-    this.secondsPerShot,
     this.damagePerShot,
     this.magazineSize,
     this.reloadTime,
     this.totalDamage,
-    this.damagePerSecond,
     this.trigger,
     this.accuracy,
     this.criticalChance,
     this.criticalMultiplier,
     this.procChance,
     this.fireRate,
-    this.chargeAttack,
-    this.spinAttack,
-    this.leapAttack,
-    this.wallAttack,
     this.slot,
     this.noise,
     this.sentinel,
     this.masteryReq,
     this.omegaAttenuation,
-    this.channelingDrain,
-    this.channelingDamagemultiplier,
     this.buildPrice,
     this.buildTime,
     this.skipBuildTime,
@@ -62,60 +54,48 @@ class Weapon extends BaseItem {
           wikiaThumbnail: wikiaThumbnail,
         );
 
-  final num secondsPerShot;
-  final List<num> damagePerShot;
-  final num magazineSize;
-  final num reloadTime;
-  final num totalDamage;
-  final num damagePerSecond;
+  final List<double> damagePerShot;
+  final int magazineSize;
+  final double reloadTime;
+  final int totalDamage;
   final String trigger;
-  final num accuracy;
-  final num criticalChance, criticalMultiplier, procChance;
-  final num fireRate;
-  final num chargeAttack, spinAttack, leapAttack, wallAttack;
-  final num slot;
+  final double accuracy;
+  final double criticalChance, criticalMultiplier, procChance;
+  final double fireRate;
+  final int slot;
   final String noise;
   final bool sentinel;
-  final num masteryReq;
-  final num omegaAttenuation;
-  final num channelingDrain, channelingDamagemultiplier;
-  final num buildPrice, buildTime, skipBuildTime, buildQuantity;
+  final int masteryReq;
+  final double omegaAttenuation;
+  final int buildPrice, buildTime, skipBuildTime, buildQuantity;
   final bool consumeOnBuild;
   final List<Component> components;
-  final dynamic damage;
-  final Map<String, dynamic> damageTypes;
-  final dynamic marketCost;
+  final int damage;
+  final Map<String, int> damageTypes;
+  final int marketCost;
   final List<String> polarites, tags;
   final bool vaulted;
-  final num disposition;
+  final int disposition;
 
   @override
   List<Object> get props {
     return super.props
       ..addAll([
-        secondsPerShot,
         damagePerShot,
         magazineSize,
         reloadTime,
         totalDamage,
-        damagePerSecond,
         trigger,
         accuracy,
         criticalChance,
         criticalMultiplier,
         procChance,
         fireRate,
-        chargeAttack,
-        spinAttack,
-        leapAttack,
-        wallAttack,
         slot,
         noise,
         sentinel,
         masteryReq,
         omegaAttenuation,
-        channelingDrain,
-        channelingDamagemultiplier,
         buildPrice,
         buildTime,
         skipBuildTime,
