@@ -71,7 +71,7 @@ class Weapon extends BaseItem {
   final int buildPrice, buildTime, skipBuildTime, buildQuantity;
   final bool consumeOnBuild;
   final List<Component> components;
-  final int damage;
+  final String damage;
   final Map<String, int> damageTypes;
   final int marketCost;
   final List<String> polarites, tags;

@@ -39,7 +39,7 @@ class WeaponModel extends Weapon {
     int buildQuantity,
     bool consumeOnBuild,
     this.components,
-    int damage,
+    String damage,
     Map<String, int> damageTypes,
     int marketCost,
     List<String> polarites,
