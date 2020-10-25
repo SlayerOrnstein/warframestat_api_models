@@ -26,7 +26,6 @@ GunModel _$GunModelFromJson(Map json) {
       magazineSize: $checkedConvert(json, 'magazineSize', (v) => v as int),
       reloadTime:
           $checkedConvert(json, 'reloadTime', (v) => (v as num)?.toDouble()),
-      totalDamage: $checkedConvert(json, 'totalDamage', (v) => v as int),
       trigger: $checkedConvert(json, 'trigger', (v) => v as String),
       accuracy:
           $checkedConvert(json, 'accuracy', (v) => (v as num)?.toDouble()),
@@ -103,7 +102,6 @@ Map<String, dynamic> _$GunModelToJson(GunModel instance) => <String, dynamic>{
       'damagePerShot': instance.damagePerShot,
       'magazineSize': instance.magazineSize,
       'reloadTime': instance.reloadTime,
-      'totalDamage': instance.totalDamage,
       'trigger': instance.trigger,
       'accuracy': instance.accuracy,
       'criticalChance': instance.criticalChance,

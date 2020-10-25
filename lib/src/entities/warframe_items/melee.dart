@@ -7,7 +7,6 @@ class Melee extends BaseItem {
     String name,
     String uniqueName,
     this.damagePerShot,
-    this.totalDamage,
     String description,
     this.criticalChance,
     this.criticalMultiplier,
@@ -64,7 +63,6 @@ class Melee extends BaseItem {
         );
 
   final List<double> damagePerShot;
-  final int totalDamage;
   final double criticalChance;
   final double criticalMultiplier;
   final double procChance;
@@ -105,7 +103,6 @@ class Melee extends BaseItem {
     return super.props
       ..addAll([
         damagePerShot,
-        totalDamage,
         criticalChance,
         criticalMultiplier,
         procChance,

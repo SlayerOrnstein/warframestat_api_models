@@ -19,7 +19,6 @@ class Gun extends BaseItem {
     this.damagePerShot,
     this.magazineSize,
     this.reloadTime,
-    this.totalDamage,
     this.trigger,
     this.accuracy,
     this.criticalChance,
@@ -61,7 +60,6 @@ class Gun extends BaseItem {
   final List<double> damagePerShot;
   final int magazineSize;
   final double reloadTime;
-  final int totalDamage;
   final String trigger;
   final double accuracy;
   final double criticalChance, criticalMultiplier, procChance;
@@ -88,7 +86,6 @@ class Gun extends BaseItem {
         damagePerShot,
         magazineSize,
         reloadTime,
-        totalDamage,
         trigger,
         accuracy,
         criticalChance,

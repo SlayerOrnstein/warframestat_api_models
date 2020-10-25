@@ -19,7 +19,6 @@ MeleeModel _$MeleeModelFromJson(Map json) {
           $checkedConvert(json, 'productCategory', (v) => v as String),
       damagePerShot: $checkedConvert(json, 'damagePerShot',
           (v) => (v as List)?.map((e) => (e as num)?.toDouble())?.toList()),
-      totalDamage: $checkedConvert(json, 'totalDamage', (v) => v as int),
       criticalChance: $checkedConvert(
           json, 'criticalChance', (v) => (v as num)?.toDouble()),
       criticalMultiplier: $checkedConvert(
@@ -114,7 +113,6 @@ Map<String, dynamic> _$MeleeModelToJson(MeleeModel instance) =>
       'wikiaUrl': instance.wikiaUrl,
       'wikiaThumbnail': instance.wikiaThumbnail,
       'damagePerShot': instance.damagePerShot,
-      'totalDamage': instance.totalDamage,
       'criticalChance': instance.criticalChance,
       'criticalMultiplier': instance.criticalMultiplier,
       'procChance': instance.procChance,
