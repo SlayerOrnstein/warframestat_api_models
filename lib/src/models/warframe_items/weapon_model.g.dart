@@ -73,6 +73,7 @@ WeaponModel _$WeaponModelFromJson(Map json) {
           json, 'tags', (v) => (v as List)?.map((e) => e as String)?.toList()),
       vaulted: $checkedConvert(json, 'vaulted', (v) => v as bool),
       disposition: $checkedConvert(json, 'disposition', (v) => v as int),
+      multishot: $checkedConvert(json, 'multishot', (v) => v as int),
     );
     return val;
   });
@@ -117,5 +118,6 @@ Map<String, dynamic> _$WeaponModelToJson(WeaponModel instance) =>
       'tags': instance.tags,
       'vaulted': instance.vaulted,
       'disposition': instance.disposition,
+      'multishot': instance.multishot,
       'components': instance.components?.map((e) => e?.toJson())?.toList(),
     };

@@ -2,46 +2,47 @@ import 'base_item.dart';
 import 'component.dart';
 
 class Weapon extends BaseItem {
-  const Weapon({
-    String uniqueName,
-    String name,
-    String description,
-    String type,
-    String imageName,
-    String category,
-    String productCategory,
-    bool isTradable,
-    String wikiaThumbnail,
-    String wikiaUrl,
-    this.damagePerShot,
-    this.magazineSize,
-    this.reloadTime,
-    this.totalDamage,
-    this.trigger,
-    this.accuracy,
-    this.criticalChance,
-    this.criticalMultiplier,
-    this.procChance,
-    this.fireRate,
-    this.slot,
-    this.noise,
-    this.sentinel,
-    this.masteryReq,
-    this.omegaAttenuation,
-    this.buildPrice,
-    this.buildTime,
-    this.skipBuildTime,
-    this.buildQuantity,
-    this.consumeOnBuild,
-    this.components,
-    this.damage,
-    this.damageTypes,
-    this.marketCost,
-    this.polarites,
-    this.tags,
-    this.vaulted,
-    this.disposition,
-  }) : super(
+  const Weapon(
+      {String uniqueName,
+      String name,
+      String description,
+      String type,
+      String imageName,
+      String category,
+      String productCategory,
+      bool isTradable,
+      String wikiaThumbnail,
+      String wikiaUrl,
+      this.damagePerShot,
+      this.magazineSize,
+      this.reloadTime,
+      this.totalDamage,
+      this.trigger,
+      this.accuracy,
+      this.criticalChance,
+      this.criticalMultiplier,
+      this.procChance,
+      this.fireRate,
+      this.slot,
+      this.noise,
+      this.sentinel,
+      this.masteryReq,
+      this.omegaAttenuation,
+      this.buildPrice,
+      this.buildTime,
+      this.skipBuildTime,
+      this.buildQuantity,
+      this.consumeOnBuild,
+      this.components,
+      this.damage,
+      this.damageTypes,
+      this.marketCost,
+      this.polarites,
+      this.tags,
+      this.vaulted,
+      this.disposition,
+      this.multishot})
+      : super(
           uniqueName: uniqueName,
           name: name,
           description: description,
@@ -76,6 +77,7 @@ class Weapon extends BaseItem {
   final List<String> polarites, tags;
   final bool vaulted;
   final int disposition;
+  final int multishot;
 
   @override
   List<Object> get props {
@@ -109,6 +111,7 @@ class Weapon extends BaseItem {
         tags,
         vaulted,
         disposition,
+        multishot,
       ]);
   }
 }
