@@ -64,7 +64,7 @@ WeaponModel _$WeaponModelFromJson(Map json) {
           json,
           'damageTypes',
           (v) => (v as Map)?.map(
-                (k, e) => MapEntry(k as String, e as int),
+                (k, e) => MapEntry(k as String, (e as num)?.toDouble()),
               )),
       marketCost: $checkedConvert(json, 'marketCost', (v) => v as int),
       polarites: $checkedConvert(json, 'polarites',

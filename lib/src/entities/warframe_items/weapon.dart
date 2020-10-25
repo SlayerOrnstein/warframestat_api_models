@@ -72,7 +72,7 @@ class Weapon extends BaseItem {
   final bool consumeOnBuild;
   final List<Component> components;
   final String damage;
-  final Map<String, int> damageTypes;
+  final Map<String, double> damageTypes;
   final int marketCost;
   final List<String> polarites, tags;
   final bool vaulted;
