@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'weapon_model.dart';
+part of 'gun_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-WeaponModel _$WeaponModelFromJson(Map json) {
-  return $checkedNew('WeaponModel', json, () {
-    final val = WeaponModel(
+GunModel _$GunModelFromJson(Map json) {
+  return $checkedNew('GunModel', json, () {
+    final val = GunModel(
       uniqueName: $checkedConvert(json, 'uniqueName', (v) => v as String),
       name: $checkedConvert(json, 'name', (v) => v as String),
       description: $checkedConvert(json, 'description', (v) => v as String),
@@ -75,13 +75,22 @@ WeaponModel _$WeaponModelFromJson(Map json) {
       disposition: $checkedConvert(json, 'disposition', (v) => v as int),
       multishot:
           $checkedConvert(json, 'multishot', (v) => (v as num)?.toDouble()),
+      patchlogs: $checkedConvert(
+          json,
+          'patchlogs',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : PatchlogModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
     );
     return val;
   });
 }
 
-Map<String, dynamic> _$WeaponModelToJson(WeaponModel instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$GunModelToJson(GunModel instance) => <String, dynamic>{
       'uniqueName': instance.uniqueName,
       'name': instance.name,
       'description': instance.description,
@@ -121,4 +130,5 @@ Map<String, dynamic> _$WeaponModelToJson(WeaponModel instance) =>
       'disposition': instance.disposition,
       'multishot': instance.multishot,
       'components': instance.components?.map((e) => e?.toJson())?.toList(),
+      'patchlogs': instance.patchlogs?.map((e) => e?.toJson())?.toList(),
     };

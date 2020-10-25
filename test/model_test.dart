@@ -40,12 +40,12 @@ void main() {
       });
 
       test('weapon', () {
-        WeaponModel.fromJson(
+        GunModel.fromJson(
             json.decode(weaponItemFixture) as Map<String, dynamic>);
       });
 
       test('melee', () {
-        WeaponModel.fromJson(
+        GunModel.fromJson(
             json.decode(meleeItemFixture) as Map<String, dynamic>);
       });
 
@@ -82,7 +82,7 @@ BaseItem toBaseItem(Map<String, dynamic> item) {
       return BioWeaponModel.fromJson(item);
     weapon:
     case 'Primary':
-      return WeaponModel.fromJson(item);
+      return GunModel.fromJson(item);
 
     default:
       return BaseItemModel.fromJson(item);

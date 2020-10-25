@@ -1,13 +1,14 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:warframestat_api_models/models.dart';
 
-import '../../entities/warframe_items/weapon.dart';
+import '../../entities/warframe_items/gun.dart';
 import 'component_model.dart';
 
-part 'weapon_model.g.dart';
+part 'gun_model.g.dart';
 
 @JsonSerializable()
-class WeaponModel extends Weapon {
-  const WeaponModel({
+class GunModel extends Gun {
+  const GunModel({
     String uniqueName,
     String name,
     String description,
@@ -47,6 +48,7 @@ class WeaponModel extends Weapon {
     bool vaulted,
     int disposition,
     double multishot,
+    this.patchlogs,
   }) : super(
           uniqueName: uniqueName,
           name: name,
@@ -88,11 +90,14 @@ class WeaponModel extends Weapon {
           multishot: multishot,
         );
 
-  factory WeaponModel.fromJson(Map<String, dynamic> json) =>
-      _$WeaponModelFromJson(json);
+  factory GunModel.fromJson(Map<String, dynamic> json) =>
+      _$GunModelFromJson(json);
 
   @override
   final List<ComponentModel> components;
 
-  Map<String, dynamic> toJson() => _$WeaponModelToJson(this);
+  @override
+  final List<PatchlogModel> patchlogs;
+
+  Map<String, dynamic> toJson() => _$GunModelToJson(this);
 }

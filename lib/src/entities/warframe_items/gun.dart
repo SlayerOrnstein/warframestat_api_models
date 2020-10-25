@@ -1,8 +1,10 @@
+import 'package:warframestat_api_models/entities.dart';
+
 import 'base_item.dart';
 import 'component.dart';
 
-class Weapon extends BaseItem {
-  const Weapon(
+class Gun extends BaseItem {
+  const Gun(
       {String uniqueName,
       String name,
       String description,
@@ -13,6 +15,7 @@ class Weapon extends BaseItem {
       bool isTradable,
       String wikiaThumbnail,
       String wikiaUrl,
+      List<Patchlog> patchlogs,
       this.damagePerShot,
       this.magazineSize,
       this.reloadTime,
@@ -51,6 +54,7 @@ class Weapon extends BaseItem {
           category: category,
           productCategory: productCategory,
           isTradable: isTradable,
+          patchlogs: patchlogs,
           wikiaUrl: wikiaUrl,
           wikiaThumbnail: wikiaThumbnail,
         );

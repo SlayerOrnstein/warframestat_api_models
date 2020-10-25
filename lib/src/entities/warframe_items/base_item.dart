@@ -17,14 +17,13 @@ class BaseItem extends Equatable {
     this.wikiaThumbnail,
   });
 
-  final String uniqueName,
-      name,
-      description,
-      type,
-      imageName,
-      category,
-      productCategory;
-
+  final String uniqueName;
+  final String name;
+  final String description;
+  final String type;
+  final String imageName;
+  final String category;
+  final String productCategory;
   final bool isTradable;
   final List<Patchlog> patchlogs;
   final String wikiaUrl, wikiaThumbnail;
@@ -50,6 +49,7 @@ class BaseItem extends Equatable {
       patchlogs,
       wikiaUrl,
       wikiaThumbnail,
+      productCategory,
     ];
   }
 }
