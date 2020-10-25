@@ -18,7 +18,7 @@ class WeaponModel extends Weapon {
     bool isTradable,
     String wikiaThumbnail,
     String wikiaUrl,
-    List<num> damagePerShot,
+    List<double> damagePerShot,
     int magazineSize,
     double reloadTime,
     int totalDamage,

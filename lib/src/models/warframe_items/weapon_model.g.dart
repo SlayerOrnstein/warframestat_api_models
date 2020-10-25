@@ -22,7 +22,7 @@ WeaponModel _$WeaponModelFromJson(Map json) {
           $checkedConvert(json, 'wikiaThumbnail', (v) => v as String),
       wikiaUrl: $checkedConvert(json, 'wikiaUrl', (v) => v as String),
       damagePerShot: $checkedConvert(json, 'damagePerShot',
-          (v) => (v as List)?.map((e) => e as num)?.toList()),
+          (v) => (v as List)?.map((e) => (e as num)?.toDouble())?.toList()),
       magazineSize: $checkedConvert(json, 'magazineSize', (v) => v as int),
       reloadTime:
           $checkedConvert(json, 'reloadTime', (v) => (v as num)?.toDouble()),
