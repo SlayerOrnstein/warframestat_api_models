@@ -22,8 +22,8 @@ MeleeModel _$MeleeModelFromJson(Map json) {
       totalDamage: $checkedConvert(json, 'totalDamage', (v) => v as int),
       criticalChance: $checkedConvert(
           json, 'criticalChance', (v) => (v as num)?.toDouble()),
-      criticalMultiplier:
-          $checkedConvert(json, 'criticalMultiplier', (v) => v as int),
+      criticalMultiplier: $checkedConvert(
+          json, 'criticalMultiplier', (v) => (v as num)?.toDouble()),
       procChance:
           $checkedConvert(json, 'procChance', (v) => (v as num)?.toDouble()),
       masteryReq: $checkedConvert(json, 'masteryReq', (v) => v as int),

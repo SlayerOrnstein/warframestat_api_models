@@ -19,7 +19,7 @@ class MeleeModel extends Melee {
     List<double> damagePerShot,
     int totalDamage,
     double criticalChance,
-    int criticalMultiplier,
+    double criticalMultiplier,
     double procChance,
     double fireRate,
     int masteryReq,

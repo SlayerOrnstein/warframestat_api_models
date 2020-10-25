@@ -67,7 +67,7 @@ class Melee extends BaseItem {
   final List<double> damagePerShot;
   final int totalDamage;
   final double criticalChance;
-  final int criticalMultiplier;
+  final double criticalMultiplier;
   final double procChance;
   final double attackSpeed;
   final int masteryReq;
