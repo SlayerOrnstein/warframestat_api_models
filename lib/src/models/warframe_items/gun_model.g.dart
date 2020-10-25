@@ -59,7 +59,6 @@ GunModel _$GunModelFromJson(Map json) {
                       (k, e) => MapEntry(k as String, e),
                     )))
               ?.toList()),
-      damage: $checkedConvert(json, 'damage', (v) => v as String),
       damageTypes: $checkedConvert(
           json,
           'damageTypes',
@@ -121,7 +120,6 @@ Map<String, dynamic> _$GunModelToJson(GunModel instance) => <String, dynamic>{
       'skipBuildTime': instance.skipBuildTime,
       'buildQuantity': instance.buildQuantity,
       'consumeOnBuild': instance.consumeOnBuild,
-      'damage': instance.damage,
       'damageTypes': instance.damageTypes,
       'marketCost': instance.marketCost,
       'polarites': instance.polarites,

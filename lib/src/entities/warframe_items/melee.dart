@@ -42,7 +42,6 @@ class Melee extends BaseItem {
     this.tradable,
     List<Patchlog> patchlogs,
     this.channeling,
-    this.damage,
     this.damageTypes,
     this.marketCost,
     this.polarities,
@@ -94,7 +93,6 @@ class Melee extends BaseItem {
   final List<Component> components;
   final bool tradable;
   final double channeling;
-  final String damage;
   final Map<String, double> damageTypes;
   final int marketCost;
   final List<String> polarities;
@@ -136,7 +134,6 @@ class Melee extends BaseItem {
         components,
         tradable,
         channeling,
-        damage,
         damageTypes,
         marketCost,
         polarities,

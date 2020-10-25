@@ -70,7 +70,6 @@ MeleeModel _$MeleeModelFromJson(Map json) {
       tradable: $checkedConvert(json, 'tradable', (v) => v as bool),
       channeling:
           $checkedConvert(json, 'channeling', (v) => (v as num)?.toDouble()),
-      damage: $checkedConvert(json, 'damage', (v) => v as String),
       damageTypes: $checkedConvert(
           json,
           'damageTypes',
@@ -142,7 +141,6 @@ Map<String, dynamic> _$MeleeModelToJson(MeleeModel instance) =>
       'consumeOnBuild': instance.consumeOnBuild,
       'tradable': instance.tradable,
       'channeling': instance.channeling,
-      'damage': instance.damage,
       'damageTypes': instance.damageTypes,
       'marketCost': instance.marketCost,
       'polarities': instance.polarities,
