@@ -77,7 +77,7 @@ class Weapon extends BaseItem {
   final List<String> polarites, tags;
   final bool vaulted;
   final int disposition;
-  final int multishot;
+  final double multishot;
 
   @override
   List<Object> get props {

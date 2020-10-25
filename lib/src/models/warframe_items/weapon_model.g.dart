@@ -73,7 +73,8 @@ WeaponModel _$WeaponModelFromJson(Map json) {
           json, 'tags', (v) => (v as List)?.map((e) => e as String)?.toList()),
       vaulted: $checkedConvert(json, 'vaulted', (v) => v as bool),
       disposition: $checkedConvert(json, 'disposition', (v) => v as int),
-      multishot: $checkedConvert(json, 'multishot', (v) => v as int),
+      multishot:
+          $checkedConvert(json, 'multishot', (v) => (v as num)?.toDouble()),
     );
     return val;
   });
