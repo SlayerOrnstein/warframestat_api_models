@@ -22,12 +22,12 @@ class BioWeapon extends BaseItem {
     this.skipBuildTimePrice,
     this.buildQuantity,
     this.consumeOnBuild,
-    this.components,
     String type,
     String imageName,
     String category,
     String productCategory,
     bool isTradable,
+    List<Component> components,
     List<Patchlog> patchlogs,
     String wikiaThumbnail,
     String wikiaUrl,
@@ -44,6 +44,7 @@ class BioWeapon extends BaseItem {
           category: category,
           productCategory: productCategory,
           isTradable: isTradable,
+          components: components,
           patchlogs: patchlogs,
           wikiaThumbnail: wikiaThumbnail,
           wikiaUrl: wikiaUrl,
@@ -54,7 +55,7 @@ class BioWeapon extends BaseItem {
   final double sprintSpeed;
   final int buildPrice, buildTime, skipBuildTimePrice, buildQuantity;
   final bool consumeOnBuild;
-  final List<Component> components;
+
   final List<Ability> abilities;
   final List<String> polarities;
   final String passiveDescription, introduced, sex;

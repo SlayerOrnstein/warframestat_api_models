@@ -34,7 +34,7 @@ class Melee extends BaseItem {
     this.skipBuildTimePrice,
     this.buildQuantity,
     this.consumeOnBuild,
-    this.components,
+    List<Component> components,
     String type,
     String imageName,
     String category,
@@ -57,6 +57,7 @@ class Melee extends BaseItem {
           imageName: imageName,
           category: category,
           productCategory: productCategory,
+          components: components,
           patchlogs: patchlogs,
           wikiaThumbnail: wikiaThumbnail,
           wikiaUrl: wikiaUrl,
@@ -88,7 +89,6 @@ class Melee extends BaseItem {
   final int skipBuildTimePrice;
   final int buildQuantity;
   final bool consumeOnBuild;
-  final List<Component> components;
   final bool tradable;
   final double channeling;
   final Map<String, double> damageTypes;

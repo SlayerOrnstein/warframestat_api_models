@@ -35,7 +35,7 @@ class Gun extends BaseItem {
     this.skipBuildTime,
     this.buildQuantity,
     this.consumeOnBuild,
-    this.components,
+    List<Component> components,
     this.damageTypes,
     this.marketCost,
     this.polarites,
@@ -52,6 +52,7 @@ class Gun extends BaseItem {
           category: category,
           productCategory: productCategory,
           isTradable: isTradable,
+          components: components,
           patchlogs: patchlogs,
           wikiaUrl: wikiaUrl,
           wikiaThumbnail: wikiaThumbnail,
@@ -71,7 +72,6 @@ class Gun extends BaseItem {
   final double omegaAttenuation;
   final int buildPrice, buildTime, skipBuildTime, buildQuantity;
   final bool consumeOnBuild;
-  final List<Component> components;
   final Map<String, double> damageTypes;
   final int marketCost;
   final List<String> polarites, tags;

@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+import 'component.dart';
 import 'patch_log.dart';
 
 class BaseItem extends Equatable {
@@ -12,6 +13,7 @@ class BaseItem extends Equatable {
     this.category,
     this.productCategory,
     this.isTradable = false,
+    this.components,
     this.patchlogs,
     this.wikiaUrl,
     this.wikiaThumbnail,
@@ -25,6 +27,7 @@ class BaseItem extends Equatable {
   final String category;
   final String productCategory;
   final bool isTradable;
+  final List<Component> components;
   final List<Patchlog> patchlogs;
   final String wikiaUrl, wikiaThumbnail;
 
