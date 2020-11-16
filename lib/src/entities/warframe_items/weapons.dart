@@ -70,7 +70,7 @@ class WeaponItem extends FoundryItem {
   final String damage;
   final double totalDamage;
   final List<double> damagePerShot;
-  final Map<String, dynamic> damageTypes;
+  final Map<String, double> damageTypes;
   final List<String> polarities;
   final int marketCost, disposition;
   final bool sentinel, vaulted;
