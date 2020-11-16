@@ -30,7 +30,7 @@ ModModel _$ModModelFromJson(Map json) {
               ?.toList()),
       category: $checkedConvert(json, 'category', (v) => v as String),
       isAugment: $checkedConvert(json, 'isAugment', (v) => v as bool),
-      isTradable: $checkedConvert(json, 'isTradable', (v) => v as bool),
+      tradable: $checkedConvert(json, 'tradable', (v) => v as bool),
       patchlogs: $checkedConvert(
           json,
           'patchlogs',
@@ -57,7 +57,7 @@ Map<String, dynamic> _$ModModelToJson(ModModel instance) => <String, dynamic>{
       'type': instance.type,
       'imageName': instance.imageName,
       'category': instance.category,
-      'isTradable': instance.isTradable,
+      'tradable': instance.tradable,
       'wikiaUrl': instance.wikiaUrl,
       'wikiaThumbnail': instance.wikiaThumbnail,
       'polarity': instance.polarity,

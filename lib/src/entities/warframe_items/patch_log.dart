@@ -13,7 +13,5 @@ class Patchlog extends Equatable {
   final DateTime date;
 
   @override
-  List<Object> get props {
-    return [name, date, url, changes, fixes];
-  }
+  List<Object> get props => [name, date, url, changes, fixes];
 }

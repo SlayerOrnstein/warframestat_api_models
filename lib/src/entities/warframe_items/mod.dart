@@ -1,25 +1,26 @@
-import 'package:warframestat_api_models/entities.dart';
+import 'abstract_item.dart';
+import 'patch_log.dart';
 
-class Mod extends BaseItem {
+class Mod extends Item {
   const Mod({
     String uniqueName,
     String name,
     String description,
+    String type,
     String imageName,
+    String category,
     this.polarity,
     this.rarity,
     this.baseDrain,
     this.fusionLimit,
     this.compatName,
-    String type,
     this.levelStats,
-    String category,
     this.isAugment,
-    bool isTradable,
+    bool tradable,
+    this.transmutable,
     List<Patchlog> patchlogs,
     String wikiaThumbnail,
     String wikiaUrl,
-    this.transmutable,
   }) : super(
           uniqueName: uniqueName,
           name: name,
@@ -27,7 +28,7 @@ class Mod extends BaseItem {
           imageName: imageName,
           type: type,
           category: category,
-          isTradable: isTradable,
+          tradable: tradable,
           patchlogs: patchlogs,
           wikiaThumbnail: wikiaThumbnail,
           wikiaUrl: wikiaUrl,

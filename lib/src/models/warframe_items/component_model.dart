@@ -1,7 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../entities/warframe_items/component.dart';
-import 'component_drop_model.dart';
 
 part 'component_model.g.dart';
 
@@ -13,7 +12,7 @@ class ComponentModel extends Component {
     String description,
     num itemCount,
     String imageName,
-    bool isTradable,
+    bool tradable,
     this.drops,
   }) : super(
           uniqueName: uniqueName,
@@ -21,7 +20,7 @@ class ComponentModel extends Component {
           description: description,
           itemCount: itemCount,
           imageName: imageName,
-          isTradable: isTradable,
+          tradable: tradable,
           drops: drops,
         );
 
@@ -29,10 +28,30 @@ class ComponentModel extends Component {
       _$ComponentModelFromJson(json);
 
   @override
-  final List<ComponentDropModel> drops;
+  final List<DropModel> drops;
 
   Map<String, dynamic> toJson() => _$ComponentModelToJson(this);
+}
 
-  @override
-  List<Object> get props => super.props..addAll([itemCount, drops]);
+@JsonSerializable()
+class DropModel extends Drop {
+  const DropModel({
+    String location,
+    String type,
+    String rarity,
+    String rotation,
+    double chance,
+  }) : super(
+          location: location,
+          type: type,
+          rarity: rarity,
+          rotation: rotation,
+          chance: chance,
+        );
+
+  factory DropModel.fromJson(Map<String, dynamic> json) {
+    return _$DropModelFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() => _$DropModelToJson(this);
 }

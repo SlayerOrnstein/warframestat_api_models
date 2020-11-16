@@ -14,14 +14,14 @@ ComponentModel _$ComponentModelFromJson(Map json) {
       description: $checkedConvert(json, 'description', (v) => v as String),
       itemCount: $checkedConvert(json, 'itemCount', (v) => v as num),
       imageName: $checkedConvert(json, 'imageName', (v) => v as String),
-      isTradable: $checkedConvert(json, 'isTradable', (v) => v as bool),
+      tradable: $checkedConvert(json, 'tradable', (v) => v as bool),
       drops: $checkedConvert(
           json,
           'drops',
           (v) => (v as List)
               ?.map((e) => e == null
                   ? null
-                  : ComponentDropModel.fromJson((e as Map)?.map(
+                  : DropModel.fromJson((e as Map)?.map(
                       (k, e) => MapEntry(k as String, e),
                     )))
               ?.toList()),
@@ -36,7 +36,28 @@ Map<String, dynamic> _$ComponentModelToJson(ComponentModel instance) =>
       'name': instance.name,
       'description': instance.description,
       'imageName': instance.imageName,
-      'isTradable': instance.isTradable,
+      'tradable': instance.tradable,
       'itemCount': instance.itemCount,
       'drops': instance.drops?.map((e) => e?.toJson())?.toList(),
+    };
+
+DropModel _$DropModelFromJson(Map json) {
+  return $checkedNew('DropModel', json, () {
+    final val = DropModel(
+      location: $checkedConvert(json, 'location', (v) => v as String),
+      type: $checkedConvert(json, 'type', (v) => v as String),
+      rarity: $checkedConvert(json, 'rarity', (v) => v as String),
+      rotation: $checkedConvert(json, 'rotation', (v) => v as String),
+      chance: $checkedConvert(json, 'chance', (v) => (v as num)?.toDouble()),
+    );
+    return val;
+  });
+}
+
+Map<String, dynamic> _$DropModelToJson(DropModel instance) => <String, dynamic>{
+      'location': instance.location,
+      'type': instance.type,
+      'rarity': instance.rarity,
+      'rotation': instance.rotation,
+      'chance': instance.chance,
     };

@@ -17,7 +17,8 @@ void main() {
 
   group('Make sure json are properly serialized', () {
     test('worldstate', () {
-      WorldstateModel.fromJson(json.decode(worldstateFixture));
+      WorldstateModel.fromJson(
+          json.decode(worldstateFixture) as Map<String, dynamic>);
     });
 
     test('drop table', () {
@@ -35,17 +36,17 @@ void main() {
 
     group('Warframe Items', () {
       test('warframe', () {
-        BioWeaponModel.fromJson(
+        WarframeModel.fromJson(
             json.decode(warframeItemFixture) as Map<String, dynamic>);
       });
 
       test('weapon', () {
-        GunModel.fromJson(
+        ProjectileWeaponModel.fromJson(
             json.decode(weaponItemFixture) as Map<String, dynamic>);
       });
 
       test('melee', () {
-        GunModel.fromJson(
+        MeleeWeaponModel.fromJson(
             json.decode(meleeItemFixture) as Map<String, dynamic>);
       });
 
@@ -58,33 +59,55 @@ void main() {
   });
 }
 
-// ignore: missing_return
-BaseItem toBaseItem(Map<String, dynamic> item) {
-  switch (item['category'] as String) {
-    case 'Archwings':
-      continue warframe;
-    case 'Pets':
-      continue warframe;
-    case 'Sentinels':
-      continue warframe;
+Item toBaseItem(Map<String, dynamic> item) {
+  if (item.containsKey('productCategory')) {
+    return _productCategoryItem(item);
+  } else {
+    return _categoryItem(item);
+  }
+}
 
-    case 'Secondry':
-      continue weapon;
-    case 'Melee':
-      continue weapon;
-    case 'Arch-Gun':
-      continue weapon;
-    case 'Arch-Melee':
-      continue weapon;
+Item _productCategoryItem(Map<String, dynamic> item) {
+  final _gunReg = RegExp(r'(LongGuns)|(Pistols)|(SpaceGuns)|(SentinelWeapons)');
+  final _meleeReg = RegExp(r'(Melee)|(SpaceMelee)');
+  final _frameReg = RegExp(r'(Suits)|(SpaceSuits)|(MechSuits)');
+  final _companion = RegExp(r'(Sentinels)|(KubrowPets)');
 
-    warframe:
-    case 'Warframes':
-      return BioWeaponModel.fromJson(item);
-    weapon:
-    case 'Primary':
-      return GunModel.fromJson(item);
+  final category = item['productCategory'] as String;
 
-    default:
-      return BaseItemModel.fromJson(item);
+  if (category.contains(_gunReg)) {
+    return ProjectileWeaponModel.fromJson(item);
+  } else if (category.contains(_meleeReg)) {
+    return MeleeWeaponModel.fromJson(item);
+  } else if (category.contains(_frameReg)) {
+    return WarframeModel.fromJson(item);
+  } else if (category.contains(_companion)) {
+    return CompanionModel.fromJson(item);
+  } else {
+    return BasicItemModel.fromJson(item);
+  }
+}
+
+Item _categoryItem(Map<String, dynamic> item) {
+  final _gunReg = RegExp(r'(Primary)|(Secondary)|(Arch-Gun)');
+  final _meleeReg = RegExp(r'(Melee)|(Arch-Melee)');
+  final _frameReg = RegExp(r'(Warframe)|(Archwing)');
+  final _companion = RegExp(r'(Sentinel)|(Pet)');
+  const _mods = 'Mods';
+
+  final category = item['category'] as String;
+
+  if (category.contains(_gunReg)) {
+    return ProjectileWeaponModel.fromJson(item);
+  } else if (category.contains(_meleeReg)) {
+    return MeleeWeaponModel.fromJson(item);
+  } else if (category.contains(_frameReg)) {
+    return WarframeModel.fromJson(item);
+  } else if (category.contains(_mods)) {
+    return ModModel.fromJson(item);
+  } else if (category.contains(_companion)) {
+    return CompanionModel.fromJson(item);
+  } else {
+    return BasicItemModel.fromJson(item);
   }
 }

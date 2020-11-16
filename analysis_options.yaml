@@ -1,5 +1,4 @@
 include: package:extra_pedantic/analysis_options.yaml
-
 # For lint rules and documentation, see http://dart-lang.github.io/linter/lints.
 # Uncomment to specify additional rules.
 # linter:
@@ -7,5 +6,5 @@ include: package:extra_pedantic/analysis_options.yaml
 #     - camel_case_types
 
 analyzer:
-#   exclude:
-#     - path/to/excluded/files/**
+  exclude:
+    - lib/src/models/**/*.g.dart
