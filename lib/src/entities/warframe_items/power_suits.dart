@@ -57,6 +57,66 @@ abstract class PowerSuit extends FoundryItem {
   }
 }
 
+abstract class PlayerUsuablePowerSuit extends PowerSuit {
+  const PlayerUsuablePowerSuit({
+    String uniqueName,
+    String name,
+    String description,
+    String type,
+    String imageName,
+    String category,
+    String productCategory,
+    bool tradable,
+    List<Component> components,
+    int masteryReq,
+    int buildPrice,
+    int buildTime,
+    int skipBuildTimePrice,
+    int buildQuantity,
+    bool consumeOnBuild,
+    int health,
+    int shield,
+    int armor,
+    int power,
+    this.sprintSpeed,
+    this.abilities,
+    List<Patchlog> patchlogs,
+    String wikiaThumbnail,
+    String wikiaUrl,
+  }) : super(
+          uniqueName: uniqueName,
+          name: name,
+          description: description,
+          type: type,
+          imageName: imageName,
+          category: category,
+          productCategory: productCategory,
+          tradable: tradable,
+          components: components,
+          masteryReq: masteryReq,
+          buildPrice: buildPrice,
+          buildQuantity: buildQuantity,
+          buildTime: buildTime,
+          skipBuildTimePrice: skipBuildTimePrice,
+          consumeOnBuild: consumeOnBuild,
+          patchlogs: patchlogs,
+          wikiaThumbnail: wikiaThumbnail,
+          wikiaUrl: wikiaUrl,
+          health: health,
+          shield: shield,
+          armor: armor,
+          power: power,
+        );
+
+  final double sprintSpeed;
+  final List<Ability> abilities;
+
+  @override
+  List<Object> get props {
+    return super.props..addAll([sprintSpeed, abilities]);
+  }
+}
+
 class Ability extends Equatable {
   const Ability({this.name, this.description});
 
@@ -66,7 +126,7 @@ class Ability extends Equatable {
   List<Object> get props => [name, description];
 }
 
-class Warframe extends PowerSuit {
+class Warframe extends PlayerUsuablePowerSuit {
   const Warframe({
     String uniqueName,
     String name,
@@ -88,10 +148,10 @@ class Warframe extends PowerSuit {
     int shield,
     int armor,
     int power,
-    this.sprintSpeed,
+    double sprintSpeed,
     this.stamina,
     this.passiveDescription,
-    this.abilities,
+    List<Ability> abilities,
     this.sex,
     this.introduced,
     this.polarities,
@@ -110,6 +170,8 @@ class Warframe extends PowerSuit {
           armor: armor,
           shield: shield,
           power: power,
+          abilities: abilities,
+          sprintSpeed: sprintSpeed,
           productCategory: productCategory,
           tradable: tradable,
           components: components,
@@ -125,31 +187,20 @@ class Warframe extends PowerSuit {
         );
 
   final String aura;
-  final double sprintSpeed;
   final int stamina;
   final List<String> polarities;
   final String passiveDescription, introduced, sex;
-  final List<Ability> abilities;
   final int color;
 
   @override
   List<Object> get props {
     return super.props
-      ..addAll([
-        aura,
-        sprintSpeed,
-        polarities,
-        passiveDescription,
-        abilities,
-        introduced,
-        sex,
-        color
-      ]);
+      ..addAll([aura, polarities, passiveDescription, introduced, sex, color]);
   }
 }
 
-class Archwing extends PowerSuit {
-  const Archwing({
+class HeavyPowerSuit extends PlayerUsuablePowerSuit {
+  const HeavyPowerSuit({
     String uniqueName,
     String name,
     String description,
@@ -169,8 +220,8 @@ class Archwing extends PowerSuit {
     int shield,
     int armor,
     int power,
-    this.abilities,
-    this.sprintSpeed,
+    List<Ability> abilities,
+    double sprintSpeed,
     List<Patchlog> patchlogs,
     String wikiaThumbnail,
     String wikiaUrl,
@@ -185,6 +236,8 @@ class Archwing extends PowerSuit {
           armor: armor,
           shield: shield,
           power: power,
+          abilities: abilities,
+          sprintSpeed: sprintSpeed,
           productCategory: productCategory,
           tradable: tradable,
           components: components,
@@ -198,12 +251,6 @@ class Archwing extends PowerSuit {
           wikiaThumbnail: wikiaThumbnail,
           wikiaUrl: wikiaUrl,
         );
-
-  final double sprintSpeed;
-  final List<Ability> abilities;
-
-  @override
-  List<Object> get props => super.props..addAll([sprintSpeed, abilities]);
 }
 
 class Companion extends PowerSuit {

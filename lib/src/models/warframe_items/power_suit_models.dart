@@ -100,8 +100,8 @@ class WarframeModel extends Warframe {
 }
 
 @JsonSerializable()
-class ArchwingModel extends Archwing {
-  const ArchwingModel({
+class HeavyPowerSuitModel extends HeavyPowerSuit {
+  const HeavyPowerSuitModel({
     String uniqueName,
     String name,
     String description,
@@ -152,8 +152,8 @@ class ArchwingModel extends Archwing {
           wikiaUrl: wikiaUrl,
         );
 
-  factory ArchwingModel.fromJson(Map<String, dynamic> json) {
-    return _$ArchwingModelFromJson(json);
+  factory HeavyPowerSuitModel.fromJson(Map<String, dynamic> json) {
+    return _$HeavyPowerSuitModelFromJson(json);
   }
 
   @override
@@ -165,7 +165,7 @@ class ArchwingModel extends Archwing {
   @override
   final List<PatchlogModel> patchlogs;
 
-  Map<String, dynamic> toJson() => _$ArchwingModelToJson(this);
+  Map<String, dynamic> toJson() => _$HeavyPowerSuitModelToJson(this);
 }
 
 @JsonSerializable()

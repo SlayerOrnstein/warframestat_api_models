@@ -115,8 +115,8 @@ Map<String, dynamic> _$WarframeModelToJson(WarframeModel instance) =>
       'shield': instance.shield,
       'armor': instance.armor,
       'power': instance.power,
-      'aura': instance.aura,
       'sprintSpeed': instance.sprintSpeed,
+      'aura': instance.aura,
       'polarities': instance.polarities,
       'passiveDescription': instance.passiveDescription,
       'introduced': instance.introduced,
@@ -127,9 +127,9 @@ Map<String, dynamic> _$WarframeModelToJson(WarframeModel instance) =>
       'patchlogs': instance.patchlogs?.map((e) => e?.toJson())?.toList(),
     };
 
-ArchwingModel _$ArchwingModelFromJson(Map json) {
-  return $checkedNew('ArchwingModel', json, () {
-    final val = ArchwingModel(
+HeavyPowerSuitModel _$HeavyPowerSuitModelFromJson(Map json) {
+  return $checkedNew('HeavyPowerSuitModel', json, () {
+    final val = HeavyPowerSuitModel(
       uniqueName: $checkedConvert(json, 'uniqueName', (v) => v as String),
       name: $checkedConvert(json, 'name', (v) => v as String),
       description: $checkedConvert(json, 'description', (v) => v as String),
@@ -190,7 +190,8 @@ ArchwingModel _$ArchwingModelFromJson(Map json) {
   });
 }
 
-Map<String, dynamic> _$ArchwingModelToJson(ArchwingModel instance) =>
+Map<String, dynamic> _$HeavyPowerSuitModelToJson(
+        HeavyPowerSuitModel instance) =>
     <String, dynamic>{
       'uniqueName': instance.uniqueName,
       'name': instance.name,
