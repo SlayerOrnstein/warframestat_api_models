@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:warframestat_api_models/models.dart';
 import '../../entities/warframe_items/misc.dart';
 
 import 'patch_log_model.dart';
@@ -13,18 +14,37 @@ class BasicItemModel extends BasicItem {
     String description,
     String type,
     String imageName,
+    String productCategory,
     String category,
     bool tradable,
+    int masteryReq,
+    this.components,
+    this.drops,
+    int buildPrice,
+    int buildTime,
+    int skipBuildTimePrice,
+    int buildQuantity,
+    bool consumeOnBuild,
     this.patchlogs,
+    String wikiaUrl,
+    String wikiaThumbnail,
   }) : super(
           uniqueName: uniqueName,
           name: name,
           description: description,
-          type: type,
           imageName: imageName,
+          productCategory: productCategory,
+          type: type,
           category: category,
           tradable: tradable,
-          patchlogs: patchlogs,
+          masteryReq: masteryReq,
+          buildPrice: buildPrice,
+          buildTime: buildTime,
+          skipBuildTimePrice: skipBuildTimePrice,
+          buildQuantity: buildQuantity,
+          consumeOnBuild: consumeOnBuild,
+          wikiaUrl: wikiaUrl,
+          wikiaThumbnail: wikiaThumbnail,
         );
 
   factory BasicItemModel.fromJson(Map<String, dynamic> json) {
@@ -32,7 +52,13 @@ class BasicItemModel extends BasicItem {
   }
 
   @override
+  final List<ComponentModel> components;
+
+  @override
   final List<PatchlogModel> patchlogs;
+
+  @override
+  final List<DropModel> drops;
 
   Map<String, dynamic> toJson() => _$BasicItemModelToJson(this);
 }

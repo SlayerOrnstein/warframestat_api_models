@@ -2,26 +2,46 @@ import 'abstract_item.dart';
 import 'component.dart';
 import 'patch_log.dart';
 
-class BasicItem extends Item {
+class BasicItem extends FoundryItem {
   const BasicItem({
     String uniqueName,
     String name,
     String description,
     String type,
     String imageName,
+    String productCategory,
     String category,
     bool tradable,
-    List<Patchlog> patchlogs,
+    int masteryReq,
+    List<Component> components,
     this.drops,
+    int buildPrice,
+    int buildTime,
+    int skipBuildTimePrice,
+    int buildQuantity,
+    bool consumeOnBuild,
+    List<Patchlog> patchlogs,
+    String wikiaUrl,
+    String wikiaThumbnail,
   }) : super(
           uniqueName: uniqueName,
           name: name,
           description: description,
           imageName: imageName,
+          productCategory: productCategory,
           type: type,
           category: category,
           tradable: tradable,
+          masteryReq: masteryReq,
+          components: components,
+          buildPrice: buildPrice,
+          buildTime: buildTime,
+          skipBuildTimePrice: skipBuildTimePrice,
+          buildQuantity: buildQuantity,
+          consumeOnBuild: consumeOnBuild,
           patchlogs: patchlogs,
+          wikiaUrl: wikiaUrl,
+          wikiaThumbnail: wikiaThumbnail,
         );
 
   final List<Drop> drops;

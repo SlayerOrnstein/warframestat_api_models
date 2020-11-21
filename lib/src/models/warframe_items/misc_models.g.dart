@@ -14,8 +14,37 @@ BasicItemModel _$BasicItemModelFromJson(Map json) {
       description: $checkedConvert(json, 'description', (v) => v as String),
       type: $checkedConvert(json, 'type', (v) => v as String),
       imageName: $checkedConvert(json, 'imageName', (v) => v as String),
+      productCategory:
+          $checkedConvert(json, 'productCategory', (v) => v as String),
       category: $checkedConvert(json, 'category', (v) => v as String),
       tradable: $checkedConvert(json, 'tradable', (v) => v as bool),
+      masteryReq: $checkedConvert(json, 'masteryReq', (v) => v as int),
+      components: $checkedConvert(
+          json,
+          'components',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : ComponentModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      drops: $checkedConvert(
+          json,
+          'drops',
+          (v) => (v as List)
+              ?.map((e) => e == null
+                  ? null
+                  : DropModel.fromJson((e as Map)?.map(
+                      (k, e) => MapEntry(k as String, e),
+                    )))
+              ?.toList()),
+      buildPrice: $checkedConvert(json, 'buildPrice', (v) => v as int),
+      buildTime: $checkedConvert(json, 'buildTime', (v) => v as int),
+      skipBuildTimePrice:
+          $checkedConvert(json, 'skipBuildTimePrice', (v) => v as int),
+      buildQuantity: $checkedConvert(json, 'buildQuantity', (v) => v as int),
+      consumeOnBuild: $checkedConvert(json, 'consumeOnBuild', (v) => v as bool),
       patchlogs: $checkedConvert(
           json,
           'patchlogs',
@@ -26,6 +55,9 @@ BasicItemModel _$BasicItemModelFromJson(Map json) {
                       (k, e) => MapEntry(k as String, e),
                     )))
               ?.toList()),
+      wikiaUrl: $checkedConvert(json, 'wikiaUrl', (v) => v as String),
+      wikiaThumbnail:
+          $checkedConvert(json, 'wikiaThumbnail', (v) => v as String),
     );
     return val;
   });
@@ -38,9 +70,20 @@ Map<String, dynamic> _$BasicItemModelToJson(BasicItemModel instance) =>
       'description': instance.description,
       'type': instance.type,
       'imageName': instance.imageName,
+      'productCategory': instance.productCategory,
       'category': instance.category,
       'tradable': instance.tradable,
+      'wikiaUrl': instance.wikiaUrl,
+      'wikiaThumbnail': instance.wikiaThumbnail,
+      'masteryReq': instance.masteryReq,
+      'buildPrice': instance.buildPrice,
+      'buildTime': instance.buildTime,
+      'skipBuildTimePrice': instance.skipBuildTimePrice,
+      'buildQuantity': instance.buildQuantity,
+      'consumeOnBuild': instance.consumeOnBuild,
+      'components': instance.components?.map((e) => e?.toJson())?.toList(),
       'patchlogs': instance.patchlogs?.map((e) => e?.toJson())?.toList(),
+      'drops': instance.drops?.map((e) => e?.toJson())?.toList(),
     };
 
 SolNodeModel _$SolNodeModelFromJson(Map json) {
