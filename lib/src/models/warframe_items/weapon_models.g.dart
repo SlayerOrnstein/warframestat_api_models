@@ -33,6 +33,8 @@ ProjectileWeaponModel _$ProjectileWeaponModelFromJson(Map json) {
           json, 'criticalChance', (v) => (v as num)?.toDouble()),
       criticalMultiplier: $checkedConvert(
           json, 'criticalMultiplier', (v) => (v as num)?.toDouble()),
+      procChance:
+          $checkedConvert(json, 'procChance', (v) => (v as num)?.toDouble()),
       fireRate:
           $checkedConvert(json, 'fireRate', (v) => (v as num)?.toDouble()),
       slot: $checkedConvert(json, 'slot', (v) => v as int),
@@ -123,6 +125,7 @@ Map<String, dynamic> _$ProjectileWeaponModelToJson(
       'noise': instance.noise,
       'multishot': instance.multishot,
       'flight': instance.flight,
+      'procChance': instance.procChance,
       'components': instance.components?.map((e) => e?.toJson())?.toList(),
       'patchlogs': instance.patchlogs?.map((e) => e?.toJson())?.toList(),
     };
@@ -161,8 +164,8 @@ MeleeWeaponModel _$MeleeWeaponModelFromJson(Map json) {
           json, 'criticalChance', (v) => (v as num)?.toDouble()),
       criticalMultiplier: $checkedConvert(
           json, 'criticalMultiplier', (v) => (v as num)?.toDouble()),
-      statusChance:
-          $checkedConvert(json, 'statusChance', (v) => (v as num)?.toDouble()),
+      procChance:
+          $checkedConvert(json, 'procChance', (v) => (v as num)?.toDouble()),
       attackSpeed:
           $checkedConvert(json, 'attackSpeed', (v) => (v as num)?.toDouble()),
       omegaAttenuation: $checkedConvert(
@@ -245,7 +248,6 @@ Map<String, dynamic> _$MeleeWeaponModelToJson(MeleeWeaponModel instance) =>
       'slot': instance.slot,
       'criticalChance': instance.criticalChance,
       'criticalMultiplier': instance.criticalMultiplier,
-      'statusChance': instance.statusChance,
       'omegaAttenuation': instance.omegaAttenuation,
       'damage': instance.damage,
       'totalDamage': instance.totalDamage,
@@ -272,6 +274,7 @@ Map<String, dynamic> _$MeleeWeaponModelToJson(MeleeWeaponModel instance) =>
       'heavySlamRadius': instance.heavySlamRadius,
       'windup': instance.windup,
       'stancePolarity': instance.stancePolarity,
+      'procChance': instance.procChance,
       'components': instance.components?.map((e) => e?.toJson())?.toList(),
       'patchlogs': instance.patchlogs?.map((e) => e?.toJson())?.toList(),
     };

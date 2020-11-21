@@ -26,7 +26,7 @@ class ProjectileWeaponModel extends ProjectileWeapon {
     double accuracy,
     double criticalChance,
     double criticalMultiplier,
-    double procChance,
+    this.procChance,
     double fireRate,
     int slot,
     int ammo,
@@ -89,6 +89,8 @@ class ProjectileWeaponModel extends ProjectileWeapon {
   factory ProjectileWeaponModel.fromJson(Map<String, dynamic> json) =>
       _$ProjectileWeaponModelFromJson(json);
 
+  final double procChance;
+
   @override
   final List<ComponentModel> components;
 
@@ -119,7 +121,7 @@ class MeleeWeaponModel extends MeleeWeapon {
     this.components,
     double criticalChance,
     double criticalMultiplier,
-    double statusChance,
+    this.procChance,
     double attackSpeed,
     double omegaAttenuation,
     String damage,
@@ -159,7 +161,7 @@ class MeleeWeaponModel extends MeleeWeapon {
           productCategory: productCategory,
           criticalChance: criticalChance,
           criticalMultiplier: criticalMultiplier,
-          statusChance: statusChance,
+          statusChance: procChance,
           attackSpeed: attackSpeed,
           slot: slot,
           omegaAttenuation: omegaAttenuation,
@@ -203,6 +205,8 @@ class MeleeWeaponModel extends MeleeWeapon {
   factory MeleeWeaponModel.fromJson(Map<String, dynamic> json) {
     return _$MeleeWeaponModelFromJson(json);
   }
+
+  final double procChance;
 
   @override
   final List<ComponentModel> components;
