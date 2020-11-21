@@ -146,6 +146,7 @@ class MeleeWeaponModel extends MeleeWeapon {
     int heavyAttackDamage,
     int heavySlamAttack,
     int heavySlamRadius,
+    int heavySlamRadialDamage,
     double windup,
     String stancePolarity,
     this.patchlogs,
@@ -198,6 +199,7 @@ class MeleeWeaponModel extends MeleeWeapon {
           heavyAttackDamage: heavyAttackDamage,
           heavySlamAttack: heavySlamAttack,
           heavySlamRadius: heavySlamRadius,
+          heavySlamRadialDamage: heavySlamRadialDamage,
           windup: windup,
           stancePolarity: stancePolarity,
         );

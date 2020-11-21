@@ -252,6 +252,7 @@ class MeleeWeapon extends WeaponItem {
     this.heavyAttackDamage,
     this.heavySlamAttack,
     this.heavySlamRadius,
+    this.heavySlamRadialDamage,
     this.windup,
     this.stancePolarity,
     List<Patchlog> patchlogs,
@@ -301,6 +302,7 @@ class MeleeWeapon extends WeaponItem {
   final int slamAttack, slamRadialDamage, slamRadius;
   final int slideAttack;
   final int heavyAttackDamage, heavySlamAttack, heavySlamRadius;
+  final int heavySlamRadialDamage;
   final double windup;
   final String stancePolarity;
 

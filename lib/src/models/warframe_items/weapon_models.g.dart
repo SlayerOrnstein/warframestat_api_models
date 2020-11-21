@@ -206,6 +206,8 @@ MeleeWeaponModel _$MeleeWeaponModelFromJson(Map json) {
           $checkedConvert(json, 'heavySlamAttack', (v) => v as int),
       heavySlamRadius:
           $checkedConvert(json, 'heavySlamRadius', (v) => v as int),
+      heavySlamRadialDamage:
+          $checkedConvert(json, 'heavySlamRadialDamage', (v) => v as int),
       windup: $checkedConvert(json, 'windup', (v) => (v as num)?.toDouble()),
       stancePolarity:
           $checkedConvert(json, 'stancePolarity', (v) => v as String),
@@ -272,6 +274,7 @@ Map<String, dynamic> _$MeleeWeaponModelToJson(MeleeWeaponModel instance) =>
       'heavyAttackDamage': instance.heavyAttackDamage,
       'heavySlamAttack': instance.heavySlamAttack,
       'heavySlamRadius': instance.heavySlamRadius,
+      'heavySlamRadialDamage': instance.heavySlamRadialDamage,
       'windup': instance.windup,
       'stancePolarity': instance.stancePolarity,
       'procChance': instance.procChance,
