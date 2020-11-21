@@ -13,6 +13,8 @@ PatchlogModel _$PatchlogModelFromJson(Map json) {
       date: $checkedConvert(
           json, 'date', (v) => v == null ? null : DateTime.parse(v as String)),
       url: $checkedConvert(json, 'url', (v) => v as String),
+      imgUrl: $checkedConvert(json, 'imgUrl', (v) => v as String),
+      additions: $checkedConvert(json, 'additions', (v) => v as String),
       changes: $checkedConvert(json, 'changes', (v) => v as String),
       fixes: $checkedConvert(json, 'fixes', (v) => v as String),
     );
@@ -24,6 +26,8 @@ Map<String, dynamic> _$PatchlogModelToJson(PatchlogModel instance) =>
     <String, dynamic>{
       'name': instance.name,
       'url': instance.url,
+      'imgUrl': instance.imgUrl,
+      'additions': instance.additions,
       'changes': instance.changes,
       'fixes': instance.fixes,
       'date': instance.date?.toIso8601String(),

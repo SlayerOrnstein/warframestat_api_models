@@ -10,12 +10,16 @@ class PatchlogModel extends Patchlog {
     String name,
     DateTime date,
     String url,
+    String imgUrl,
+    String additions,
     String changes,
     String fixes,
   }) : super(
           name: name,
           date: date,
           url: url,
+          imgUrl: imgUrl,
+          additions: additions,
           changes: changes,
           fixes: fixes,
         );

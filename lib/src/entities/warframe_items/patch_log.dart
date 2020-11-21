@@ -5,13 +5,18 @@ class Patchlog extends Equatable {
     this.name,
     this.date,
     this.url,
+    this.imgUrl,
+    this.additions,
     this.changes,
     this.fixes,
   });
 
-  final String name, url, changes, fixes;
+  final String name, url, imgUrl;
+  final String additions, changes, fixes;
   final DateTime date;
 
   @override
-  List<Object> get props => [name, date, url, changes, fixes];
+  List<Object> get props {
+    return [name, date, url, imgUrl, additions, changes, fixes];
+  }
 }
