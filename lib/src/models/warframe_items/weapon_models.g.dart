@@ -166,8 +166,8 @@ MeleeWeaponModel _$MeleeWeaponModelFromJson(Map json) {
           json, 'criticalMultiplier', (v) => (v as num)?.toDouble()),
       procChance:
           $checkedConvert(json, 'procChance', (v) => (v as num)?.toDouble()),
-      attackSpeed:
-          $checkedConvert(json, 'attackSpeed', (v) => (v as num)?.toDouble()),
+      fireRate:
+          $checkedConvert(json, 'fireRate', (v) => (v as num)?.toDouble()),
       omegaAttenuation: $checkedConvert(
           json, 'omegaAttenuation', (v) => (v as num)?.toDouble()),
       damage: $checkedConvert(json, 'damage', (v) => v as String),
@@ -248,6 +248,7 @@ Map<String, dynamic> _$MeleeWeaponModelToJson(MeleeWeaponModel instance) =>
       'slot': instance.slot,
       'criticalChance': instance.criticalChance,
       'criticalMultiplier': instance.criticalMultiplier,
+      'fireRate': instance.fireRate,
       'omegaAttenuation': instance.omegaAttenuation,
       'damage': instance.damage,
       'totalDamage': instance.totalDamage,
@@ -260,7 +261,6 @@ Map<String, dynamic> _$MeleeWeaponModelToJson(MeleeWeaponModel instance) =>
       'vaulted': instance.vaulted,
       'releaseDate': instance.releaseDate,
       'estimatedVaultDate': instance.estimatedVaultDate,
-      'attackSpeed': instance.attackSpeed,
       'blockingAngle': instance.blockingAngle,
       'comboDuration': instance.comboDuration,
       'followThrough': instance.followThrough,
