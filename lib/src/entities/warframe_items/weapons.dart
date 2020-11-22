@@ -253,7 +253,7 @@ class MeleeWeapon extends WeaponItem {
     this.heavySlamAttack,
     this.heavySlamRadius,
     this.heavySlamRadialDamage,
-    this.windup,
+    this.windUp,
     this.stancePolarity,
     List<Patchlog> patchlogs,
     String wikiaThumbnail,
@@ -303,7 +303,7 @@ class MeleeWeapon extends WeaponItem {
   final int slideAttack;
   final int heavyAttackDamage, heavySlamAttack, heavySlamRadius;
   final int heavySlamRadialDamage;
-  final double windup;
+  final double windUp;
   final String stancePolarity;
 
   // Becasue fireRate and attackSpeed are the same in melee
@@ -323,7 +323,7 @@ class MeleeWeapon extends WeaponItem {
         heavyAttackDamage,
         heavySlamAttack,
         heavySlamRadius,
-        windup,
+        windUp,
         stancePolarity,
       ]);
   }
