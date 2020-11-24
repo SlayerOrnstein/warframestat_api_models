@@ -67,6 +67,8 @@ ProjectileWeaponModel _$ProjectileWeaponModelFromJson(Map json) {
           (v) => (v as Map)?.map(
                 (k, e) => MapEntry(k as String, (e as num)?.toDouble()),
               )),
+      polarities: $checkedConvert(json, 'polarities',
+          (v) => (v as List)?.map((e) => e as String)?.toList()),
       marketCost: $checkedConvert(json, 'marketCost', (v) => v as int),
       vaulted: $checkedConvert(json, 'vaulted', (v) => v as bool),
       disposition: $checkedConvert(json, 'disposition', (v) => v as int),
@@ -113,6 +115,7 @@ Map<String, dynamic> _$ProjectileWeaponModelToJson(
       'omegaAttenuation': instance.omegaAttenuation,
       'damagePerShot': instance.damagePerShot,
       'damageTypes': instance.damageTypes,
+      'polarities': instance.polarities,
       'marketCost': instance.marketCost,
       'disposition': instance.disposition,
       'sentinel': instance.sentinel,
