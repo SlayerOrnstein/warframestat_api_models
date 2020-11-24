@@ -25,6 +25,7 @@ abstract class PowerSuit extends FoundryItem {
     this.shield,
     this.armor,
     this.power,
+    this.polarities,
     List<Patchlog> patchlogs,
     String wikiaThumbnail,
     String wikiaUrl,
@@ -50,10 +51,11 @@ abstract class PowerSuit extends FoundryItem {
         );
 
   final int health, shield, armor, power;
+  final List<String> polarities;
 
   @override
   List<Object> get props {
-    return super.props..addAll([health, shield, armor, power]);
+    return super.props..addAll([health, shield, armor, power, polarities]);
   }
 }
 
@@ -78,6 +80,7 @@ abstract class PlayerUsuablePowerSuit extends PowerSuit {
     int shield,
     int armor,
     int power,
+    List<String> polarities,
     this.sprintSpeed,
     this.abilities,
     List<Patchlog> patchlogs,
@@ -106,6 +109,7 @@ abstract class PlayerUsuablePowerSuit extends PowerSuit {
           shield: shield,
           armor: armor,
           power: power,
+          polarities: polarities,
         );
 
   final double sprintSpeed;
@@ -152,9 +156,9 @@ class Warframe extends PlayerUsuablePowerSuit {
     this.stamina,
     this.passiveDescription,
     List<Ability> abilities,
+    List<String> polarities,
     this.sex,
     this.introduced,
-    this.polarities,
     this.color,
     List<Patchlog> patchlogs,
     String wikiaThumbnail,
@@ -172,6 +176,7 @@ class Warframe extends PlayerUsuablePowerSuit {
           power: power,
           abilities: abilities,
           sprintSpeed: sprintSpeed,
+          polarities: polarities,
           productCategory: productCategory,
           tradable: tradable,
           components: components,
@@ -188,14 +193,13 @@ class Warframe extends PlayerUsuablePowerSuit {
 
   final String aura;
   final int stamina;
-  final List<String> polarities;
   final String passiveDescription, introduced, sex;
   final int color;
 
   @override
   List<Object> get props {
     return super.props
-      ..addAll([aura, polarities, passiveDescription, introduced, sex, color]);
+      ..addAll([aura, passiveDescription, introduced, sex, color]);
   }
 }
 
@@ -220,6 +224,7 @@ class HeavyPowerSuit extends PlayerUsuablePowerSuit {
     int shield,
     int armor,
     int power,
+    List<String> polarities,
     List<Ability> abilities,
     double sprintSpeed,
     List<Patchlog> patchlogs,
@@ -236,6 +241,7 @@ class HeavyPowerSuit extends PlayerUsuablePowerSuit {
           armor: armor,
           shield: shield,
           power: power,
+          polarities: polarities,
           abilities: abilities,
           sprintSpeed: sprintSpeed,
           productCategory: productCategory,
@@ -274,6 +280,7 @@ class Companion extends PowerSuit {
     int shield,
     int armor,
     int power,
+    List<String> polarities,
     List<Patchlog> patchlogs,
     String wikiaThumbnail,
     String wikiaUrl,
@@ -288,6 +295,7 @@ class Companion extends PowerSuit {
           armor: armor,
           shield: shield,
           power: power,
+          polarities: polarities,
           productCategory: productCategory,
           tradable: tradable,
           components: components,
